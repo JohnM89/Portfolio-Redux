@@ -26,21 +26,23 @@ const iconColors = {
   faJsSquare: "#EFD81D",
   faGitAlt: "#EC4D28",
 };
+const initialIcons = [faAngular, faHtml5, faCss3, faReact, faJsSquare, faGitAlt];
 
 const About = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
-    const [iconSetIndex, setIconSetIndex] = useState(0);
+    const [currentIcons, setCurrentIcons] = useState([...initialIcons]);
 
     useEffect(() => {
-        const intervalId = setInterval(() => {
-            setIconSetIndex((current) => (current + 1) % iconSets.length);
-        }, 5000);
-
         setTimeout(() => {
             setLetterClass('text-animate-hover');
         }, 3000);
+
+        const intervalId = setInterval(() => {
+            setCurrentIcons(shuffleArray([...currentIcons]));
+        }, 5000);
+
         return () => clearInterval(intervalId);
-    }, []);
+    }, [currentIcons]);
 
     return (
         <>
@@ -56,24 +58,13 @@ const About = () => {
                 </div>
 
                 <div className="stage-cube-cont">
-                    <div className="face1">
-                        <FontAwesomeIcon icon={faAngular} color={iconColors[faAngular.iconName]} />
-                    </div>
-                    <div className="face2">
-                        <FontAwesomeIcon icon={faHtml5} color={iconColors[faHtml5.iconName]} />
-                    </div>
-                    <div className="face3">
-                        <FontAwesomeIcon icon={faCss3} color={iconColors[faCss3.iconName]} />
-                    </div>
-                    <div className="face4">
-                        <FontAwesomeIcon icon={faReact} color={iconColors[faReact.iconName]} />
-                    </div>
-                    <div className="face5">
-                        <FontAwesomeIcon icon={faJsSquare} color={iconColors[faJsSquare.iconName]} />
-                    </div>
-                    <div className="face6">
-                        <FontAwesomeIcon icon={faGitAlt} color={iconColors[faGitAlt.iconName]} />
-                    </div>
+                     <div className="cubespinner">
+                    {currentIcons.map((icon, index) => (
+                        <div className={`face${index + 1}`} key={icon.iconName}>
+                            <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
+                        </div>
+                    ))}
+                </div>
                 </div>
             </div>
             <Loader type="pacman" />
