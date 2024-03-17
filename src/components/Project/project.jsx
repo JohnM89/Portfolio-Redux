@@ -1,8 +1,7 @@
 function Project() {
   return (
     <div>
-      <h2>Projects</h2>
-      <p>This is the Projects section.</p>
+      <h2></h2>
     </div>
   );
 }

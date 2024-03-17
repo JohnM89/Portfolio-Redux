@@ -2,7 +2,7 @@ body {
   background-color: #333;
 }
 
-#featureAnimation {
+/* #featureAnimation {
   background-color: #000;
   height: 262px;
   overflow: hidden;
@@ -27,7 +27,7 @@ body {
   100% {
     transform: translate(700px, 212px);
   }
-}
+} */
 
 .project {
     transform: translateX(-100vw);
@@ -36,8 +36,8 @@ body {
     margin-bottom: 100px;
 
     img {
-        max-width: 100%;
-        height: auto;
+        max-width: 25%;
+        height: 25%;
     }
 }
 .portfolio-container {
