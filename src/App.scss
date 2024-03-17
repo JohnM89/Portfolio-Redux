@@ -1,3 +1,26 @@
+$primary-color: #5d0cff;
+
+@import 'animate.css';
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./assets/fonts/helvectica-neu.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'La Belle Aurore';
+  src: url('./assets/fonts/LaBelleAurore.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('./assets/fonts/CoolvecticaRg-Regular.woff2') format('woff2');
+}
+
+input,
+textarea {
+  font-family: 'jokerman', 'Helvetica Neue', 'La Belle Aurore', 'Coolvetica',
+    sans-serif;
+}
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
