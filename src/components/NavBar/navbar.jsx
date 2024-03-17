@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function NavBar({ scrollToProjects }) {
   return (
     <nav>
@@ -12,6 +14,10 @@ function NavBar({ scrollToProjects }) {
   );
 }
 
-// props 
+// props validation
+
+NavBar.propTypes = {
+  scrollToProjects: PropTypes.func.isRequired,
+};
 
 export default NavBar;

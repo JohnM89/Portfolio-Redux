@@ -1,4 +1,5 @@
 import './animatedletters.scss'
+import PropTypes from 'prop-types';
 
 const AnimatedLetters = ({ letterClass, strArray, idx }) => {
   return (
@@ -12,4 +13,10 @@ const AnimatedLetters = ({ letterClass, strArray, idx }) => {
   )
 }
 
+// props validation
+AnimatedLetters.propTypes = {
+  letterClass: PropTypes.string.isRequired,
+  strArray: PropTypes.array.isRequired,
+  idx: PropTypes.number.isRequired,
+}
 export default AnimatedLetters
