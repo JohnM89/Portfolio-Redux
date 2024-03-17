@@ -38,7 +38,6 @@ const About = () => {
                             idx={15}
                         />
                     </h1>
-                    {/* Paragraphs omitted for brevity */}
                 </div>
 
                 <div className="stage-cube-cont">
