@@ -1,17 +1,18 @@
-import { Routes, Route } from 'react-router-dom';
+// import { Routes, Route } from 'react-router-dom';
 import Project from '../Project/project';
+
+const projects = [
+  // Array of project data
+];
 
 function Portfolio() {
   return (
     <div>
-      <h2>Portfolio</h2>
-      <p>Portfolio section.</p>
-       <Routes>
-        <Route path="/projects" element={<Project />} />
-      </Routes>
+      {projects.map((project, index) => (
+        <Project key={index} {...project} />
+      ))}
     </div>
   );
 }
-
 
 export default Portfolio;

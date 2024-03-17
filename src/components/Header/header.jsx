@@ -1,8 +1,10 @@
-function Header({ children }) {
+import NavBar from '../NavBar/navbar';
+
+function Header() {
   return (
     <header>
-      <h1>Header</h1>
-      {children}
+      <h1>My Portfolio</h1>
+      <NavBar />
     </header>
   );
 }

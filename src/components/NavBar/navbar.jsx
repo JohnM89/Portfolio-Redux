@@ -1,23 +1,14 @@
-import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
-function NavBar({ scrollToProjects }) {
+function Navigation() {
   return (
     <nav>
-      <ul>
-        <li><a href="/">About Me</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
-        {/* <button onClick={scrollToProjects}>Projects</button> */}
-        <li><a href="/projects">Projects</a></li>
-      </ul>
+      <NavLink to="/about">About Me</NavLink>
+      <NavLink to="/portfolio">Portfolio</NavLink>
+      <NavLink to="/contact">Contact</NavLink>
+      <NavLink to="/resume">Resume</NavLink>
     </nav>
   );
 }
 
-// props validation
-
-NavBar.propTypes = {
-  scrollToProjects: PropTypes.func.isRequired,
-};
-
-export default NavBar;
+export default Navigation;
