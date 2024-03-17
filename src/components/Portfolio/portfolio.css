@@ -40,6 +40,10 @@ body {
         height: auto;
     }
 }
+.portfolio-container {
+    padding-top: 100vh; 
+}
+
 
 .project.active {
     transform: translateX(0);
