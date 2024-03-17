@@ -2,6 +2,15 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.scss'
+import AboutMe from './components/AboutMe/aboutme';
+
+import Contact from './components/Contact/contact';
+import Project from './components/Project/project';
+import Header from './components/Header/header';
+import Footer from './components/Footer/footer';
+import NavBar from './components/NavBar/navbar';
+import Portfolio from './components/Portfolio/portfolio';
+
 
 // function App() {
 //   const [count, setCount] = useState(0)
@@ -32,25 +41,13 @@ import './App.scss'
 //   )
 // }
 
-import AboutMe from './components/AboutMe/aboutme';
-
-import Contact from './components/Contact/contact';
-import Project from './components/Project/project';
-import Header from './components/Header/header';
-import Footer from './components/Footer/footer';
-import NavBar from './components/NavBar/navbar';
-import Portfolio from './components/Portfolio/portfolio';
-
 function App() {
   return (
     <div className="app">
-      {/* Header always displayed at the top of all pages */}
       <Header>
-        {/* NavBar included inside the Header */}
         <NavBar />
       </Header>
 
-      {/* Main content that changes based on the route */}
       <main>
         <Routes>
           <Route path="/" element={<AboutMe />} />
@@ -61,7 +58,8 @@ function App() {
         </Routes>
       </main>
 
-      {/* Footer always displayed at the bottom of all pages */}
+      
+
       <Footer />
     </div>
   );
@@ -69,5 +67,3 @@ function App() {
 
 export default App;
 
-
-export default App
