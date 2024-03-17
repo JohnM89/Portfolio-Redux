@@ -1,0 +1,30 @@
+body {
+  padding-top: 60px; /* Adjust this value to match the height of your navigation bar */
+}
+
+.navigation-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #afaef9d2;
+  box-shadow: 0px 2px 4px rgba(119, 119, 119, 0.158);
+  z-index: 1000;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px; /* Adjust this value as needed */
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+}
+
+.navigation a:hover {
+  color: #555;
+}
