@@ -19,3 +19,37 @@ body {
   border-radius: 50%;
   will-change: transform;
 }
+
+@keyframes featureAnimation {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(700px, 212px);
+  }
+}
+
+.project {
+    transform: translateX(-100vw);
+    opacity: 0;
+    transition: all 0.5s ease-out;
+    margin-bottom: 100px;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.project.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.project.active ~ .project {
+    transform: translateX(100vw);
+    opacity: 0;
+}
+
+
+

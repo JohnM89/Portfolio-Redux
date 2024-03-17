@@ -34,13 +34,6 @@ const projects = [
     imageUrl: '/images/project6.png', // Path to the image or gif
     liveLink: 'https://example.com/project6', // Optional live link
   },
-   {
-    id: 6,
-    title: 'Project 6',
-    description: 'Description of Project 6',
-    imageUrl: '/images/project6.png', // Path to the image or gif
-    liveLink: 'https://example.com/project6', // Optional live link
-  },
   {
     id: 6,
     title: 'Project 6',
