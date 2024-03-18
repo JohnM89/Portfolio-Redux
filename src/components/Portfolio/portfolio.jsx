@@ -3,8 +3,11 @@ import projects from '../../data/projects';
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './portfolio.scss';
 
 gsap.registerPlugin(ScrollTrigger);
+
+
 const Portfolio = () => {
   useEffect(() => {
     // padding at the start to allow scrolling to the first project

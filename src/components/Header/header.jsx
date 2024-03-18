@@ -3,7 +3,7 @@ import NavBar from '../NavBar/navbar';
 function Header() {
   return (
     <header>
-      <h1>John MacNeil</h1>
+      <h1></h1>
       <NavBar />
     </header>
   );
