@@ -1,31 +1,32 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.scss';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/header';
-import NavBar from './components/NavBar/navbar';
+import Footer from './components/Footer/footer';
 import AboutMe from './components/AboutMe/aboutme';
 import Portfolio from './components/Portfolio/portfolio';
 import Contact from './components/Contact/contact';
 import Resume from './components/Resume/resume';
-import Footer from './components/Footer/footer';
 
 function App() {
   return (
     <Router>
       <div className="app">
-        <Header>
-          <NavBar />
-        </Header>
-
+        <Header />
         <main>
-          <Routes>
-            <Route path="/" element={<AboutMe />} />
-            <Route path="/about" element={<AboutMe />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/resume" element={<Resume />} />
-          </Routes>
+          <section id="about">
+            <AboutMe />
+          </section>
+          <section id="portfolio">
+            <Portfolio />
+          </section>
+          <section id="contact">
+            <Contact />
+          </section>
+          <section id="resume">
+            <Resume />
+          </section>
         </main>
-
         <Footer />
       </div>
     </Router>

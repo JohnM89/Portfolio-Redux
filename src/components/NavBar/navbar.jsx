@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import './navbar.scss'; // Import your SCSS file for styling
+import '../NavBar/navbar.scss'; // Import your SCSS file for styling
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,18 +14,18 @@ function Navigation() {
         ☰
       </button> */}
       <nav className="navigation">
-        <NavLink to="/about" onClick={toggleModal}>
+        <a href="#about" onClick={toggleModal}>
           About Me
-        </NavLink>
-        <NavLink to="/portfolio" onClick={toggleModal}>
+        </a>
+        <a href="#portfolio" onClick={toggleModal}>
           Portfolio
-        </NavLink>
-        <NavLink to="/contact" onClick={toggleModal}>
+        </a>
+        <a href="#contact" onClick={toggleModal}>
           Contact
-        </NavLink>
-        <NavLink to="/resume" onClick={toggleModal}>
+        </a>
+        <a href="#resume" onClick={toggleModal}>
           Resume
-        </NavLink>
+        </a>
       </nav>
     </div>
   );
