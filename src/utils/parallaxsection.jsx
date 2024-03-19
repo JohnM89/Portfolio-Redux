@@ -10,7 +10,7 @@ const ParallaxSection = ({ id, backgroundImage, children }) => (
 ParallaxSection.propTypes = {
   id: PropTypes.string.isRequired,
   backgroundImage: PropTypes.string.isRequired,
-  children: PropTypes.node // Children can be any valid React node
+  children: PropTypes.node 
 };
 
 export default ParallaxSection;

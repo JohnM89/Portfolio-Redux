@@ -77,7 +77,6 @@ const Portfolio = () => {
           ) : (
             <img src={project.imageUrl} alt={project.title} />
           )}
-          {/* Passing project props to the Project component */}
           <Project {...project} />
         </div>
       ))}

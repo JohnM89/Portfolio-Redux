@@ -23,9 +23,9 @@
 }
 
 .portfolio-parallax {
-  background-image: url('/images/space.webp'); // Add your portfolio background image
+  background-image: url('/images/space.webp'); 
   background-size: cover;
-  background-attachment: fixed; // Ensures the background remains fixed while scrolling
+  background-attachment: fixed; 
 }
 
 
@@ -81,7 +81,7 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #e89d9dd5;
+    color: #885b5bf5;
     background-color: #ffffff;
   }
 
