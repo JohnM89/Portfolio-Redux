@@ -75,7 +75,6 @@ const Contact = () => {
       <div className="info">
         John MacNeil, Web Developer
       </div>
-      <Loader type="pacman" />
     </div>
   )
 }
