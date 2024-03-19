@@ -10,9 +10,9 @@ function Navigation() {
 
   return (
     <div className={`navigation-container ${isOpen ? 'open' : ''}`}>
-      <button className="toggle-button" onClick={toggleModal}>
+      {/* <button className="toggle-button" onClick={toggleModal}>
         ☰
-      </button>
+      </button> */}
       <nav className="navigation">
         <a href="#about" onClick={toggleModal}>
           About Me
