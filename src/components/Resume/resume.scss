@@ -1,7 +1,7 @@
 .resume-container {
     .social-links {
         display: flex;
-        justify-content: space-around; 
+        justify-content: space-evenly; 
         margin-top: 20px;
 
         a {
@@ -15,7 +15,7 @@
                 color: #007bff; 
 
                 svg {
-                    margin-right: 8px; 
+                    margin-right: 18px; 
                 }
             }
         }

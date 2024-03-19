@@ -1,17 +1,16 @@
-
 .cubes-container {
-  display: flex;
-  justify-content: space-between; // This spreads out the children to each end
-  position: relative; // Establishes a new positioning context
-  height: 100%; // Adjust as necessary
+    display: flex;
+    justify-content: space-between; // This spreads out the children to each end
+    position: relative; // Establishes a new positioning context
+    height: 100%; // Adjust as necessary
 }
 
 .stage-cube-cont {
-  width: 50%;
-  height: 100%;
-  padding-top: 3%;
-  position: absolute; 
-//   overflow: hidden;
+    width: 50%;
+    height: 100%;
+    padding-top: 3%;
+    position: absolute;
+    //   overflow: hidden;
 }
 
 .about-me-content {
@@ -21,32 +20,74 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.355);
     
+
     p {
         color: #ffffff; // Darker text color for contrast
         line-height: 1.6;
     }
 }
 
+.portfolio-image-div {
+    display: flex;
+    justify-content: center;
+    /* Center items horizontally */
+    align-items: center;
+    /* Center items vertically */
+    height: 100vh;
+    position: relative;
+    /* Needed for absolute positioning of cubes */
+}
+
+.portfolio-image {
+    width: auto;
+    /* Adjust based on your preference */
+    height: 85%;
+    /* Maintain aspect ratio */
+    // object-fit: cover;
+    align-items: center;
+    // border-radius: 8px;
+    // box-shadow: 0 2px 4px rgba(255, 255, 255, 0.355);
+    z-index: 2;
+    /* Ensure it's above the cubes if they overlap */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.left-cube,
+.right-cube {
+    position: absolute;
+    justify-content: space-between;
+    /* Take them out of document flow */
+    z-index: 1;
+    /* Place them below the image */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .left-cube {
-  left: 0;
-  transform: translateX(0%); // Adjust if needed for spacing
+    left: 0;
+    /* Move it to the left of the container */
+    /* Additional styling for the cube */
 }
 
 .right-cube {
-  right: 0;
-  transform: translateX(0%); // Adjust if needed for spacing
+    right: 0;
+    /* Move it to the right of the container */
+    /* Additional styling for the cube */
 }
 
-// .stage-cube-cont {
-//     width: 50%;
-//     height: 100%;
-//     top: 0;
-//     padding-top: 18%;
-//     margin-left: 0;
-//     position: absolute;
-//     right: 0;
-//     overflow: hidden;
-// }
+.stage-cube-cont {
+    // width: 50%;
+    // height: 100%;
+    // top: 0;
+    padding-top: 18%;
+    margin-left: 0;
+    // position: absolute;
+    right: 0;
+    // overflow: hidden;
+}
 
 .cubespinner {
     animation-name: spincube;

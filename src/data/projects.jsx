@@ -1,17 +1,17 @@
 const projects = [
     {
-        id: 1,
-        title: 'Weather Wizard',
-        description: 'The Weather Networks Biggest Competitor',
-        imageUrl: '/images/project1.png',
-        liveLink: 'https://johnm89.github.io/Weather-Wiz-Revisited/',
-    },
-    {
         id: 2,
         title: 'Super Note Taker!',
         description: 'Description of Project 6',
         imageUrl: '/images/project2.jpeg',
         liveLink: 'https://super-note-taker-5f8a21af5c2e.herokuapp.com/',
+    },
+        {
+        id: 12,
+        title: 'Hungry_Mikey',
+        description: 'A fun and interactive game!',
+        imageUrl: '/images/CaptureMM.PNG',
+        liveLink: 'https://hungry-hungry-mikey-f614bbce79a1.herokuapp.com/game',
     },
     {
         id: 3,
@@ -49,6 +49,13 @@ const projects = [
         liveLink: 'https://damp-waters-66345-0d13ff4f4fbd.herokuapp.com/',
     },
     {
+        id: 13,
+        title: 'Movie Recommendation Application',
+        description: 'A movie recommendation application with a twist!',
+        imageUrl: '/images/project13.png',
+        liveLink: 'https://teamprojectmoviereview.github.io/Team-Project-',
+    },
+    {
         id: 8,
         title: 'MarketingTemplate',
         description: 'Webpage Meets Accessibility Standards',
@@ -76,18 +83,11 @@ const projects = [
         liveLink: 'https://johnm89.github.io/SpeedQuiz/',
     },
     {
-        id: 12,
-        title: 'Hungry_Mikey',
-        description: 'A fun and interactive game!',
-        imageUrl: '/images/CaptureMM.PNG',
-        liveLink: 'https://hungry-hungry-mikey-f614bbce79a1.herokuapp.com/game',
-    },
-    {
-        id: 13,
-        title: 'Movie Recommendation Application',
-        description: 'A movie recommendation application with a twist!',
-        imageUrl: '/images/project13.png',
-        liveLink: 'https://teamprojectmoviereview.github.io/Team-Project-',
+        id: 1,
+        title: 'Weather Wizard',
+        description: 'The Weather Networks Biggest Competitor',
+        imageUrl: '/images/project1.png',
+        liveLink: 'https://johnm89.github.io/Weather-Wiz-Revisited/',
     },
 
 ];

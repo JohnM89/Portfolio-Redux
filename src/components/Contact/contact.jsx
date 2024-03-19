@@ -73,12 +73,7 @@ const Contact = () => {
         </div>
       </div>
       <div className="info">
-        John MacNeil,
-        <br />
-        Canada,
-        <br />
-        Toronto <br />
-        <span>mjammer2@gmail.com</span>
+        John MacNeil, Web Developer
       </div>
       <Loader type="pacman" />
     </div>

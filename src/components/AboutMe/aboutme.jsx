@@ -55,29 +55,25 @@ const About = () => {
                     <h1>
                         <AnimatedLetters
                             letterClass={letterClass}
-                            strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']}
+                            strArray={[
+  'H', 'i', ' ', 't', 'h', 'e', 'r', 'e', '!', ' ', 'I', 'm', ' ', 'J', 'o', 'h', 'n', ' '
+]}
                             idx={15}
                         />
                     </h1>
                 </div>
                 <div className="about-me-content">
                                         <p>
-                        <AnimatedLetters
-                            letterClass={letterClass}
-                            strArray={[
-  'H', 'i', ' ', 't', 'h', 'e', 'r', 'e', '!', ' ', 'I', 'm', ' ', 'J', 'o', 'h', 'n', ' '
-]}
-                            idx={15}
-                        />
                         </p>
                     <p>
+                                                
+                <img src="/images/IMG_2044.png" alt="Me" className="portfolio-image" />
+            
                     
 
 
                 
                      I'm a full-stack web developer with a passion for creating beautiful and functional websites. I'm always on the lookout for new opportunities and am currently focused on expanding my expertise in React and Node.js. Stay tuned to this profile, as it's bound to grow!
-
-                    Professionally, I'm keen on diving deeper into cloud computing, cybersecurity, and machine learning. Outside of work, I'm a dad, hockey player, surfer, backpacking enthusiast, and a lover of all things adventure.I'm also currently exploring Micropython and programming Arduino-based projects!!
                 </p>
                 </div>
 
@@ -90,6 +86,9 @@ const About = () => {
                                 </div>
                             ))}
                         </div>
+                        {/* <div className="portfolio-image-div">
+                <img src="/images/IMG_2044.png" alt="Me" className="portfolio-image" />
+            </div> */}
                     </div>
                     <div className="stage-cube-cont right-cube">
                         <div className="cubespinner">

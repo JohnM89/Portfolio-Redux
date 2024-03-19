@@ -1,33 +1,9 @@
 body {
-  background-color: #333;
+  background-color: #333333;
+    // background-image: url('./images/blue.gif'); /* Replace 'your-background-image.jpg' with the path to your background image */
+  // background-size: cover; /* Ensure the background image covers the entire body */
+  // background-blend-mode: repeat;
 }
-
-/* #featureAnimation {
-  background-color: #000;
-  height: 262px;
-  overflow: hidden;
-  position: relative;
-  width: 800px;
-  margin: auto;
-}
-
-.dot {
-  position: absolute;
-  background-color: #91e600;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  will-change: transform;
-}
-
-@keyframes featureAnimation {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(700px, 212px);
-  }
-} */
 
 .project {
     transform: translateX(-100vw);
@@ -36,12 +12,14 @@ body {
     margin-bottom: 100px;
 
     img {
-        max-width: 25%;
-        height: 25%;
+        max-width: 45%;
+        height: auto;
     }
 }
+
+
 .portfolio-container {
-    padding-top: 100vh; 
+    padding-top: 50vh; 
 }
 
 
@@ -50,10 +28,10 @@ body {
     opacity: 1;
 }
 
-.project.active ~ .project {
-    transform: translateX(100vw);
-    opacity: 0;
-}
+// .project.active ~ .project {
+//     transform: translateX(100vw);
+//     opacity: 0;
+// }
 
 
 
