@@ -18,7 +18,8 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault()
 
-    emailjs.sendForm('your_service_id', 'template_YeJhZkgb', form.current, 'your_token')
+    emailjs.sendForm('service_9alko6t', 'template_obvxi9f', form.current, 'M25D7aTY81tiWY-_J')
+
       .then(
         (result) => {
           console.log(result.text)

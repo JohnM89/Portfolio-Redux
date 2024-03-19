@@ -1,23 +1,45 @@
 .resume-container {
     .social-links {
         display: flex;
-        justify-content: space-around; // Spread the icons out evenly
+        justify-content: space-around; 
         margin-top: 20px;
 
         a {
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: #333; // Dark color for text
+            color: #333;
             font-size: 1.2rem;
 
             &:hover {
-                color: #007bff; // Change color on hover
-            }
+                color: #007bff; 
 
-            svg {
-                margin-right: 8px; // Space out icon from text
+                svg {
+                    margin-right: 8px; 
+                }
             }
         }
     }
+}
+
+.resume-container {
+    text-align: center; /* Centers the content */
+    padding: 20px; /* Adds some padding around the container */
+}
+
+.image-placeholders {
+    display: flex;
+    justify-content: center; /* Centers the placeholders horizontally */
+    gap: 20px; /* Adds space between the placeholders */
+    margin-bottom: 20px; /* Adds some space between the placeholders and the links below */
+}
+
+.placeholder {
+    width: 100px; /* Placeholder width */
+    height: 100px; /* Placeholder height */
+    background-color: #ddd; /* Placeholder background color */
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    border: 2px dashed #ccc; /* Adds a dashed border to visualize the placeholder */
 }
