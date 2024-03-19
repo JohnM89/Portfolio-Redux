@@ -38,7 +38,7 @@ const Contact = () => {
   return (
     <div className={`container contact-page ${theme}`}>
       <div className="text-zone">
-        <button onClick={toggleTheme} className="theme-toggle-button">Toggle Theme</button>
+        {/* <button onClick={toggleTheme} className="theme-toggle-button">Toggle Theme</button> */}
         <h1>
           <AnimatedLetters
             letterClass={letterClass}
@@ -47,7 +47,7 @@ const Contact = () => {
           />
         </h1>
         <p>
-          ASDASDASDASDAD
+          I am on the lookout for freelance opportunities - big or small. If you have any questions, don't you hesitate, reach out! Contact me using the form below.
         </p>
         <div className="contact-form">
           <form ref={form} onSubmit={sendEmail}>
@@ -72,13 +72,12 @@ const Contact = () => {
         </div>
       </div>
       <div className="info">
-        AAAAA,
+        John MacNeil,
         <br />
-        CCCCC,
+        Canada,
         <br />
-        WWWWWWW 19, 22000 <br />
-        EEEEEE <br />
-        <span>vvvvvv@gmail.com</span>
+        Toronto <br />
+        <span>mjammer2@gmail.com</span>
       </div>
       <Loader type="pacman" />
     </div>

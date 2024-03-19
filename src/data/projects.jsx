@@ -11,7 +11,7 @@ const projects = [
         title: 'Super Note Taker!',
         description: 'Description of Project 6',
         imageUrl: '/images/project2.jpeg', 
-        liveLink: 'https://example.com/project6', 
+        liveLink: 'https://super-note-taker-5f8a21af5c2e.herokuapp.com/', 
     },
     {
         id: 3,
@@ -55,13 +55,13 @@ const projects = [
         imageUrl: '/images/project8.png', 
         liveLink: 'https://github.com/JohnM89/MarketingTemplate', 
     },
-    {
-        id: 9,
-        title: 'Super Note Taker!',
-        description: 'A Super Note Taker!',
-        imageUrl: '/images/project11.png', 
-        liveLink: 'https://super-note-taker-5f8a21af5c2e.herokuapp.com/', 
-    },
+    // {
+    //     id: 9,
+    //     title: 'Super Note Taker!',
+    //     description: 'A Super Note Taker!',
+    //     imageUrl: '/images/project11.png', 
+    //     liveLink: 'https://super-note-taker-5f8a21af5c2e.herokuapp.com/', 
+    // },
     // {
     //     id: 10,
     //     title: 'Discord_Bot',

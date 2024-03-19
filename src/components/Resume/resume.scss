@@ -1,0 +1,23 @@
+.resume-container {
+    .social-links {
+        display: flex;
+        justify-content: space-around; // Spread the icons out evenly
+        margin-top: 20px;
+
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333; // Dark color for text
+            font-size: 1.2rem;
+
+            &:hover {
+                color: #007bff; // Change color on hover
+            }
+
+            svg {
+                margin-right: 8px; // Space out icon from text
+            }
+        }
+    }
+}

@@ -1,13 +1,52 @@
-.stage-cube-cont {
-    width: 50%;
-    height: 100%;
-    top: 0;
-    padding-top: 18%;
-    margin-left: 0;
-    position: absolute;
-    right: 0;
-    overflow: hidden;
+
+.cubes-container {
+  display: flex;
+  justify-content: space-between; // This spreads out the children to each end
+  position: relative; // Establishes a new positioning context
+  height: 100%; // Adjust as necessary
 }
+
+.stage-cube-cont {
+  width: 50%;
+  height: 100%;
+  padding-top: 3%;
+  position: absolute; 
+//   overflow: hidden;
+}
+
+.about-me-content {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f4f4f4; // Light grey background
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    p {
+        color: #333; // Darker text color for contrast
+        line-height: 1.6;
+    }
+}
+
+.left-cube {
+  left: 0;
+  transform: translateX(0%); // Adjust if needed for spacing
+}
+
+.right-cube {
+  right: 0;
+  transform: translateX(0%); // Adjust if needed for spacing
+}
+
+// .stage-cube-cont {
+//     width: 50%;
+//     height: 100%;
+//     top: 0;
+//     padding-top: 18%;
+//     margin-left: 0;
+//     position: absolute;
+//     right: 0;
+//     overflow: hidden;
+// }
 
 .cubespinner {
     animation-name: spincube;

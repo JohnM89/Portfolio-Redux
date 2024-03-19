@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faAngular, faHtml5, faCss3, faReact, faJsSquare, faGitAlt, faNode, faGithub, faSass, faDatabase } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faReact, faJsSquare, faGitAlt, faNode, faGithub, faSass, } from '@fortawesome/free-brands-svg-icons';
 import './AboutMe.scss';
 
 library.add(fas, fab); 
@@ -19,20 +19,18 @@ function shuffleArray(array) {
 }
 
 const iconColors = {
-  faAngular: "#DD0031",
   faHtml5: "#F06529",
-  faCss3: "#28A4D9",
+//   faCss3: "#28A4D9",
   faReact: "#5ED4F4",
   faJsSquare: "#EFD81D",
   faGitAlt: "#EC4D28",
   faNode: "#68A063", 
   faGithub: "#181717", 
   faSass: "#CD6799", 
-  faDatabase: "#F29111",
   faRobot: "#6A6A6A",
   faPaintBrush: "#F0A30A" 
 };
-const initialIcons = [faAngular, faHtml5, faCss3, faReact, faJsSquare, faGitAlt, faNode, faGithub, faSass, faDatabase];
+const initialIcons = [ faHtml5, faReact, faJsSquare, faGitAlt, faNode, faGithub, faSass,];
 
 const About = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
@@ -61,6 +59,11 @@ const About = () => {
                             idx={15}
                         />
                     </h1>
+                </div>
+                <div className="about-me-content">
+                <p>
+                    Here's a little about me... (add your content here)
+                </p>
                 </div>
 
                 <div className="cubes-container">
