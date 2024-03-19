@@ -17,12 +17,12 @@
 .about-me-content {
     padding: 20px;
     margin-top: 20px;
-    background-color: #f4f4f4; // Light grey background
+    background-color: #f4f4f400; // Light grey background
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.355);
     
     p {
-        color: #333; // Darker text color for contrast
+        color: #ffffff; // Darker text color for contrast
         line-height: 1.6;
     }
 }

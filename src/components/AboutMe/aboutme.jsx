@@ -61,8 +61,23 @@ const About = () => {
                     </h1>
                 </div>
                 <div className="about-me-content">
-                <p>
-                    Here's a little about me... (add your content here)
+                                        <p>
+                        <AnimatedLetters
+                            letterClass={letterClass}
+                            strArray={[
+  'H', 'i', ' ', 't', 'h', 'e', 'r', 'e', '!', ' ', 'I', 'm', ' ', 'J', 'o', 'h', 'n', ' '
+]}
+                            idx={15}
+                        />
+                        </p>
+                    <p>
+                    
+
+
+                
+                     I'm a full-stack web developer with a passion for creating beautiful and functional websites. I'm always on the lookout for new opportunities and am currently focused on expanding my expertise in React and Node.js. Stay tuned to this profile, as it's bound to grow!
+
+                    Professionally, I'm keen on diving deeper into cloud computing, cybersecurity, and machine learning. Outside of work, I'm a dad, hockey player, surfer, backpacking enthusiast, and a lover of all things adventure.I'm also currently exploring Micropython and programming Arduino-based projects!!
                 </p>
                 </div>
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../NavBar/navbar.scss'; 
+import { HashLink as Link } from 'react-router-hash-link';
+import '../NavBar/navbar.scss';
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,18 +12,18 @@ function Navigation() {
   return (
     <div className={`navigation-container ${isOpen ? 'open' : ''}`}>
       <nav className="navigation">
-        <a href="#about" onClick={toggleModal}>
+        <Link smooth to="/#about" onClick={toggleModal}>
           About Me
-        </a>
-        <a href="#portfolio" onClick={toggleModal}>
+        </Link>
+        <Link smooth to="/#portfolio" onClick={toggleModal}>
           Portfolio
-        </a>
-        <a href="#contact" onClick={toggleModal}>
+        </Link>
+        <Link smooth to="/#contact" onClick={toggleModal}>
           Contact
-        </a>
-        <a href="#resume" onClick={toggleModal}>
+        </Link>
+        <Link smooth to="/#resume" onClick={toggleModal}>
           Resume
-        </a>
+        </Link>
       </nav>
     </div>
   );
