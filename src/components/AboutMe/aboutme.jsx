@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faAngular, faHtml5, faCss3, faReact, faJsSquare, faGitAlt } from '@fortawesome/free-brands-svg-icons';
+import { faAngular, faHtml5, faCss3, faReact, faJsSquare, faGitAlt, faNode, faGithub, faSass, faDatabase } from '@fortawesome/free-brands-svg-icons';
 import './AboutMe.scss';
 
 library.add(fas, fab); 
@@ -25,8 +25,14 @@ const iconColors = {
   faReact: "#5ED4F4",
   faJsSquare: "#EFD81D",
   faGitAlt: "#EC4D28",
+  faNode: "#68A063", 
+  faGithub: "#181717", 
+  faSass: "#CD6799", 
+  faDatabase: "#F29111",
+  faRobot: "#6A6A6A",
+  faPaintBrush: "#F0A30A" 
 };
-const initialIcons = [faAngular, faHtml5, faCss3, faReact, faJsSquare, faGitAlt];
+const initialIcons = [faAngular, faHtml5, faCss3, faReact, faJsSquare, faGitAlt, faNode, faGithub, faSass, faDatabase];
 
 const About = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
@@ -44,7 +50,7 @@ const About = () => {
         return () => clearInterval(intervalId);
     }, [currentIcons]);
 
-    return (
+     return (
         <>
             <div className="container about-page">
                 <div className="text-zone">
@@ -57,14 +63,25 @@ const About = () => {
                     </h1>
                 </div>
 
-                <div className="stage-cube-cont">
-                     <div className="cubespinner">
-                    {currentIcons.map((icon, index) => (
-                        <div className={`face${index + 1}`} key={icon.iconName}>
-                            <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
+                <div className="cubes-container">
+                    <div className="stage-cube-cont left-cube">
+                        <div className="cubespinner">
+                            {currentIcons.map((icon, index) => (
+                                <div className={`face${index + 1}`} key={icon.iconName}>
+                                    <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
+                    </div>
+                    <div className="stage-cube-cont right-cube">
+                        <div className="cubespinner">
+                            {currentIcons.map((icon, index) => (
+                                <div className={`face${index + 1}`} key={icon.iconName}>
+                                    <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
             <Loader type="pacman" />
