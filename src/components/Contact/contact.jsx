@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import Loader from 'react-loaders'
 import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters/animatedletters'
-import './Contact.scss'
+import '../Contact/Contact.scss'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -32,9 +32,9 @@ const Contact = () => {
       )
   }
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light')
-  }
+  // const toggleTheme = () => {
+  //   setTheme(theme === 'light' ? 'dark' : 'light')
+  // }
 
   return (
     <div className={`container contact-page ${theme}`}>

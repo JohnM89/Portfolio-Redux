@@ -7,7 +7,7 @@ import AboutMe from './components/AboutMe/aboutme';
 import Portfolio from './components/Portfolio/portfolio';
 import Contact from './components/Contact/contact';
 import Resume from './components/Resume/resume';
-import ParallaxSection from './utils/parallaxsection'; 
+import ParallaxSection from './utils/parallaxsection';
 
 function App() {
   return (
@@ -18,14 +18,15 @@ function App() {
           <section id="about">
             <AboutMe />
           </section>
-          <ParallaxSection id="parallax-1" backgroundImage="/images/space.webp" />
+          <ParallaxSection id="parallax-1" backgroundImage="/images/Okinawa.jpeg" className='parallex-custom-1' />
           <section id="portfolio" className="portfolio-parallax">
             <Portfolio />
           </section>
           <section id="contact">
             <Contact />
           </section>
-          <ParallaxSection id="parallax-2" backgroundImage="/images/water.webp" />
+          <ParallaxSection id="parallax-2" backgroundImage="/images/water.webp"
+          className='parallex-custom-2' />
           <section id="resume">
             <Resume />
           </section>

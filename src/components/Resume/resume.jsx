@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import '../Resume/resume.scss';
 
 const Resume = () => {
     return (
@@ -13,13 +14,13 @@ const Resume = () => {
                 <img src="./images/logo2.png" alt="Logo 3" className="placeholder" />
             </div>
             <div className="social-links">
-                <a href="https://github.com/JohnM89" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/JohnM89" target="git" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faGithub} /> GitHub
                 </a>
-                <a href="https://www.linkedin.com/in/john-macneil-981316203/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/john-macneil-981316203/" target="link" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
                 </a>
-                <a href="/pdf/John MToronto 1 (1).pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/pdf/John MToronto 1 (1).pdf" target="pdf" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faFilePdf} /> Resume PDF
                 </a>
             </div>

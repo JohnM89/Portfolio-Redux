@@ -25,7 +25,7 @@ const projects = [
         title: 'Not-JATE',
         description: 'A Text Editor Application With Offline Support',
         imageUrl: '/images/project6.png',
-        liveLink: 'https://not-jate-4.onrender.com/',
+        liveLink: 'https://tranquil-eyrie-59285-63d53bcd7da5.herokuapp.com/',
     },
     // {
     //     id: 5,

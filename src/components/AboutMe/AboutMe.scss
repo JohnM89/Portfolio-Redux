@@ -13,47 +13,76 @@
     //   overflow: hidden;
 }
 
+.text-zone {
+    color: #000000;
+
+}
+
 .about-me-content {
     padding: 20px;
     margin-top: 20px;
-    background-color: #f4f4f400; // Light grey background
+    background-color: #f4f4f498; // Light grey background
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.355);
-    
+    box-shadow: 0 2px 4px rgba(103, 101, 101, 0.355);
+
 
     p {
-        color: #ffffff; // Darker text color for contrast
+        color: #000000; // Darker text color for contrast
         line-height: 1.6;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 }
 
-.portfolio-image-div {
-    display: flex;
-    justify-content: center;
-    /* Center items horizontally */
-    align-items: center;
-    /* Center items vertically */
-    height: 100vh;
-    position: relative;
-    /* Needed for absolute positioning of cubes */
+// .portfolio-image-div {
+//     display: flex;
+//     justify-content: center;
+//     /* Center items horizontally */
+//     align-items: center;
+//     /* Center items vertically */
+//     height: 100vh;
+//     position: relative;
+//     overflow: hidden;
+//     /* Ensure the pseudo-element doesn't extend outside this container */
+// }
+
+
+// .portfolio-image {
+//     width: auto;
+//     /* Adjust based on your preference */
+//     height: 85%;
+//     /* Maintain aspect ratio */
+//     object-fit: cover;
+//     align-items: center;
+//     // border-radius: 8px;
+//     // box-shadow: 0 2px 4px rgba(255, 255, 255, 0.355);
+//     z-index: 2;
+//     /* Ensure it's above the cubes if they overlap */
+//     position: absolute;
+//     top: 100%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     overflow: hidden;
+//     /* Ensure the pseudo-element doesn't extend outside this container */
+// }
+
+.technologies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 20px;
 }
 
-.portfolio-image {
-    width: auto;
-    /* Adjust based on your preference */
-    height: 85%;
-    /* Maintain aspect ratio */
-    // object-fit: cover;
+.technology {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    // border-radius: 8px;
-    // box-shadow: 0 2px 4px rgba(255, 255, 255, 0.355);
-    z-index: 2;
-    /* Ensure it's above the cubes if they overlap */
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+    p {
+        margin-top: 8px;
+    }
 }
+
 
 .left-cube,
 .right-cube {
@@ -68,12 +97,14 @@
 
 .left-cube {
     left: 0;
+    transform: translateX(-65%) translateY(-50%);
     /* Move it to the left of the container */
     /* Additional styling for the cube */
 }
 
 .right-cube {
     right: 0;
+    transform: translateX(65%) translateY(-50%);
     /* Move it to the right of the container */
     /* Additional styling for the cube */
 }
