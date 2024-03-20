@@ -5,21 +5,40 @@
 //   // background-blend-mode: repeat;
 // }
 
+
+
 .project {
     transform: translateX(-100vw);
     opacity: 0;
     transition: all 0.5s ease-out;
     margin-bottom: 100px;
 
+
     img {
         max-width: 45%;
         height: auto;
+    }
+
+    h2,
+    p,
+    a {
+        //   margin: 5px 0; /* Margins for spacing, adjust as needed */
+        // display: flex; /* Use flexbox for layout */
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: center;
+        /* Center items horizontally */
+        text-align: center;
+        /* Ensure text is centered */
+        //   margin-bottom: 20px; /* Add some space between projects */
+        color: rgb(145, 251, 215);
+        text-shadow: black 2px 2px 4px;
     }
 }
 
 
 .portfolio-container {
-    padding-top: 50vh; 
+    padding-top: 50vh;
 }
 
 
@@ -32,6 +51,3 @@
 //     transform: translateX(100vw);
 //     opacity: 0;
 // }
-
-
-

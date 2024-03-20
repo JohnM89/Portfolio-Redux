@@ -2,7 +2,7 @@ const projects = [
     {
         id: 2,
         title: 'Super Note Taker!',
-        description: 'Description of Project 6',
+        description: 'The most super of note takers!',
         imageUrl: '/images/project2.jpeg',
         liveLink: 'https://super-note-taker-5f8a21af5c2e.herokuapp.com/',
     },
@@ -51,7 +51,7 @@ const projects = [
         {
         id: 11,
         title: 'SpeedQuiz',
-        description: 'A timed quiz to showcase',
+        description: 'A competitive timed quiz with a high score feature',
         imageUrl: '/images/project11.png',
         liveLink: 'https://johnm89.github.io/SpeedQuiz/',
     },
