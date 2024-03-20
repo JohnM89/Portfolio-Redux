@@ -4,7 +4,7 @@ Welcome to my React Portfolio Prototype! This is a work-in-progress 🛠️ and 
 
 ## Deployed Application 🌐
 
-Check out the live version here: [Deployed Application](https://main--harmonious-lily-8137a3.netlify.app/)
+Check out the live version here: [Deployed Application](https://johns-portfolio-prototype.netlify.app/)
 
 ## Project Overview 📖
 
