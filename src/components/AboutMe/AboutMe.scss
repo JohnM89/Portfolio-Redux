@@ -18,20 +18,84 @@
 
 }
 
-.about-me-content {
-    padding: 20px;
-    margin-top: 20px;
-    background-color: #f4f4f498; // Light grey background
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(103, 101, 101, 0.355);
+// #about-section {
+//   position: relative;
+//   text-align: center; // Center-align the text if needed
+//   min-height: 500px; // Ensure there's enough space for your content
+
+//   .background-image {
+//     // width: 100%; // Ensure the image covers the full width
+//     // height: 100%; // Stretch the image to cover the content
+//     // object-fit: cover; // Cover the area without stretching the image
+//     // position: absolute; // Position it absolutely within its relative parent
+//     z-index: 0; // Send it to the back
+//   }
+
+//   .about-me-content {
+//     position: relative; // Ensure this content is positioned relative to its parent
+//     z-index: 10; // Ensure it sits above the background image
+//     padding: 20px;
+//     background-color: rgba(244, 244, 244, 0); // Optional: a semi-transparent background for the text for better readability
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100%; // Take full height of parent
+//   }
+// }
+
+.image-text-container {
+    position: relative;
+    display: inline-block;
+    /* Or 'block', depending on your layout */
+    z-index: 3;
+    margin-top: -70px;
 
 
-    p {
-        color: #000000; // Darker text color for contrast
-        line-height: 1.6;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
 }
+
+.background-image {
+    display: block;
+    /* Ensure the image doesn't have extra space below */
+    width: 89%;
+    transform: translate(1.75%, -3.5%);
+    /* Adjust as necessary */
+    height: 51%;
+    /* Adjust as necessary */
+
+}
+
+.text-over-image {
+    position: absolute;
+    top: 50%;
+    /* Adjust the position as necessary */
+    left: 50%;
+    transform: translate(-59%, -50%);
+    /* Center the text */
+    color: rgb(5, 0, 0);
+    /* Or any color */
+    /* Add more styling as needed */
+    // padding: 20px;
+    // margin-top: 20px;
+    // background-color: #f4f4f498; // Light grey background
+    // border-radius: 8px;
+    // box-shadow: 0 2px 4px rgba(103, 101, 101, 0.355);
+
+}
+
+// .about-me-content {
+//     padding: 20px;
+//     margin-top: 20px;
+//     background-color: #f4f4f498; // Light grey background
+//     border-radius: 8px;
+//     box-shadow: 0 2px 4px rgba(103, 101, 101, 0.355);
+
+
+//     p {
+//         color: #000000; // Darker text color for contrast
+//         line-height: 1.6;
+//         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+//     }
+// }
 
 // .portfolio-image-div {
 //     display: flex;
@@ -86,25 +150,26 @@
 
 .left-cube,
 .right-cube {
-    position: absolute;
+    position: fixed;
     justify-content: space-between;
     /* Take them out of document flow */
     z-index: 1;
     /* Place them below the image */
     top: 50%;
     transform: translateY(-50%);
+
 }
 
 .left-cube {
     left: 0;
-    transform: translateX(-65%) translateY(-50%);
+    transform: translateX(-19%) translateY(-33.33%);
     /* Move it to the left of the container */
     /* Additional styling for the cube */
 }
 
 .right-cube {
     right: 0;
-    transform: translateX(65%) translateY(-50%);
+    transform: translateX(19%) translateY(-33.33%);
     /* Move it to the right of the container */
     /* Additional styling for the cube */
 }
@@ -199,5 +264,78 @@
 
     83% {
         transform: rotateX(90deg);
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Adjust the cubes-container for smaller screens */
+    .cubes-container {
+        flex-direction: column;
+        /* Stack the cubes vertically */
+        align-items: center;
+        /* Center-align the cubes */
+        height: auto;
+        /* Adjust height to content */
+    }
+
+    /* Adapt the stage-cube-cont */
+    .stage-cube-cont {
+        width: 80%;
+        /* Adjust the width to fit smaller screens */
+        padding-top: 10%;
+        /* Adjust padding */
+        position: relative;
+        /* Change positioning if necessary */
+        left: 10%;
+        /* Center the content */
+        transform: translate(0, 0);
+        /* Reset transformations if needed */
+    }
+
+    /* Adjustments for the cubes positioning */
+    .left-cube,
+    .right-cube {
+        position: relative;
+        /* Change from fixed to flow within the document */
+        left: auto;
+        /* Reset left positioning */
+        right: auto;
+        /* Reset right positioning */
+        transform: translateY(0);
+        /* Reset translateY */
+        margin-top: 20px;
+        /* Add some space between the cubes */
+    }
+
+    /* Adjusting the text zone for better readability */
+    .text-zone {
+        font-size: 14px;
+        /* Smaller font size for smaller screens */
+        padding: 10px;
+        /* Adjust padding for text */
+    }
+
+    /* Adjust the background image container for responsiveness */
+    .image-text-container {
+        margin-top: 0;
+        /* Adjust the top margin */
+    }
+
+    .background-image {
+        width: 100%;
+        /* Full width */
+        height: auto;
+        /* Adjust height automatically */
+        transform: translate(0, 0);
+        /* Reset transformations */
+    }
+
+    /* Adjust the text overlay on the image */
+    .text-over-image {
+        transform: translate(-50%, -50%);
+        /* Center the text */
+        font-size: 14px;
+        /* Smaller font for better readability on smaller screens */
     }
 }

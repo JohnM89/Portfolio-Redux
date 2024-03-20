@@ -25,27 +25,26 @@
 
   .toggle-button {
     position: absolute;
-    right: -40px; // Adjust as necessary to place outside the sidebar
+    right: -40px;
     top: 20px;
     color: black;
     font-size: x-large;
     cursor: pointer;
-    // Style your toggle button as needed
   }
 
   .sidebar {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding-top: 20px; // Adjust padding as needed
+    padding-top: 20px; 
 
     a {
-      padding: 10px 20px; // Adjust padding for links
+      padding: 10px 20px; 
       text-decoration: none;
-      color: #120f0fef; // Link color
+      color: #120f0fef;
 
       &:hover {
-        background-color: #f0f0f0; // Hover effect
+        background-color: #f0f0f0;
       }
     }
   }
@@ -53,17 +52,17 @@
 
 .nav-technologies {
   display: flex;
-  flex-direction: column; // Align icons horizontally
-  justify-content: center; // Center icons if there's extra space
-  align-items: center; // Align icons vertically
-  gap: 25px; // Spacing between icons
-  padding: 10px 0; // Top and bottom padding
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 25px; 
+  padding: 10px 0;
 
   .nav-tech-icon {
-    color: #201202c5; // Example icon color, adjust as needed
+    color: #201202c5;
 
     &:hover {
-      color: #cccccc84; // Example hover color, adjust as needed
+      color: #cccccc84;
     }
   }
 }

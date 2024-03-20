@@ -48,7 +48,7 @@ const Contact = () => {
           />
         </h1>
         <p>
-          I am on the lookout for freelance opportunities - big or small. If you have any questions, don't you hesitate, reach out! Contact me using the form below.
+          I am on the lookout for freelance opportunities - big or small. If you have any questions reach out! Contact me using the form below.
         </p>
         <div className="contact-form">
           <form ref={form} onSubmit={sendEmail}>

@@ -2,6 +2,43 @@ $primary-color: #5d0cff;
 
 @import 'animate.css';
 
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .text-zone,
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  input,
+  textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 input,
 textarea {
@@ -22,16 +59,63 @@ textarea {
   display: block;
 }
 
-.parallax-custom-1 {
-  background-attachment: none;
-  /* Ensures it scrolls with the page */
+div#parallax-1 {
+  height: 311px;
+  background-position: center top;
+  margin-top: -115px; 
+  border-radius: 20px; 
+
+  background-size: 49%;
+
+ 
+  background-attachment: fixed;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  div#parallax-1 {
+    background-attachment: scroll;
+    
+    background-size: cover;
+      border-radius: 20px; 
+
+    background-position: center top;
+    
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  div#parallax-2 {
+    background-attachment: scroll;
+    background-size: cover;
+    height: 200px;
+  }
+}
+
+
+.parallax {
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
 
 }
 
-.parallax-custom-2 {
+
+.portfolio-parallax {
+  background-image: url('/images/space.webp');
   background-size: cover;
   background-attachment: fixed;
 }
+
+div#parallax-2 {
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .loader-active {
   display: block;
   position: absolute;
@@ -47,11 +131,12 @@ textarea {
 }
 
 #about {
-  // margin-bottom: -150px; // Adjust the margin-bottom to reduce space
+  // margin-bottom: 150px; 
+
 }
 
 #portfolio {
-  margin-top: -450px;
+  margin-top: -100px;
 }
 
 

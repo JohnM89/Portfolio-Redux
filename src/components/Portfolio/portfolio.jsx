@@ -20,7 +20,6 @@ const Portfolio = () => {
     projects.forEach((project, index) => {
       const projectClass = `.project-${index}`;
 
-      // Entry and exit animations for each project
       gsap.fromTo(
         projectClass,
         { autoAlpha: 0, x: () => (index % 2 === 0 ? '-100%' : '100%') }, // entry direction
