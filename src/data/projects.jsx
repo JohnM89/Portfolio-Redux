@@ -14,13 +14,6 @@ const projects = [
         liveLink: 'https://hungry-hungry-mikey-f614bbce79a1.herokuapp.com/game',
     },
     {
-        id: 3,
-        title: 'Work Day Scheduler',
-        description: 'Work Day Scheduler with an aesthetic twist!',
-        imageUrl: '/images/project5.png',
-        liveLink: 'https://github.com/JohnM89/Work-Calendar',
-    },
-    {
         id: 4,
         title: 'Not-JATE',
         description: 'A Text Editor Application With Offline Support',
@@ -55,6 +48,13 @@ const projects = [
         imageUrl: '/images/project13.png',
         liveLink: 'https://teamprojectmoviereview.github.io/Team-Project-',
     },
+        {
+        id: 11,
+        title: 'SpeedQuiz',
+        description: 'A timed quiz to showcase',
+        imageUrl: '/images/project11.png',
+        liveLink: 'https://johnm89.github.io/SpeedQuiz/',
+    },
     {
         id: 8,
         title: 'MarketingTemplate',
@@ -75,12 +75,13 @@ const projects = [
     //     description: 'ChatGPT Discord Bot!',
     //     imageUrl: '/images/project13.png',
     //     liveLink: 'https://github.com/JohnM89/Discord_Bot', 
-    {
-        id: 11,
-        title: 'SpeedQuiz',
-        description: 'A timed quiz to showcase',
-        imageUrl: '/images/project11.png',
-        liveLink: 'https://johnm89.github.io/SpeedQuiz/',
+
+        {
+        id: 3,
+        title: 'Work Day Scheduler',
+        description: 'Work Day Scheduler with an aesthetic twist!',
+        imageUrl: '/images/project5.png',
+        liveLink: 'https://github.com/JohnM89/Work-Calendar',
     },
     {
         id: 1,
