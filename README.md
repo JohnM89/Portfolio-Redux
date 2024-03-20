@@ -61,7 +61,9 @@ A big thank you to everyone who has supported me on this journey!
 
 ## Screenshot 🚀
 
-Here's a screenshot for you curious lot  👀. [here](/portfolio-app/public/images/Captureportfolio.PNG).
+Here's a screenshot for you 👀:
+
+![Screenshot of my project](./public/images/Captureportfolio.PNG)
 
 ---
 
