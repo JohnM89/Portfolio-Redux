@@ -10,7 +10,7 @@ import '../NavBar/navbar.scss';
 
 
 function Navigation() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);

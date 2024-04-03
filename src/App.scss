@@ -60,27 +60,29 @@ textarea {
 }
 
 div#parallax-1 {
-  height: 311px;
-  background-position: center top;
-  margin-top: -115px; 
-  border-radius: 20px; 
+  // height: 770px;
+  // background-position: center top;
+  // // margin-top: -55px;
+  // border-radius: 20px;
 
-  background-size: 49%;
 
- 
-  background-attachment: fixed;
-  z-index: 2;
+
+  // background-size: 49%;
+
+
+  // background-attachment: fixed;
+  // z-index: 2;
 }
 
 @media (max-width: 768px) {
   div#parallax-1 {
     background-attachment: scroll;
-    
+
     background-size: cover;
-      border-radius: 20px; 
+    border-radius: 20px;
 
     background-position: center top;
-    
+
   }
 }
 
@@ -105,16 +107,29 @@ div#parallax-1 {
 }
 
 
-.portfolio-parallax {
-  background-image: url('/images/space.webp');
-  background-size: cover;
-  background-attachment: fixed;
-}
+// .portfolio-parallax {
+//   background-image: url('/images/space.webp');
+//   background-size: cover;
+//   background-attachment: fixed;
+// }
 
 div#parallax-2 {
   background-size: cover;
   background-attachment: fixed;
+  width: calc(100% + 40px) !important;
+  /* Make it wider than its container by extending 20px on each side */
+  max-width: none;
+  /* Override any max-width constraints */
+  height: 200px;
+  /* Adjust the height to your preference */
+  margin-left: -20px;
+  /* Negative margin to extend the element beyond its container on the left */
+  margin-right: -20px;
+  /* Negative margin to extend the element beyond its container on the right */
+  position: relative;
+  /* May need to adjust positioning depending on your layout */
 }
+
 
 .loader-active {
   display: block;
@@ -136,7 +151,7 @@ div#parallax-2 {
 }
 
 #portfolio {
-  margin-top: -100px;
+  // margin-top: -100px;
 }
 
 

@@ -148,6 +148,296 @@
 }
 
 
+.monaco-editor-container {
+    // position: relative;
+    // background-color: #000;
+    // border-radius: 8px;
+    // box-shadow: inset 0 0 10px #000, 0 0 20px rgba(0, 255, 0, 0.3);
+    // overflow: hidden;
+}
+
+.monaco-editor-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(25, 25, 25, 0.615) 30%, transparent 70%);
+    pointer-events: none;
+}
+
+.monaco-editor-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0,
+            rgba(0, 0, 0, 0.05) 1px,
+            rgba(0, 0, 0, 0) 2px);
+    pointer-events: none;
+}
+
+/* Optional: Animation for flickering effect */
+@keyframes flicker {
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        opacity: 1;
+    }
+
+    20%,
+    24%,
+    55% {
+        opacity: 0.5;
+    }
+}
+
+.monaco-editor-container::after {
+    animation: flicker 2s infinite;
+}
+
+
+.overlay {
+
+    text-align: start;
+
+}
+
+.popup-window {
+    position: relative;
+    background-color: #ffffff;
+    /* White background */
+    color: #000000;
+    /* Black text */
+    border: 2px solid #000;
+    /* Dark border */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+    width: 80%;
+    /* Adjust based on preference */
+    max-width: 600px;
+    /* Maximum width */
+    margin: auto;
+    /* Center in the available space */
+    transform: translateY(-50%);
+    /* Adjust based on layout */
+    z-index: 2;
+}
+
+.popup-window-language {
+    position: relative;
+    background-color: #ffffff;
+    /* White background */
+    color: #000000;
+    /* Black text */
+    border: 2px solid #000;
+    /* Dark border */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+    width: 80%;
+    /* Adjust based on preference */
+    max-width: 600px;
+    /* Maximum width */
+    margin: auto;
+    /* Center in the available space */
+    transform: translateY(-50%);
+    /* Adjust based on layout */
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.popup-window-scroll {
+    position: relative;
+    background-color: #ffffff;
+    /* White background */
+    color: #000000;
+    /* Black text */
+    border: 2px solid #000;
+    /* Dark border */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+    width: 80%;
+    /* Adjust based on preference */
+    max-width: 600px;
+    /* Maximum width */
+    margin: auto;
+    /* Center in the available space */
+    transform: translateY(-50%);
+    /* Adjust based on layout */
+    z-index: 2;
+}
+
+.window-title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background-color: #000000b6;
+    color: #fffefe;
+}
+
+.window-title {
+    font-weight: bold;
+}
+
+.window-controls {
+    display: flex;
+}
+
+.window-control {
+    background: none;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 8px;
+}
+
+.window-content {
+    padding: 20px;
+    text-align: left;
+    background-color: #00000000;
+    /* Slightly off-white background for the content */
+}
+
+.popup-window {
+    position: relative;
+    margin-top: 40px;
+    /* Space between windows */
+    /* Other styles remain unchanged */
+}
+
+.profile-window {
+    position: absolute;
+    top: 320px;
+    /* Adjust for desired vertical position */
+    right: 340px;
+    /* Right-aligned; adjust as needed */
+    z-index: 3;
+    top: 340px;
+    /* Ensures this window is layered correctly */
+    width: calc(50% - 25px);
+    /* Full width minus margins */
+    max-width: 300px;
+    /* Prevents the window from being too wide */
+    /* Add the rest of your styles here */
+}
+
+
+.profile-image {
+    width: 70%;
+    /* Responsive width; adjust as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 2px;
+    /* Optional: Rounded corners */
+    display: block;
+    /* Allows margin auto to work for horizontal centering */
+    margin: auto;
+    /* Centers the image horizontally */
+    /* Add the rest of your styles here */
+}
+
+
+/* Adjust .window-content for the profile window if necessary */
+.profile-window .window-content {
+    padding: 5px;
+    /* Increased padding; adjust to preference */
+    /* Keep other styles unchanged */
+}
+
+
+
+.cmd-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    color: #b4b4b4;
+    font-family: 'Consolas', 'Courier New', Courier;
+    font-size: 13.5px;
+    /* Adjust based on actual cmd prompt size, typical values might range from 12px to 16px */
+    line-height: 1.5;
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid #333333ee;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.111);
+}
+
+.cmd-title-bar {
+    background-color: #FFF;
+    color: #0b0b0b;
+    padding: 4px 7.5px;
+    border: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    /* Gives an impression that the window can be moved */
+}
+
+.cmd-title {
+    // font-weight: bold;
+    padding-left: 20px;
+    /* Make room for the icon */
+    background-image: url('/images/icon.png');
+    /* Replace with the path to your icon */
+    background-repeat: no-repeat;
+    background-size: 17.5px;
+    /* Adjust based on the size of your icon */
+    background-position: left center;
+}
+
+.cmd-controls {
+    display: flex;
+}
+
+.cmd-control {
+    background: none;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 5px;
+}
+
+.cmd-content {
+    padding: 20px;
+    text-align: left;
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.cmd-cursor {
+    animation: blink 1s step-start infinite;
+}
+
+
+
+
 .left-cube,
 .right-cube {
     position: fixed;
@@ -169,6 +459,7 @@
 
 .right-cube {
     right: 0;
+    bottom: 0;
     transform: translateX(19%) translateY(-33.33%);
     /* Move it to the right of the container */
     /* Additional styling for the cube */
@@ -191,53 +482,63 @@
     animation-iteration-count: infinite;
     animation-duration: 12s;
     transform-style: preserve-3d;
-    transform-origin: 100px 100px 0;
-    margin-left: calc(50% - 100px);
-
-    div {
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        border: 1px solid #ccc;
-        background: rgba(255, 255, 255, 0.4);
-        text-align: center;
-        font-size: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 0 20px 0px rgba(255, 255, 224, 0.159);
-    }
-
-    .face1 {
-        transform: translateZ(100px);
-        color: #dd0031;
-    }
-
-    .face2 {
-        transform: rotateY(90deg) translateZ(100px);
-        color: #f06529;
-    }
-
-    .face3 {
-        transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
-        color: #28a4d9;
-    }
-
-    .face4 {
-        transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
-        color: #5ed4f4;
-    }
-
-    .face5 {
-        transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
-        color: #f0d505;
-    }
-
-    .face6 {
-        transform: rotateX(-90deg) translateZ(100px);
-        color: #000000;
-    }
+    /* Adjust transform-origin based on the new size */
+    transform-origin: 50px 50px 0;
+    /* Adjust margin to center the smaller cube, assuming the spinner's container is relatively positioned */
+    margin-left: calc(50% - 50px);
 }
+
+.cubespinner div {
+    position: absolute;
+    /* Adjust width and height for a smaller cube */
+    width: 100px;
+    /* Half of the original size */
+    height: 100px;
+    /* Half of the original size */
+    border: 1px solid #ccc;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    /* Adjust font size and other styling as needed for the smaller size */
+    font-size: 50px;
+    /* Example adjustment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px 0px rgba(255, 255, 224, 0.159);
+}
+
+/* Adjust the transform translateZ value for each face to match the new cube size */
+.cubespinner .face1 {
+    transform: translateZ(50px);
+    /* Half of the original depth */
+    color: #dd0031;
+}
+
+.cubespinner .face2 {
+    transform: rotateY(90deg) translateZ(50px);
+    color: #f06529;
+}
+
+.cubespinner .face3 {
+    transform: rotateY(90deg) rotateX(90deg) translateZ(50px);
+    color: #28a4d9;
+}
+
+.cubespinner .face4 {
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(50px);
+    color: #5ed4f4;
+}
+
+.cubespinner .face5 {
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(50px);
+    color: #f0d505;
+}
+
+.cubespinner .face6 {
+    transform: rotateX(-90deg) translateZ(50px);
+    color: #000000;
+}
+
 
 @keyframes spincube {
 
@@ -337,5 +638,14 @@
         /* Center the text */
         font-size: 14px;
         /* Smaller font for better readability on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-window {
+        position: static;
+        margin-top: 20px;
+        width: auto;
+        right: auto;
     }
 }
