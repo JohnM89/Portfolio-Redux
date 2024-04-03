@@ -216,15 +216,16 @@
 
 .popup-window {
     position: relative;
-    background-color: #ffffff;
-    /* White background */
-    color: #000000;
-    /* Black text */
-    border: 2px solid #000;
-    /* Dark border */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    /* Shadow for depth */
+        background-color: #000;
+    color: #b4b4b4;
+    font-family: 'Consolas', 'Courier New', Courier;
+    font-size: 13.5px;
+    /* Adjust based on actual cmd prompt size, typical values might range from 12px to 16px */
+    line-height: 1.5;
     width: 80%;
+    max-width: 600px;
+    border: 1px solid #333333ee;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.111);
     /* Adjust based on preference */
     max-width: 600px;
     /* Maximum width */
@@ -237,9 +238,18 @@
 
 .popup-window-language {
     position: relative;
-    background-color: #ffffff;
     top: -75px;
     right: 370px;
+    background-color: #000;
+    color: #b4b4b4;
+    font-family: 'Consolas', 'Courier New', Courier;
+    font-size: 13.5px;
+    /* Adjust based on actual cmd prompt size, typical values might range from 12px to 16px */
+    line-height: 1.5;
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid #333333ee;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.111);
     /* White background */
     color: #000000;
     /* Black text */
@@ -265,13 +275,16 @@
 
 .popup-window-scroll {
     position: relative;
-    background-color: #ffffff;
-    /* White background */
-    color: #000000;
-    /* Black text */
-    border: 2px solid #000;
-    /* Dark border */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #000;
+    color: #b4b4b4;
+    font-family: 'Consolas', 'Courier New', Courier;
+    font-size: 13.5px;
+    /* Adjust based on actual cmd prompt size, typical values might range from 12px to 16px */
+    line-height: 1.5;
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid #333333ee;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.111);
     top: -45px;
     right: 50vh;
     /* Shadow for depth */
@@ -286,17 +299,32 @@
     z-index: 2;
 }
 
+
+// .profile-window-scroll-cursor {
+//     animation: blink 1s step-start infinite;
+// }
+
 .window-title-bar {
+    background-color: #FFF;
+    color: #0b0b0b;
+    padding: 4px 7.5px;
+    border: #000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px;
-    background-color: #000000b6;
-    color: #fffefe;
+    cursor: move;
 }
 
 .window-title {
-    font-weight: bold;
+    // font-weight: bold;
+    padding-left: 20px;
+    /* Make room for the icon */
+    background-image: url('/images/icon.png');
+    /* Replace with the path to your icon */
+    background-repeat: no-repeat;
+    background-size: 17.5px;
+    /* Adjust based on the size of your icon */
+    background-position: left center;
 }
 
 .window-controls {
@@ -306,10 +334,11 @@
 .window-control {
     background: none;
     border: none;
-    color: #FFF;
+    color: #000000;
     cursor: pointer;
     font-size: 16px;
-    padding: 0 8px;
+    padding: 0 5px;
+
 }
 
 .window-content {

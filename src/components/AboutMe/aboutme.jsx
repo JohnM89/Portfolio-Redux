@@ -351,7 +351,7 @@ const About = () => {
                                 </div>
                             </div>
                             <div className="window-content">
-                                <p>Scroll down to continue</p>
+                                <p>Scroll down to continue<span className="cmd-cursor">_</span></p>
                             </div>
                         </div>
 
