@@ -59,7 +59,7 @@ const Portfolio = () => {
 
   return (
     <div className="portfolio">
-      <h1>
+      <h1 className="animated">
 
         <AnimatedLetters
           letterClass={letterClass}

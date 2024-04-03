@@ -329,7 +329,11 @@ const About = () => {
                     <div className={`popup-window-scroll ${isProfileOpen ? "" : "hidden"}`}>
                         <div className="window-title-bar">
                             <span className="window-title">Notice</span>
-                            <button onClick={() => setShowScrollPrompt(false)} className="window-control">&#10005;</button>
+                            <div className="window-controls">
+                                <button className="window-control">&#x2212;</button> {/* Minimize */}
+                                <button className="window-control">&#9744;</button>  {/* Maximize */}
+                                <button className="window-control">&#10005;</button> {/* Close */}
+                            </div>
                         </div>
                         <div className="window-content">
                             <p>Scroll down to continue</p>
