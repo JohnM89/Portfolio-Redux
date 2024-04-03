@@ -1,0 +1,19 @@
+.terminal-container {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background: #1D2021;
+    position: absolute;
+    text-align: start;
+    top: 320px;
+    /* Adjust for desired vertical position */
+    right: 340px;
+    /* Right-aligned; adjust as needed */
+    z-index: 3;
+    top: 340px;
+    /* Ensures this window is layered correctly */
+    width: calc(50% - 25px);
+    /* Full width minus margins */
+    max-width: 300px;
+    /* Prevents the window from being too wide */
+    /* Add the rest of your styles here */
+}

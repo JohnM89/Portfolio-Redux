@@ -216,7 +216,7 @@
 
 .popup-window {
     position: relative;
-        background-color: #000;
+    background-color: #000;
     color: #b4b4b4;
     font-family: 'Consolas', 'Courier New', Courier;
     font-size: 13.5px;
@@ -595,6 +595,15 @@
     height: 50px;
     width: 50px;
     position: absolute;
+}
+
+.clippy {
+    cursor: pointer;
+    height: 75px;
+    width: 150px;
+    position: absolute;
+    bottom: 4%;
+    right: 2%;
 }
 
 .icon-1 {

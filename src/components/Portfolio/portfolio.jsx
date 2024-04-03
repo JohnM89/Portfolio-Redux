@@ -17,6 +17,8 @@ const Portfolio = () => {
     gsap.set('.portfolio', { paddingTop: '30vh' });
     ScrollTrigger.refresh();
 
+    
+
     projects.forEach((project, index) => {
       const projectClass = `.project-${index}`;
 

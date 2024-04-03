@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 // import Loader from 'react-loaders';
+// import XTerminal from '../Xterminal/xterm';
+import { gsap } from 'gsap';
 import AnimatedLetters from '../AnimatedLetters/animatedletters';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -71,6 +73,20 @@ const About = () => {
     const hideOverlay = () => {
         setShowOverlay(false);
     };
+    const clippy = document.querySelector("#clippy");
+
+    // Bounce animation
+    const bounce = () => {
+    gsap.to(clippy, {
+        y: -20, // Adjust the bounce height as needed
+        repeat: -1, // Infinite loop
+        yoyo: true, // Go back and forth
+        ease: "power1.inOut",
+        duration: 0.5, // Adjust timing as needed
+    });
+    };
+
+    bounce();
 
     const editorDidMount = (editor, monaco) => {
         editor.focus();
@@ -308,6 +324,10 @@ const About = () => {
                             <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
                         </div>
                     </div>
+                                         {/* <div className="terminal-container">
+                        <XTerminal />
+                        </div> */}
+
                     <>
                         {/* Existing elements */}
 
@@ -337,6 +357,7 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
+   
 
 
 
@@ -358,6 +379,7 @@ const About = () => {
                     </>
 
                 </div>
+                <img src="/images/clippy.png" className="clippy" id="clippy" />
                 {/* <div className="cubes-container"> */}
 
                 {/* <div className="stage-cube-cont right-cube">
