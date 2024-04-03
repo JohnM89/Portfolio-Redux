@@ -23,14 +23,38 @@
     transform: translateX(0); // Slide in when open
   }
 
-  .toggle-button {
-    position: absolute;
-    right: -60px;
-    bottom: -10px;
-    color: black;
-    font-size: x-large;
-    cursor: pointer;
+.toggle-button {
+  /* Initial state: hidden or fully transparent */
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  right: -60px;
+  bottom: -10px;
+  color: black;
+  font-size: x-large;
+  cursor: pointer;
+  /* Animation with delay */
+  animation: slideInFromLeft 0.5s ease-out 6s forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
   }
+  1% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
 
   .sidebar {
     display: flex;
