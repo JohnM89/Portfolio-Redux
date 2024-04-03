@@ -14,12 +14,12 @@ footer {
 .tray-image {
     width: 100%;
     /* Full width of the footer */
-    height: 300px;
+    height: 100%;
     /* Match the height of the footer or adjust as necessary */
-    background-image: url('/images/desktop-win77.png');
-    background-position: center -1050px;
+    background-image: url('/images/TrayCapture.PNG');
+    /* background-position: center; */
     background-repeat: no-repeat;
-    background-size: cover;
+    /* background-size: fill; */
     /* Use 'contain' to ensure the image fits within the div */
     margin: auto;
     z-index: 3;

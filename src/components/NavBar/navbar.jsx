@@ -23,7 +23,9 @@ function Navigation() {
 
   return (
     <div className={`sidebar-container ${isOpen ? 'open' : ''}`}>
-      <div className="toggle-button" onClick={toggleSidebar}>☰</div>
+      <div className="toggle-button" onClick={toggleSidebar}>
+  <img src="/images/windowsStart.PNG" alt="Menu" />
+</div>
       <nav className={`sidebar ${isOpen ? 'show' : ''}`}>
         <Link smooth to="/#about" onClick={toggleSidebar}>About Me</Link>
         <Link smooth to="/#portfolio" onClick={toggleSidebar}>Portfolio</Link>

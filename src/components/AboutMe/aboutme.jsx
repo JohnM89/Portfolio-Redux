@@ -45,6 +45,11 @@ const About = () => {
         setIsProfileOpen(!isProfileOpen);
     };
 
+    const handleIconClick = (iconName) => {
+        console.log(`${iconName} clicked`);
+        // Logic to open the corresponding pop-up or perform actions based on the icon
+    };
+
 
 
 
@@ -141,35 +146,36 @@ const About = () => {
 
     return (
         <>
-            <img src="/images/icon.png" alt="Open Profile" onClick={toggleProfileWindow} className="profile-icon" />
-            {showOverlay && (
-                <div
-                    className="overlay"
-                    onClick={hideOverlay}
-                    style={{
-                        position: 'fixed',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        zIndex: 10,
-                        display: 'fill',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        color: '#FFF',
+            <div className="container about-page">
+                <img src="/images/icon.png" alt="Open Profile" onClick={toggleProfileWindow} className="profile-icon" />
+                {showOverlay && (
+                    <div
+                        className="overlay"
+                        onClick={hideOverlay}
+                        style={{
+                            position: 'fixed',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            zIndex: 10,
+                            display: 'fill',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            color: '#FFF',
 
 
-                        // textAlign: 'center'
-                    }}
-                >
+                            // textAlign: 'center'
+                        }}
+                    >
 
-                    <MonacoEditor
-                        className="monaco-editor-container"
-                        width="100%"
-                        height="100%"
-                        language="javascript"
-                        theme="vs-dark"
-                        value={`
+                        <MonacoEditor
+                            className="monaco-editor-container"
+                            width="100%"
+                            height="100%"
+                            language="javascript"
+                            theme="vs-dark"
+                            value={`
     import React from 'react';
     import './AboutMe.scss';
 
@@ -205,130 +211,80 @@ const About = () => {
 
     export default AboutMe;
                     `}
-                        options={{
-                            selectOnLineNumbers: true,
-                            padding: { top: 0, bottom: 0, left: 0 },
-                            readOnly: true, // Make it read-only if you just want to display code
-                            fontFamily: '"Fira Code", monospace', // Example font family
-                            fontSize: 16, // Example font size
-                            fontWeight: 'normal', // Can be 'bold', 'normal', etc.
-                            lineNumbers: 'on', // Hide line numbers if desired
-                            lineNumbersMinChars: 3,
-                            lineDecorationsWidth: 0,
-                            lineNumbersWidth: 0,
-                            minimap: { enabled: false }, // Disable minimap
-                            scrollbar: { vertical: 'hidden', horizontal: 'hidden' }, // Hide scrollbars
-                            wordWrap: 'off', // Enable word wrap
-                            scrollBeyondLastLine: false, // Stop scrolling beyond the last line
-                            renderLineHighlight: 'none', // Disable line highlight
-                        }}
-                        editorDidMount={editorDidMount}
-                    />
-
-                    <div
-                        style={{
-                            position: 'absolute',
-                            top: '50%',
-                            left: '50%',
-                            transform: 'translate(-50%, -50%)',
-                            color: '#FFF',
-                        }}
-                    ></div>
-                    <div>
-
-
-
-                    </div>
-                    <div className="cmd-container">
-                        <div className="cmd-title-bar">
-                            <span className="cmd-title">Select Command Prompt</span>
-                            <div className="cmd-controls">
-                                <button className="cmd-control">&#x2212;</button> {/* Minimize */}
-                                <button className="cmd-control">&#9744;</button>  {/* Maximize */}
-                                <button className="cmd-control">&#10005;</button> {/* Close */}
-                            </div>
-                        </div>
-                        <div className="cmd-content">
-                            Click here to interrupt<span className="cmd-cursor">_</span>
-                        </div>
-                    </div>
-                </div>
-
-            )}
-            <div className="container about-page">
-                <div className="text-zone">
-                    <h1>
-                        <AnimatedLetters
-                            letterClass={letterClass}
-                            strArray={[
-                                'A', 'b', 'o', 'u', 't', ' ', 'M', 'e', '!',
-                            ]}
-                            idx={15}
+                            options={{
+                                selectOnLineNumbers: true,
+                                padding: { top: 0, bottom: 0, left: 0 },
+                                readOnly: true, // Make it read-only if you just want to display code
+                                fontFamily: '"Fira Code", monospace', // Example font family
+                                fontSize: 16, // Example font size
+                                fontWeight: 'normal', // Can be 'bold', 'normal', etc.
+                                lineNumbers: 'on', // Hide line numbers if desired
+                                lineNumbersMinChars: 3,
+                                lineDecorationsWidth: 0,
+                                lineNumbersWidth: 0,
+                                minimap: { enabled: false }, // Disable minimap
+                                scrollbar: { vertical: 'hidden', horizontal: 'hidden' }, // Hide scrollbars
+                                wordWrap: 'off', // Enable word wrap
+                                scrollBeyondLastLine: false, // Stop scrolling beyond the last line
+                                renderLineHighlight: 'none', // Disable line highlight
+                            }}
+                            editorDidMount={editorDidMount}
                         />
-                    </h1>
-                </div>
-                <div id="about-section" className={`popup-window ${isProfileOpen ? "" : "hidden"}`}>
-                    <div className="window-title-bar">
-                        <span className="window-title">About Me</span>
-                        <div className="window-controls">
-                            <button className="window-control">&#x2212;</button> {/* Minimize */}
-                            <button className="window-control">&#9744;</button>  {/* Maximize */}
-                            <button className="window-control">&#10005;</button> {/* Close */}
-                        </div>
-                    </div>
-                    <div className="window-content">
-                        <p>Hi there, I'm John, a full stack developer, a coder and a problem solver. I love to build things, websites, applications, devices, you name it. This portfolio is a work in progress but also a showcase of my abilities. Scroll down to see more! </p>
-                    </div>
-                </div>
-                <div className={`popup-window profile-window ${isProfileOpen ? "" : "hidden"}`}>
-                    <div className="window-title-bar">
-                        <span className="window-title">Profile</span>
-                        <div className="window-controls">
-                            <button className="window-control">&#x2212;</button> {/* Minimize */}
-                            <button className="window-control">&#9744;</button>  {/* Maximize */}
-                            <button className="window-control">&#10005;</button> {/* Close */}
-                        </div>
-                    </div>
-                    <div className="window-content">
-                        <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
-                    </div>
-                </div>
-                <>
-                    {/* Existing elements */}
 
-                    <div className={`popup-window-language ${isProfileOpen ? "" : "hidden"}`}>
+                        <div
+                            style={{
+                                position: 'absolute',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                                color: '#FFF',
+                            }}
+                        ></div>
+                        <div>
 
-                        <div className="window-title-bar">
-                            <span className="window-title">Languages</span>
-                            <div className="window-controls">
-                                <button className="window-control">&#x2212;</button> {/* Minimize */}
-                                <button className="window-control">&#9744;</button>  {/* Maximize */}
-                                <button className="window-control">&#10005;</button> {/* Close */}
-                            </div>
+
+
                         </div>
-                        <div className="window-content">
-                            <div className="cube-container-languages"></div>
-                            <div className="cube-container">
-                                <div className="stage-cube-cont left-cube">
-                                    <div className="cubespinner">
-                                        {currentIcons.map((icon, index) => (
-                                            <div className={`face${index + 1}`} key={icon.iconName}>
-                                                <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
-                                            </div>
-                                        ))}
-                                    </div>
+                        <div className="cmd-container">
+                            <div className="cmd-title-bar">
+                                <span className="cmd-title">Select Command Prompt</span>
+                                <div className="cmd-controls">
+                                    <button className="cmd-control">&#x2212;</button> {/* Minimize */}
+                                    <button className="cmd-control">&#9744;</button>  {/* Maximize */}
+                                    <button className="cmd-control">&#10005;</button> {/* Close */}
                                 </div>
-
+                            </div>
+                            <div className="cmd-content">
+                                Click here to interrupt<span className="cmd-cursor">_</span>
                             </div>
                         </div>
                     </div>
 
-
-
-
-                    <div className={`popup-window-scroll ${isProfileOpen ? "" : "hidden"}`}>
+                )}
+                <div className="container about-page">
+                    <div className="text-zone">
+                        <h1>
+                            <AnimatedLetters
+                                letterClass={letterClass}
+                                strArray={[
+                                    'A', 'b', 'o', 'u', 't', ' ', 'M', 'e', '!',
+                                ]}
+                                idx={15}
+                            />
+                        </h1>
+                    </div>
+                    <div className="desktop">
+                        <img src="/images/icons8-remote-desktop-48.png" alt="Icon 1" className="desktop-icon icon-1" onClick={() => handleIconClick('Icon 1')} />
+                        <img src="/images/icons8-old-computer-50.png" alt="Icon 2" className="desktop-icon icon-2" onClick={() => handleIconClick('Icon 2')} />
+                        <img src="/images/folder.PNG" alt="Icon 3" className="desktop-icon icon-3" onClick={() => handleIconClick('Icon 3')} />
+                        <img src="/images/folder.PNG" alt="Icon 4" className="desktop-icon icon-4" onClick={() => handleIconClick('Icon 4')} />
+                        <img src="/images/folder.PNG" alt="Icon 5" className="desktop-icon icon-5" onClick={() => handleIconClick('Icon 5')} />
+                        <img src="/images/icons8-old-computer-50.png" alt="Icon 6" className="desktop-icon icon-6" onClick={() => handleIconClick('Icon 6')} />
+                        {/* More icons */}
+                    </div>
+                    <div id="about-section" className={`popup-window ${isProfileOpen ? "" : "hidden"}`}>
                         <div className="window-title-bar">
-                            <span className="window-title">Notice</span>
+                            <span className="window-title">About Me</span>
                             <div className="window-controls">
                                 <button className="window-control">&#x2212;</button> {/* Minimize */}
                                 <button className="window-control">&#9744;</button>  {/* Maximize */}
@@ -336,16 +292,75 @@ const About = () => {
                             </div>
                         </div>
                         <div className="window-content">
-                            <p>Scroll down to continue</p>
+                            <p>Hi there, I'm John, a full stack developer, a coder and a problem solver. I love to build things, websites, applications, devices, you name it. This portfolio is a work in progress but also a showcase of my abilities. Scroll down to see more! </p>
                         </div>
                     </div>
+                    <div className={`popup-window profile-window ${isProfileOpen ? "" : "hidden"}`}>
+                        <div className="window-title-bar">
+                            <span className="window-title">Profile</span>
+                            <div className="window-controls">
+                                <button className="window-control">&#x2212;</button> {/* Minimize */}
+                                <button className="window-control">&#9744;</button>  {/* Maximize */}
+                                <button className="window-control">&#10005;</button> {/* Close */}
+                            </div>
+                        </div>
+                        <div className="window-content">
+                            <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
+                        </div>
+                    </div>
+                    <>
+                        {/* Existing elements */}
 
-                </>
+                        <div className={`popup-window-language ${isProfileOpen ? "" : "hidden"}`}>
 
-            </div>
-            {/* <div className="cubes-container"> */}
+                            <div className="window-title-bar">
+                                <span className="window-title">Languages</span>
+                                <div className="window-controls">
+                                    <button className="window-control">&#x2212;</button> {/* Minimize */}
+                                    <button className="window-control">&#9744;</button>  {/* Maximize */}
+                                    <button className="window-control">&#10005;</button> {/* Close */}
+                                </div>
+                            </div>
+                            <div className="window-content">
+                                <div className="cube-container-languages"></div>
+                                <div className="cube-container">
+                                    <div className="stage-cube-cont left-cube">
+                                        <div className="cubespinner">
+                                            {currentIcons.map((icon, index) => (
+                                                <div className={`face${index + 1}`} key={icon.iconName}>
+                                                    <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
 
-            {/* <div className="stage-cube-cont right-cube">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div className={`popup-window-scroll ${isProfileOpen ? "" : "hidden"}`}>
+                            <div className="window-title-bar">
+                                <span className="window-title">Notice</span>
+                                <div className="window-controls">
+                                    <button className="window-control">&#x2212;</button> {/* Minimize */}
+                                    <button className="window-control">&#9744;</button>  {/* Maximize */}
+                                    <button className="window-control">&#10005;</button> {/* Close */}
+                                </div>
+                            </div>
+                            <div className="window-content">
+                                <p>Scroll down to continue</p>
+                            </div>
+                        </div>
+
+                    </>
+
+                </div>
+                {/* <div className="cubes-container"> */}
+
+                {/* <div className="stage-cube-cont right-cube">
                     <div className="cubespinner">
                         {currentIcons.map((icon, index) => (
                             <div className={`face${index + 1}`} key={icon.iconName}>
@@ -354,9 +369,12 @@ const About = () => {
                         ))}
                     </div>
                 </div> */}
-            {/* </div> */}
+                {/* </div> */}
+            </div>
         </>
+
     );
 };
+
 
 export default About;

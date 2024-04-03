@@ -561,6 +561,43 @@
     transform: translate(-50%, -50%);
 }
 
+.desktop-icon {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+}
+
+.icon-1 {
+    top: 5%;
+    left: 2%;
+}
+
+.icon-2 {
+    top: 20%;
+    left: 2%;
+}
+
+.icon-3 {
+    top: 35%;
+    left: 2%;
+}
+
+.icon-4 {
+    top: 50%;
+    left: 2%;
+}
+
+.icon-5 {
+    top: 65%;
+    left: 2%;
+}
+
+.icon-6 {
+    top: 80%;
+    left: 2%;
+}
+
 
 @keyframes spincube {
 

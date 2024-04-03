@@ -25,8 +25,8 @@
 
   .toggle-button {
     position: absolute;
-    right: -40px;
-    bottom: 10px;
+    right: -60px;
+    bottom: -10px;
     color: black;
     font-size: x-large;
     cursor: pointer;
@@ -36,10 +36,10 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding-top: 20px; 
+    padding-top: 20px;
 
     a {
-      padding: 10px 20px; 
+      padding: 10px 20px;
       text-decoration: none;
       color: #120f0fef;
 
@@ -52,10 +52,10 @@
 
 .nav-technologies {
   display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 25px; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
   padding: 10px 0;
 
   .nav-tech-icon {
