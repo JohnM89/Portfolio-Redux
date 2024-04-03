@@ -67,4 +67,4 @@ Here's a screenshot for you 👀:
 
 ---
 
-Made with 💖 and React by `yours truley`
+Made by `yours truley`
