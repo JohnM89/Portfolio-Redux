@@ -38,25 +38,16 @@ const About = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
     const [currentIcons, setCurrentIcons] = useState([...initialIcons]);
     const [showOverlay, setShowOverlay] = useState(true);
-    const [showLanguages, setShowLanguages] = useState(false);
-    const [showScrollPrompt, setShowScrollPrompt] = useState(false)
+    const [isProfileOpen, setIsProfileOpen] = useState(false);
 
-    const toggleLanguages = () => {
-        setShowLanguages(!showLanguages);
+
+    const toggleProfileWindow = () => {
+        setIsProfileOpen(!isProfileOpen);
     };
 
-    const toggleScrollPrompt = () => {
-        setShowScrollPrompt(!showScrollPrompt);
-    };
 
-    useEffect(() => {
-        // Automatically show scroll prompt after a delay
-        const timer = setTimeout(() => {
-            setShowScrollPrompt(true);
-        }, 3000); // 3 seconds after page load
 
-        return () => clearTimeout(timer);
-    }, []);
+
 
 
 
@@ -109,9 +100,10 @@ const About = () => {
         editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S, function () {
             alert('Saving feature is not implemented.');
         });
-        const aboutMeText = ` \n I'm a web developer with a passion for creating interesting and functional websites.
-                                 I'm always on the lookout for new opportunities.
-                                       Click & Scroll down to see more!...`; // Your full content
+        const aboutMeText = ` \n Oh hi I'm there a web developer with a passion for creating interesting and functional websites 
+                & I'm always on the lookout for new opportunities.
+                Why not take a look at my portfolio?
+                All you have to do is click to see more!... </p>`; // Your full content
         let currentIndex = 0;
 
         const typeWriter = () => {
@@ -149,6 +141,7 @@ const About = () => {
 
     return (
         <>
+            <img src="/images/icon.png" alt="Open Profile" onClick={toggleProfileWindow} className="profile-icon" />
             {showOverlay && (
                 <div
                     className="overlay"
@@ -200,7 +193,6 @@ const About = () => {
             
             <h2>About Me</h2>
             <p>
-            </p>
             </section>
             // additional sections to be added here
         </main>
@@ -275,7 +267,7 @@ const About = () => {
                         />
                     </h1>
                 </div>
-                <div id="about-section" className="popup-window">
+                <div id="about-section" className={`popup-window ${isProfileOpen ? "" : "hidden"}`}>
                     <div className="window-title-bar">
                         <span className="window-title">About Me</span>
                         <div className="window-controls">
@@ -285,10 +277,10 @@ const About = () => {
                         </div>
                     </div>
                     <div className="window-content">
-                        <p>I'm a web developer with a passion for creating interesting and functional websites. I'm always on the lookout for new opportunities. Click & Scroll down to see more!</p>
+                        <p>Hi there, I'm John, a full stack developer, a coder and a problem solver. I love to build things, websites, applications, devices, you name it. This portfolio is a work in progress but also a showcase of my abilities. Scroll down to see more! </p>
                     </div>
                 </div>
-                <div className="popup-window profile-window">
+                <div className={`popup-window profile-window ${isProfileOpen ? "" : "hidden"}`}>
                     <div className="window-title-bar">
                         <span className="window-title">Profile</span>
                         <div className="window-controls">
@@ -304,7 +296,8 @@ const About = () => {
                 <>
                     {/* Existing elements */}
 
-                    <div className="popup-window-language">
+                    <div className={`popup-window-language ${isProfileOpen ? "" : "hidden"}`}>
+
                         <div className="window-title-bar">
                             <span className="window-title">Languages</span>
                             <div className="window-controls">
@@ -314,7 +307,8 @@ const About = () => {
                             </div>
                         </div>
                         <div className="window-content">
-                            <div className="cube-container"> {/* Apply the new class here */}
+                            <div className="cube-container-languages"></div>
+                            <div className="cube-container">
                                 <div className="stage-cube-cont left-cube">
                                     <div className="cubespinner">
                                         {currentIcons.map((icon, index) => (
@@ -324,23 +318,24 @@ const About = () => {
                                         ))}
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
 
 
 
-                    {showScrollPrompt && (
-                        <div className="popup-window-scroll">
-                            <div className="window-title-bar">
-                                <span className="window-title">Notice</span>
-                                <button onClick={() => setShowScrollPrompt(false)} className="window-control">&#10005;</button>
-                            </div>
-                            <div className="window-content">
-                                <p>Scroll down to continue</p>
-                            </div>
+
+                    <div className={`popup-window-scroll ${isProfileOpen ? "" : "hidden"}`}>
+                        <div className="window-title-bar">
+                            <span className="window-title">Notice</span>
+                            <button onClick={() => setShowScrollPrompt(false)} className="window-control">&#10005;</button>
                         </div>
-                    )}
+                        <div className="window-content">
+                            <p>Scroll down to continue</p>
+                        </div>
+                    </div>
+
                 </>
 
             </div>

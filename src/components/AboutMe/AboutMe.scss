@@ -1,16 +1,17 @@
 .cubes-container {
-    display: flex;
-    justify-content: space-between; // This spreads out the children to each end
-    position: relative; // Establishes a new positioning context
-    height: 100%; // Adjust as necessary
+    // // display: flex;
+    // // This spreads out the children to each end
+    // position: absolute; // Establishes a new positioning context
+    // height: 200%; // Adjust as necessary
 }
 
 .stage-cube-cont {
-    width: 50%;
-    height: 100%;
-    padding-top: 3%;
-    position: absolute;
-    //   overflow: hidden;
+    // width: 50%;
+    // height: 100%;
+    // padding-top: 3%;
+
+    // overflow: hidden;
+
 }
 
 .text-zone {
@@ -237,6 +238,8 @@
 .popup-window-language {
     position: relative;
     background-color: #ffffff;
+    top: -75px;
+    right: 370px;
     /* White background */
     color: #000000;
     /* Black text */
@@ -244,18 +247,20 @@
     /* Dark border */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     /* Shadow for depth */
-    width: 80%;
+    width: 275px;
+    height: 275px;
     /* Adjust based on preference */
     max-width: 600px;
     /* Maximum width */
-    margin: auto;
+    margin: 0 auto;
     /* Center in the available space */
     transform: translateY(-50%);
     /* Adjust based on layout */
-    z-index: 2;
+    z-index: 1;
     align-items: center;
     justify-content: center;
-    
+    overflow: hidden;
+
 }
 
 .popup-window-scroll {
@@ -267,6 +272,8 @@
     border: 2px solid #000;
     /* Dark border */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    top: -45px;
+    right: 50vh;
     /* Shadow for depth */
     width: 80%;
     /* Adjust based on preference */
@@ -440,27 +447,27 @@
 
 .left-cube,
 .right-cube {
-    position: fixed;
-    justify-content: space-between;
-    /* Take them out of document flow */
-    z-index: 1;
+    // position: fixed;
+    // justify-content: space-between;
+    // /* Take them out of document flow */
+    // z-index: 1;
     /* Place them below the image */
-    top: 50%;
-    transform: translateY(-50%);
+    // top: 50%;
+    // transform: translateY(-50%);
 
 }
 
 .left-cube {
-    left: 0;
-    transform: translateX(-19%) translateY(-33.33%);
+    // left: 0;
+    // transform: translateX(-19%) translateY(-33.33%);
     /* Move it to the left of the container */
     /* Additional styling for the cube */
 }
 
 .right-cube {
-    right: 0;
-    bottom: 0;
-    transform: translateX(19%) translateY(-33.33%);
+    // right: 0;
+    // bottom: 0;
+    // transform: translateX(19%) translateY(-33.33%);
     /* Move it to the right of the container */
     /* Additional styling for the cube */
 }
@@ -470,9 +477,9 @@
     // height: 100%;
     // top: 0;
     padding-top: 18%;
-    margin-left: 0;
+    // margin-left: 0;
     // position: absolute;
-    right: 0;
+    // right: 0;
     // overflow: hidden;
 }
 
@@ -484,6 +491,7 @@
     transform-style: preserve-3d;
     /* Adjust transform-origin based on the new size */
     transform-origin: 50px 50px 0;
+    margin: 0 auto;
     /* Adjust margin to center the smaller cube, assuming the spinner's container is relatively positioned */
     margin-left: calc(50% - 50px);
 }
@@ -537,6 +545,20 @@
 .cubespinner .face6 {
     transform: rotateX(-90deg) translateZ(50px);
     color: #000000;
+}
+
+.hidden {
+    display: none;
+}
+
+.profile-icon {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -647,5 +669,50 @@
         margin-top: 20px;
         width: auto;
         right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .popup-window-language {
+        width: 90%;
+        /* Take more screen width on smaller screens */
+        max-width: none;
+        /* Remove max-width restriction */
+    }
+
+    .popup-window-language .cube-container-languages {
+        height: auto;
+        /* Allow the container's height to adjust to its content */
+    }
+
+    .popup-window-language .stage-cube-cont {
+        width: 150px;
+        /* Smaller cube on smaller screens */
+        height: 150px;
+    }
+
+    .popup-window-scroll {
+        width: 90%;
+        /* Take more screen width on smaller screens */
+        max-width: none;
+        /* Remove max-width restriction */
+        right: auto;
+    }
+
+    .popup-window-language {
+        right: auto;
+    }
+
+    .stage-cube-cont {
+        width: 80%;
+        /* Adjust the width to fit smaller screens */
+        padding-top: 10%;
+        /* Adjust padding */
+        position: relative;
+        /* Change positioning if necessary */
+        left: 30%;
+        /* Center the content */
+        transform: translate(0, 0);
+        /* Reset transformations if needed */
     }
 }

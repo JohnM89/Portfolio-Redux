@@ -9,12 +9,12 @@ import './portfolio.scss';
 gsap.registerPlugin(ScrollTrigger);
 
 const Portfolio = () => {
- 
+
   const [letterClass,] = useState('text-animate');
 
   useEffect(() => {
 
-    gsap.set('.portfolio', { paddingTop: '100vh' });
+    gsap.set('.portfolio', { paddingTop: '30vh' });
     ScrollTrigger.refresh();
 
     projects.forEach((project, index) => {
@@ -60,10 +60,10 @@ const Portfolio = () => {
   return (
     <div className="portfolio">
       <h1>
-        
+
         <AnimatedLetters
           letterClass={letterClass}
-          strArray={['↓','P', 'o', 'r', 't', 'f', 'o', 'l', 'i', 'o', '↓']}
+          strArray={['↓', 'P', 'o', 'r', 't', 'f', 'o', 'l', 'i', 'o', '↓']}
           idx={15}
         />
       </h1>
@@ -72,12 +72,12 @@ const Portfolio = () => {
           {project.liveLink ? (
             <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
               <img src={project.imageUrl} alt={project.title} />
-                            
-                <h2>{project.title}</h2>
-                <p>{project.description}</p>
-             
+
+              <h2>{project.title}</h2>
+              <p>{project.description}</p>
+
             </a>
-            
+
           ) : (
             <img src={project.imageUrl} alt={project.title} />
           )}
