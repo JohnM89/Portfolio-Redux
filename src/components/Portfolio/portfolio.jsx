@@ -63,7 +63,7 @@ const Portfolio = () => {
 
         <AnimatedLetters
           letterClass={letterClass}
-          strArray={['↓', 'P', 'o', 'r', 't', 'f', 'o', 'l', 'i', 'o', '↓']}
+          strArray={[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']}
           idx={15}
         />
       </h1>
