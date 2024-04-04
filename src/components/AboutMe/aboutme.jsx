@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 // import Loader from 'react-loaders';
-// import XTerminal from '../Xterminal/xterm';
+import XTerminal from '../Xterminal/xterm';
 import { gsap } from 'gsap';
 import AnimatedLetters from '../AnimatedLetters/animatedletters';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -41,16 +41,32 @@ const About = () => {
     const [currentIcons, setCurrentIcons] = useState([...initialIcons]);
     const [showOverlay, setShowOverlay] = useState(true);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
+    const [isXterminalOpen, setIsXterminalOpen] = useState(false);
+
+    const toggleXterminalWindow = () => {
+        setIsXterminalOpen(!isXterminalOpen);
+    };
 
 
     const toggleProfileWindow = () => {
         setIsProfileOpen(!isProfileOpen);
+
     };
 
     const handleIconClick = (iconName) => {
         console.log(`${iconName} clicked`);
-        // Logic to open the corresponding pop-up or perform actions based on the icon
+        if (iconName === 'Icon 1') { // Assuming Icon 7 is meant for XTerminal
+            toggleXterminalWindow();
+        }
+        // Extend with more conditions if other icons have specific actions
     };
+
+useEffect(() => {
+    document.body.style.overflow = isProfileOpen ? 'unset' : 'hidden';
+    // No cleanup function needed here since we want the effect of this
+    // styling to persist as long as the component is mounted and its
+    // state changes.
+}, [isProfileOpen]);
 
 
 
@@ -77,13 +93,13 @@ const About = () => {
 
     // Bounce animation
     const bounce = () => {
-    gsap.to(clippy, {
-        y: -20, // Adjust the bounce height as needed
-        repeat: -1, // Infinite loop
-        yoyo: true, // Go back and forth
-        ease: "power1.inOut",
-        duration: 0.5, // Adjust timing as needed
-    });
+        gsap.to(clippy, {
+            y: -20, // Adjust the bounce height as needed
+            repeat: -1, // Infinite loop
+            yoyo: true, // Go back and forth
+            ease: "power1.inOut",
+            duration: 0.5, // Adjust timing as needed
+        });
     };
 
     bounce();
@@ -121,7 +137,7 @@ const About = () => {
         editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S, function () {
             alert('Saving feature is not implemented.');
         });
-        const aboutMeText = ` \n Oh hi I'm there a web developer with a passion for creating interesting and functional websites 
+        const aboutMeText = ` \n Oh hi I'm there a developer with a passion for creating interesting and functional applications 
                 & I'm always on the lookout for new opportunities.
                 Why not take a look at my portfolio?
                 All you have to do is click to see more!... </p>`; // Your full content
@@ -162,7 +178,7 @@ const About = () => {
 
     return (
         <>
-        <div className="tray-image"></div>
+            <div className="tray-image"></div>
             <div className="container about-page">
                 <img src="/images/icon.png" alt="Open Profile" onClick={toggleProfileWindow} className="profile-icon" />
                 {showOverlay && (
@@ -284,19 +300,20 @@ const About = () => {
                             <AnimatedLetters
                                 letterClass={letterClass}
                                 strArray={[
-                                    'A', 'b', 'o', 'u', 't', ' ', 'M', 'e', '!',
+                                    'C', 'l', 'i', 'c', 'k', ' ', 'M', 'e', '!',
                                 ]}
                                 idx={15}
                             />
                         </h1>
                     </div>
                     <div className="desktop">
-                        <img src="/images/icons8-remote-desktop-48.png" alt="Icon 1" className="desktop-icon icon-1" onClick={() => handleIconClick('Icon 1')} />
-                        <img src="/images/icons8-old-computer-50.png" alt="Icon 2" className="desktop-icon icon-2" onClick={() => handleIconClick('Icon 2')} />
+                        <img src="/images/icon.png" alt="Icon 7" className="desktop-icon icon-5" onClick={() => handleIconClick('Icon 1')} />
+                        <img src="/images/icons8-remote-desktop-48.png" alt="Icon 2" className="desktop-icon icon-2" onClick={() => handleIconClick('Icon 2')} />
                         <img src="/images/folder.PNG" alt="Icon 3" className="desktop-icon icon-3" onClick={() => handleIconClick('Icon 3')} />
                         <img src="/images/folder.PNG" alt="Icon 4" className="desktop-icon icon-4" onClick={() => handleIconClick('Icon 4')} />
-                        <img src="/images/folder.PNG" alt="Icon 5" className="desktop-icon icon-5" onClick={() => handleIconClick('Icon 5')} />
+                        <img src="/images/folder.PNG" alt="Icon 5" className="desktop-icon icon-1" onClick={() => handleIconClick('Icon 5')} />
                         <img src="/images/icons8-old-computer-50.png" alt="Icon 6" className="desktop-icon icon-6" onClick={() => handleIconClick('Icon 6')} />
+
                         {/* More icons */}
                     </div>
                     <div id="about-section" className={`popup-window ${isProfileOpen ? "" : "hidden"}`}>
@@ -325,7 +342,7 @@ const About = () => {
                             <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
                         </div>
                     </div>
-                                         {/* <div className="terminal-container">
+                    {/* <div className="terminal-container">
                         <XTerminal />
                         </div> */}
 
@@ -358,7 +375,7 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
-   
+
 
 
 
@@ -374,6 +391,19 @@ const About = () => {
                             </div>
                             <div className="window-content">
                                 <p>Scroll down to continue<span className="cmd-cursor">_</span></p>
+                            </div>
+                        </div>
+                        <div className={`popup-window-Xterminal ${isXterminalOpen ? "" : "hidden"}`}>
+                            <div className="window-title-bar">
+                                <span className="window-title">Terminal</span>
+                                <div className="window-controls">
+                                    <button className="window-control">&#x2212;</button> {/* Minimize */}
+                                    <button className="window-control">&#9744;</button>  {/* Maximize */}
+                                    <button className="window-control">&#10005;</button> {/* Close */}
+                                </div>
+                            </div>
+                            <div className="window-content">
+                                <XTerminal />
                             </div>
                         </div>
 

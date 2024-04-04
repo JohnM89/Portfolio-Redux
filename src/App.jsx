@@ -18,8 +18,7 @@ function App() {
           <section id="about">
             <AboutMe />
           </section>
-          {/* <ParallaxSection id="parallax-1" backgroundImage="/images/Okinawa.jpeg" className='parallex-custom-1' /> */}
-          <section id="portfolio" className="portfolio-parallax">
+          <section>
             <Portfolio />
           </section>
           <section id="contact">

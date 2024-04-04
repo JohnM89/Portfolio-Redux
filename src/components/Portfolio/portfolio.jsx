@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Project from '../Project/project';
 import projects from '../../data/projects';
 import AnimatedLetters from '../AnimatedLetters/animatedletters';
+
 import './portfolio.scss';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,10 +15,10 @@ const Portfolio = () => {
 
   useEffect(() => {
 
-    gsap.set('.portfolio', { paddingTop: '30vh' });
+    gsap.set('.portfolio', { paddingTop: '80%' });
     ScrollTrigger.refresh();
 
-    
+
 
     projects.forEach((project, index) => {
       const projectClass = `.project-${index}`;
@@ -26,7 +27,7 @@ const Portfolio = () => {
         projectClass,
         { autoAlpha: 0, x: () => (index % 2 === 0 ? '-100%' : '100%') }, // entry direction
         {
-          duration: 1,
+          duration: 2,
           autoAlpha: 1,
           x: 0,
           ease: 'power2.out',
@@ -37,18 +38,18 @@ const Portfolio = () => {
             toggleActions: "play none none reverse",
             markers: false,
             onLeave: () => gsap.to(projectClass, {
-              duration: 1,
+              duration: 3,
               autoAlpha: 0,
-              x: () => (Math.random() < 0.5 ? '-100%' : '100%'),
+              // x: () => (Math.random() < 0.5 ? '-100%' : '100%'),
               scale: 0.5
             }),
             // entry animation for the project
             onEnterBack: () => gsap.fromTo(projectClass, {
               autoAlpha: 0,
               scale: 0.5,
-              x: () => (Math.random() < 0.5 ? '-100%' : '100%'),
+              // x: () => (Math.random() < 0.5 ? '-100%' : '100%'),
             }, {
-              duration: 1,
+              duration: 2,
               autoAlpha: 1,
               x: 0,
               scale: 1
@@ -61,6 +62,7 @@ const Portfolio = () => {
 
   return (
     <div className="portfolio">
+
       <h1 className="animated">
 
         <AnimatedLetters

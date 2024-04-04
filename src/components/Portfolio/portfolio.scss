@@ -11,7 +11,8 @@
     transform: translateX(-100vw);
     opacity: 0;
     transition: all 0.5s ease-out;
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
+
 
 
     img {
@@ -36,6 +37,7 @@
     }
 }
 
+
 .animated {
 
     animation: fadeIn 320s;
@@ -43,12 +45,14 @@
 
 .portfolio-container {
     padding-top: 50vh;
+
 }
 
 
 .project.active {
     transform: translateX(0);
     opacity: 1;
+
 }
 
 // .project.active ~ .project {
