@@ -214,6 +214,20 @@
 
 }
 
+.tray-image {
+    width: 100%;
+    /* Full width of the footer */
+    height: 100%;
+    /* Match the height of the footer or adjust as necessary */
+    background-image: url('/images/TrayCapture.PNG');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    /* Use 'contain' to ensure the image fits within the div */
+    margin: auto;
+    z-index: 3;
+}
+
 .popup-window {
     position: relative;
     background-color: #000;
@@ -604,7 +618,22 @@
     position: absolute;
     bottom: 4%;
     right: 2%;
+    animation: bounce 2s infinite;
 }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+
 
 .icon-1 {
     top: 5%;

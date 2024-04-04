@@ -162,6 +162,7 @@ const About = () => {
 
     return (
         <>
+        <div className="tray-image"></div>
             <div className="container about-page">
                 <img src="/images/icon.png" alt="Open Profile" onClick={toggleProfileWindow} className="profile-icon" />
                 {showOverlay && (
