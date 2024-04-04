@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
 
 const MyScrollAnimatedComponent = () => {
     const flyingImageRef = useRef(null);

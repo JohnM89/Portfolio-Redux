@@ -130,7 +130,7 @@ const About = () => {
         const typeWriter = () => {
             if (currentIndex < aboutMeText.length) {
                 const nextChar = aboutMeText.charAt(currentIndex);
-                const position = editor.getPosition();
+                // const position = editor.getPosition();
                 const currentContent = editor.getValue();
                 let newValue = currentContent.split('\n');
 
@@ -309,7 +309,7 @@ const About = () => {
                             </div>
                         </div>
                         <div className="window-content">
-                            <p>Hi there, I'm John, a full stack developer, a coder and a problem solver. I love to build things, websites, applications, devices, you name it. This portfolio is a work in progress but also a showcase of my abilities. Scroll down to see more! </p>
+                            <p>Hi there, Im John, a full stack developer, a coder and a problem solver. I love to build things, websites, applications, devices, you name it. This portfolio is a work in progress but also a showcase of my abilities. Scroll down to see more! </p>
                         </div>
                     </div>
                     <div className={`popup-window profile-window ${isProfileOpen ? "" : "hidden"}`}>

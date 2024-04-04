@@ -1,12 +1,12 @@
 import { useEffect, useState, useRef } from 'react'
-import Loader from 'react-loaders'
+// import Loader from 'react-loaders'
 import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters/animatedletters'
 import '../Contact/Contact.scss'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
-  const [theme, setTheme] = useState('light'); // Theme state
+  const [theme] = useState('light'); // Theme state
   const form = useRef()
 
   useEffect(() => {

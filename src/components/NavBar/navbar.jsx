@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import '../NavBar/navbar.scss'; // Make sure your CSS is adapted for sidebar styling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
