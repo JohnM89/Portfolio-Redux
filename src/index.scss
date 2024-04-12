@@ -32,9 +32,17 @@
     background-position: center;
     z-index: -1;
     will-change: transform;
+        overflow: hidden; // hiding scrollbar
+    overflow-y: scroll; //uncomment to show scrollbar
   }
 
 
+}
+
+
+/* Hides the scrollbar but allows scrolling */
+::-webkit-scrollbar {
+    display: none;
 }
 
 // .app {
