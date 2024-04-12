@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { GroupBox, Button, Frame, Toolbar, Window, WindowContent, WindowHeader } from 'react95';
+import { GroupBox, Button, ScrollView, TextInput, Frame, Toolbar, Window, WindowContent, WindowHeader } from 'react95';
 import styled from 'styled-components';
 import AnimatedLetters from '../AnimatedLetters/animatedletters';
 
@@ -45,9 +45,28 @@ const Wrapper = styled.div`
       transform: translateY(-50%);
     }
   }
+  #cutout {
+    padding: 1rem;
+    width: 400px;
+    background: ${({ theme }) => theme.canvas};
+  }
 `;
 
 const Contact = () => {
+//   const [state, setState] = useState({
+//     value: ''
+//  });
+
+//  const handleChange  = (e) =>
+//     setState({ value: e.target.value });
+//   const reset = () => setState({ value: '' });
+
+    // const handleSubmit = (event) => {
+    //     event.preventDefault(); // Prevent the default form submission behavior
+    //     // Your submit logic here
+    //     console.log('Form submitted!');
+    // };
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -84,11 +103,18 @@ const Contact = () => {
             </h1> */}
             <p>I am on the lookout for freelance opportunities - big or small. Contact me using the form below if you have any questions!</p>
             <form ref={form} onSubmit={sendEmail}>
-              <p><input placeholder="Name" type="text" name="name" required /></p>
-              <p><input placeholder="Email" type="email" name="email" required /></p>
-              <p><input placeholder="Subject" type="text" name="subject" required /></p>
-              <p><textarea placeholder="Message" name="message" required /></p>
-              <p><input type="submit" value="SEND" /></p>
+              <p><TextInput 
+              // value={state.value}
+              placeholder="Name"
+              // onChange={handleChange}
+               type="text" name="name" required /></p>
+              <p><TextInput placeholder="Email" type="email" name="email" required /></p>
+              <p><TextInput placeholder="Subject" type="text" name="subject" required /></p>
+              <p><TextInput multiline rows={4} placeholder="Message" name="message" required /></p>
+              
+             <Button type="submit" style={{ margin: '10px 0', width: '100%' }}>
+    Send
+  </Button>
             </form>
           </GroupBox>
           <div className="info">

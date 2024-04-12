@@ -16,6 +16,7 @@ const Resume = () => {
             <div className="social-links">
                 <a href="https://github.com/JohnM89" target="git" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faGithub} /> GitHub
+                    
                 </a>
                 <a href="https://www.linkedin.com/in/john-macneil-981316203/" target="link" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faLinkedin} /> LinkedIn

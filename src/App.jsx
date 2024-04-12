@@ -9,6 +9,7 @@ import Resume from './components/Resume/resume';
 import ParallaxSection from './utils/parallaxsection';
 
 
+
 // Import the necessary React95 components and styles
 import { MenuList, MenuListItem, Separator, styleReset } from 'react95';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
