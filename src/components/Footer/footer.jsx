@@ -3,6 +3,7 @@ import '../Footer/footer.css';
 import { useState, useEffect } from 'react';
 import { AppBar, Button, MenuList, MenuListItem, Separator, TextInput, Toolbar } from 'react95';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 // import logoIMG from '../assets/images/logo.png';
 
 const Footer = () => {
@@ -97,5 +98,10 @@ const Footer = () => {
     </footer>
   );
 }
+
+//prop handling
+ Footer.propTypes = {
+  children: PropTypes.node,
+ };
 
 export default Footer;
