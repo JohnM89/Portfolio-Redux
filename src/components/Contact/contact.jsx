@@ -118,7 +118,7 @@ const Contact = () => {
             </form>
           </GroupBox>
           <div className="info">
-            John MacNeil, Web Developer
+            John MacNeil
           </div>
         </WindowContent>
       </Window>
