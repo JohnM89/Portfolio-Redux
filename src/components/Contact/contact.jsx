@@ -1,82 +1,103 @@
-import { useEffect, useState, useRef } from 'react'
-// import Loader from 'react-loaders'
-import emailjs from '@emailjs/browser'
-import AnimatedLetters from '../AnimatedLetters/animatedletters'
-import '../Contact/Contact.scss'
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { GroupBox, Button, Frame, Toolbar, Window, WindowContent, WindowHeader } from 'react95';
+import styled from 'styled-components';
+import AnimatedLetters from '../AnimatedLetters/animatedletters';
 
-const Contact = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
-  const [theme] = useState('light'); // Theme state
-  const form = useRef()
+const Wrapper = styled.div`
+  padding: 5rem;
+  // background: ${({ theme }) => theme.desktopBackground};
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 3000)
-  }, [])
-
-  const sendEmail = (e) => {
-    e.preventDefault()
-
-    emailjs.sendForm('service_9alko6t', 'template_obvxi9f', form.current, 'M25D7aTY81tiWY-_J')
-
-      .then(
-        (result) => {
-          console.log(result.text)
-          
-        },
-        (error) => {
-          console.log(error.text)
-          
-        }
-      )
+  .window-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  // const toggleTheme = () => {
-  //   setTheme(theme === 'light' ? 'dark' : 'light')
-  // }
+  .close-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: -1px;
+    margin-top: -1px;
+    transform: rotateZ(45deg);
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background: ${({ theme }) => theme.materialText};
+    }
+
+    &:before {
+    height: 100%;
+    width: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+    &:after {
+      height: 3px;
+     width: 100%;
+     left: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+`;
+
+const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_9alko6t', 'template_obvxi9f', form.current, 'M25D7aTY81tiWY-_J')
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   return (
-    <div className={`container contact-page ${theme}`}>
-      <div className="text-zone">
-        {/* <button onClick={toggleTheme} className="theme-toggle-button">Toggle Theme</button> */}
-        <h1>
-          <AnimatedLetters
-            letterClass={letterClass}
-            strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
-            idx={15}
-          />
-        </h1>
-        <p>
-          I am on the lookout for freelance opportunities - big or small. If you have any questions reach out! Contact me using the form below.
-        </p>
-        <div className="contact-form">
-          <form ref={form} onSubmit={sendEmail}>
-            <ul>
-              <li className="half">
-                <input placeholder="Name" type="text" name="name" required />
-              </li>
-              <li className="half">
-                <input placeholder="Email" type="email" name="email" required />
-              </li>
-              <li>
-                <input placeholder="Subject" type="text" name="subject" required />
-              </li>
-              <li>
-                <textarea placeholder="Message" name="message" required></textarea>
-              </li>
-              <li>
-                <input type="submit" className="flat-button" value="SEND" />
-              </li>
-            </ul>
-          </form>
-        </div>
-      </div>
-      <div className="info">
-        John MacNeil, Web Developer
-      </div>
-    </div>
-  )
+    <Wrapper>
+      <Window className="contact-page">
+        <WindowHeader className="window-title">
+          <span>ContactForm.exe</span>
+          <Button>
+            <span className="close-icon" />
+          </Button>
+        </WindowHeader>
+        <WindowContent>
+          
+          <GroupBox label="Contact Me">
+            {/* <h1>
+              <AnimatedLetters
+                letterClass="text-animate-hover"
+                strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
+                idx={15}
+              />
+            </h1> */}
+            <p>I am on the lookout for freelance opportunities - big or small. Contact me using the form below if you have any questions!</p>
+            <form ref={form} onSubmit={sendEmail}>
+              <p><input placeholder="Name" type="text" name="name" required /></p>
+              <p><input placeholder="Email" type="email" name="email" required /></p>
+              <p><input placeholder="Subject" type="text" name="subject" required /></p>
+              <p><textarea placeholder="Message" name="message" required /></p>
+              <p><input type="submit" value="SEND" /></p>
+            </form>
+          </GroupBox>
+          <div className="info">
+            John MacNeil, Web Developer
+          </div>
+        </WindowContent>
+      </Window>
+    </Wrapper>
+  );
 }
 
-export default Contact
+export default Contact;

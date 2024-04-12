@@ -11,6 +11,7 @@ import { faHtml5, faReact, faGitAlt, faNode, faGithub, faSass, } from '@fortawes
 import './AboutMe.scss';
 import MonacoEditor from 'react-monaco-editor';
 
+
 library.add(fas, fab);
 
 function shuffleArray(array) {
