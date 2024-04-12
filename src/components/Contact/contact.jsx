@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { GroupBox, Button, ScrollView, TextInput, Frame, Toolbar, Window, WindowContent, WindowHeader } from 'react95';
+import { GroupBox, Button, TextInput, Window, WindowContent, WindowHeader } from 'react95';
 import styled from 'styled-components';
-import AnimatedLetters from '../AnimatedLetters/animatedletters';
+// import AnimatedLetters from '../AnimatedLetters/animatedletters';
 
 const Wrapper = styled.div`
   padding: 5rem;

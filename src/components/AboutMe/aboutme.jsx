@@ -10,9 +10,26 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faHtml5, faReact, faGitAlt, faNode, faGithub, faSass, } from '@fortawesome/free-brands-svg-icons';
 import './AboutMe.scss';
 import MonacoEditor from 'react-monaco-editor';
+import { GroupBox,  MenuList, MenuListItem, ScrollView, Toolbar, Separator, Button, TextInput, Window, WindowContent, WindowHeader } from 'react95';
+import styled from 'styled-components';
 
 
 library.add(fas, fab);
+
+const Wrapper = styled.div`
+  padding: 5rem;
+  background: ${({ theme }) => theme.material};
+  #default-buttons button {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+
+  #cutout {
+    background: ${({ theme }) => theme.canvas};
+    padding: 1rem;
+    width: 300px;
+  }
+`;
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -181,7 +198,7 @@ useEffect(() => {
         <>
             <div className="tray-image"></div>
             <div className="container about-page">
-                <img src="/images/icon.png" alt="Open Profile" onClick={toggleProfileWindow} className="profile-icon" />
+                <img src="/images/Documents Folder.ico" alt="Open Profile" onClick={toggleProfileWindow} className="profile-icon" />
                 {showOverlay && (
                     <div
                         className="overlay"
@@ -308,14 +325,14 @@ useEffect(() => {
                         </h1>
                     </div>
                     <div className="desktop">
-                        <img src="/images/icon.png" alt="Icon 7" className="desktop-icon icon-5" onClick={() => handleIconClick('Icon 1')} />
-                        <img src="/images/icons8-remote-desktop-48.png" alt="Icon 2" className="desktop-icon icon-2" onClick={() => handleIconClick('Icon 2')} />
-                        <img src="/images/folder.PNG" alt="Icon 3" className="desktop-icon icon-3" onClick={() => handleIconClick('Icon 3')} />
-                        <img src="/images/folder.PNG" alt="Icon 4" className="desktop-icon icon-4" onClick={() => handleIconClick('Icon 4')} />
-                        <img src="/images/folder.PNG" alt="Icon 5" className="desktop-icon icon-1" onClick={() => handleIconClick('Icon 5')} />
-                        <img src="/images/icons8-old-computer-50.png" alt="Icon 6" className="desktop-icon icon-6" onClick={() => handleIconClick('Icon 6')} />
+                        <img src="/images/Search on Earth.ico" alt="Icon 7" className="desktop-icon icon-5" onClick={() => handleIconClick('Icon 1')} />
+                        <img src="/images/Folder.ico" alt="Icon 2" className="desktop-icon icon-2" onClick={() => handleIconClick('Icon 2')} />
+                        <img src="/images/Network Drive.ico" alt="Icon 3" className="desktop-icon icon-3" onClick={() => handleIconClick('Icon 3')} />
+                        <img src="/images/Folder.ico" alt="Icon 4" className="desktop-icon icon-4" onClick={() => handleIconClick('Icon 4')} />
+                        <img src="/images/Recycle Bin with folder and document.ico" alt="Icon 5" className="desktop-icon icon-1" onClick={() => handleIconClick('Icon 5')} />
+                        <img src="/images/My Computer.ico" alt="Icon 6" className="desktop-icon icon-6" onClick={() => handleIconClick('Icon 6')} />
 
-                        {/* More icons */}
+
                     </div>
                     <div id="about-section" className={`popup-window ${isProfileOpen ? "" : "hidden"}`}>
                         <div className="window-title-bar">
@@ -343,12 +360,10 @@ useEffect(() => {
                             <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
                         </div>
                     </div>
-                    {/* <div className="terminal-container">
-                        <XTerminal />
-                        </div> */}
+
 
                     <>
-                        {/* Existing elements */}
+  
 
                         <div className={`popup-window-language ${isProfileOpen ? "" : "hidden"}`}>
 
@@ -412,18 +427,7 @@ useEffect(() => {
 
                 </div>
                 <img src="/images/clippy.png" className="clippy" id="clippy" />
-                {/* <div className="cubes-container"> */}
 
-                {/* <div className="stage-cube-cont right-cube">
-                    <div className="cubespinner">
-                        {currentIcons.map((icon, index) => (
-                            <div className={`face${index + 1}`} key={icon.iconName}>
-                                <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
-                            </div>
-                        ))}
-                    </div>
-                </div> */}
-                {/* </div> */}
             </div>
         </>
 
