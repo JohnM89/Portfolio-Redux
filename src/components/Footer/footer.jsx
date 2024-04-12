@@ -8,43 +8,43 @@ import PropTypes from 'prop-types';
 
 const Footer = () => {
   const [open, setOpen] = useState(false);
-  const [opacity, setOpacity] = useState(1);
+  // const [opacity, setOpacity] = useState(1);
   const Wrapper = styled.div`
-    padding: 5rem;
+
     // background: ${({ theme }) => theme.desktopBackground};
   `; // Start fully opaque
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Calculate the scroll percentage
-      const scrollPercentage = window.scrollY / (document.body.offsetHeight - window.innerHeight);
-      // Adjust opacity based on scroll. Tweak the formula as needed.
-      setOpacity(0 - scrollPercentage * 10); // Increase multiplier for quicker fade-out
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     // Calculate the scroll percentage
+  //     const scrollPercentage = window.scrollY / (document.body.offsetHeight - window.innerHeight);
+  //     // Adjust opacity based on scroll. Tweak the formula as needed.
+  //     setOpacity(0 - scrollPercentage * 10); // Increase multiplier for quicker fade-out
+  //   };
 
-    // Add scroll event listener when the component mounts
-    window.addEventListener('scroll', handleScroll);
+  //   // Add scroll event listener when the component mounts
+  //   window.addEventListener('scroll', handleScroll);
 
-    // Clean up event listener when the component unmounts
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []); // Empty dependency array means this effect runs once on mount
+  //   // Clean up event listener when the component unmounts
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []); // Empty dependency array means this effect runs once on mount
 
     //needed to override the default position of the header (which isnt even a header its a footer in this instance but the damn thing is still called header in the source code library)
-    useEffect(() => {
-    // Query the DOM for the header element
-    const header = document.querySelector('header.sc-guDLey.fLjOTq');
-    if (header) {
-      header.style.position = ''; // Or 'absolute' and set bottom to '0'
-      header.style.top = 'auto';
-      header.style.bottom = '0'; // To move it to the bottom if that's what needed
-    }
-  }, []);
+  //   useEffect(() => {
+  //   // Query the DOM for the header element
+  //   const header = document.querySelector('header.sc-guDLey.fLjOTq');
+  //   if (header) {
+  //     header.style.position = ''; // Or 'absolute' and set bottom to '0'
+  //     header.style.top = 'auto';
+  //     header.style.bottom = '0'; // To move it to the bottom if that's what needed
+  //   }
+  // }, []);
 
   return (
     <footer >
      
-      
-    <AppBar>
+      <Wrapper>
+    <AppBar style={{ position: 'relative' }}>
       <Toolbar style={{ justifyContent: 'space-between' }}>
         <div style={{ position: 'relative', display: 'inline-block' }}>
           <Button
@@ -94,7 +94,8 @@ const Footer = () => {
         <TextInput placeholder='Search...' width={150} />
       </Toolbar>
     </AppBar>
-     {/* <FooterTaskbar /> */}
+
+</Wrapper>
     </footer>
   );
 }
