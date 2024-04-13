@@ -59,20 +59,6 @@ textarea {
   display: block;
 }
 
-div#parallax-1 {
-  // height: 770px;
-  // background-position: center top;
-  // // margin-top: -55px;
-  // border-radius: 20px;
-
-
-
-  // background-size: 49%;
-
-
-  // background-attachment: fixed;
-  // z-index: 2;
-}
 
 @media (max-width: 768px) {
   div#parallax-1 {
@@ -115,16 +101,18 @@ div#parallax-1 {
 
 div#parallax-2 {
   background-size: cover;
+  justify-content: center;
   background-attachment: fixed;
-  width: calc(100% + 40px) !important;
+  // padding: 2rem;
+  width: calc(600px + 40px) !important;
   /* Make it wider than its container by extending 20px on each side */
   max-width: none;
   /* Override any max-width constraints */
   height: 200px;
   /* Adjust the height to your preference */
-  margin-left: -20px;
+  // margin-left: -20px;
   /* Negative margin to extend the element beyond its container on the left */
-  margin-right: -20px;
+  // margin-right: -20px;
   /* Negative margin to extend the element beyond its container on the right */
   position: relative;
   /* May need to adjust positioning depending on your layout */
