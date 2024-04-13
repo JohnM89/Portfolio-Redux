@@ -70,7 +70,7 @@ A big thank you to everyone who has supported me on this journey!
 ## Screenshot 🚀
 
 
-![Screenshot of my project](./public/images/Screenshot1.jpeg)
+![Screenshot of my project](./public/images/Portfolio1.jpeg)
 
 ---
 
