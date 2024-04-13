@@ -45,7 +45,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Future Development 🔮
 
-This is only a rough draft, in the near future I will:
+This is only a demo draft, in the near future I will:
 
 - Implement a sleek, professional design.
 - Expand the project section with more & more flushed out projects!
@@ -65,13 +65,10 @@ This is only a rough draft, in the near future I will:
 
  Feel free to reach out through the contact form or connect with me on [GitHub](JohnM89),
 
-## Getting Close to the End but its only the Beginning! 🙏
-
 A big thank you to everyone who has supported me on this journey!
 
 ## Screenshot 🚀
 
-Here's a screenshot for you 👀:
 
 ![Screenshot of my project](./public/images/Screenshot1.jpeg)
 
