@@ -1,6 +1,6 @@
 # 🚀 React Portfolio Prototype 🚀
 
-Welcome to my React Portfolio Prototype! This is a work-in-progress 🛠️ and a stepping stone towards a more sleek and professional portfolio and a window into my journey as a web developer. Thanks for lookin! 🌟
+Welcome to my React Portfolio Prototype! This is a work-in-progress 🛠️ and a stepping stone towards a more sleek and professional portfolio and a window into my journey as a web developer. Thanks for looking! 🌟
 
 ## Deployed Application 🌐
 
@@ -51,6 +51,16 @@ This is only a rough draft, in the near future I will:
 - Expand the project section with more & more flushed out projects!
 - Incorporate animations and perhaps some interactive elements.
 
+## Technologies 🤝
+
+- React95
+- React-rnd
+- Monaco-editor
+- Xterminal
+- GSAP
+- EmailJS
+
+
 ## Feedback and Collaboration 🤝
 
  Feel free to reach out through the contact form or connect with me on [GitHub](JohnM89),
@@ -67,4 +77,4 @@ Here's a screenshot for you 👀:
 
 ---
 
-Made by `yours truley`
+Made by `yours truly`
