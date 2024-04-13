@@ -63,7 +63,7 @@ A big thank you to everyone who has supported me on this journey!
 
 Here's a screenshot for you 👀:
 
-![Screenshot of my project](./public/images/Captureportfolio.PNG)
+![Screenshot of my project](./public/images/Screenshot1.jpeg)
 
 ---
 
