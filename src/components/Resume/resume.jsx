@@ -2,12 +2,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import { GroupBox,  MenuList, MenuListItem, ScrollView, Toolbar, Separator, Button, TextInput, Window, WindowContent, WindowHeader } from 'react95';
+import styled from 'styled-components';
 import '../Resume/resume.scss';
 
 const Resume = () => {
     return (
         <div className="resume-container">
-            <h1>Resume</h1>
+            
             <div className="image-placeholders">
                 <img src="/images/logo1.png" alt="Logo 1" className="placeholder" />
                 <img src="/images/logo3.png" alt="Logo 2" className="placeholder" />

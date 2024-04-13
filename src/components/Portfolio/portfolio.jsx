@@ -1,15 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Project from '../Project/project';
 import projects from '../../data/projects';
-import AnimatedLetters from '../AnimatedLetters/animatedletters';
-import { Button, Frame, Toolbar, Window, WindowContent, WindowHeader} from 'react95';
+// import AnimatedLetters from '../AnimatedLetters/animatedletters';
+import { Button, Toolbar, Window, WindowContent, WindowHeader} from 'react95';
 import styled from 'styled-components';
 
 import './portfolio.scss';
-
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,24 +63,19 @@ const Wrapper = styled.div`
   }
 `;
 
-
 const Portfolio = () => {
-
-  const [letterClass,] = useState('text-animate');
+  // const [letterClass,] = useState('text-animate');
 
   useEffect(() => {
-
     gsap.set('.portfolio', { paddingTop: '80%' });
     ScrollTrigger.refresh();
-
-
 
     projects.forEach((project, index) => {
       const projectClass = `.project-${index}`;
 
       gsap.fromTo(
         projectClass,
-        { autoAlpha: 0, x: () => (index % 2 === 0 ? '-100%' : '100%') }, // entry direction
+        { autoAlpha: 0, x: () => (index % 2 === 0 ? '-100%' : '100%') },
         {
           duration: 2,
           autoAlpha: 1,
@@ -90,21 +83,18 @@ const Portfolio = () => {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: projectClass,
-            start: "top center+=100", // start point for animation
-            end: "bottom top-=100", // end point for animation
+            start: "top center+=100",
+            end: "bottom top-=100",
             toggleActions: "play none none reverse",
             markers: false,
             onLeave: () => gsap.to(projectClass, {
               duration: 3,
               autoAlpha: 0,
-              // x: () => (Math.random() < 0.5 ? '-100%' : '100%'),
               scale: 0.5
             }),
-            // entry animation for the project
             onEnterBack: () => gsap.fromTo(projectClass, {
               autoAlpha: 0,
               scale: 0.5,
-              // x: () => (Math.random() < 0.5 ? '-100%' : '100%'),
             }, {
               duration: 2,
               autoAlpha: 1,
@@ -119,46 +109,42 @@ const Portfolio = () => {
 
   return (
     <div className="portfolio">
-      
-
-      <h1 className="animated">
-
+      {/* <h1 className="animated">
         <AnimatedLetters
           letterClass={letterClass}
           strArray={[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']}
           idx={15}
         />
-      </h1>
-{projects.map((project, index) => (
-  <Wrapper>
-  <Window key={project.id} className={`project project-${index}`} style={{ width: 'auto', margin: '20px' }}>
-    <WindowHeader className="window-title">
-      <span>{project.title}</span>
-      <Button>
-        <span className="close-icon" />
-      </Button>
-    </WindowHeader>
-    <Toolbar>
-      <Button variant='menu' size='sm'>File</Button>
-      <Button variant='menu' size='sm'>Edit</Button>
-      <Button variant='menu' size='sm' disabled>Save</Button>
-    </Toolbar>
-    <WindowContent>
-      {project.liveLink ? (
-        <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-          <img src={project.imageUrl} alt={project.title} style={{ width: '100%', height: 'auto' }} />
-          
-          <h2>{project.title}</h2>
-          <p>{project.description}</p>
-        </a>
-      ) : (
-        <img src={project.imageUrl} alt={project.title} style={{ width: '100%', height: 'auto' }} />
-      )}
-      <Project {...project} />
-    </WindowContent>
-  </Window>
-  </Wrapper>
-))}
+      </h1> */}
+      {projects.map((project, index) => (
+        <Wrapper key={project.id}>
+          <Window className={`project project-${index}`} style={{ width: 'auto', margin: '20px' }}>
+            <WindowHeader className="window-title">
+              <span>{project.title}</span>
+              <Button>
+                <span className="close-icon" />
+              </Button>
+            </WindowHeader>
+            <Toolbar>
+              <Button variant='menu' size='sm'>File</Button>
+              <Button variant='menu' size='sm'>Edit</Button>
+              <Button variant='menu' size='sm' disabled>Save</Button>
+            </Toolbar>
+            <WindowContent>
+              {project.liveLink ? (
+                <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                  <img src={project.imageUrl} alt={project.title} style={{ width: '100%', height: 'auto' }} />
+                  <h2>{project.title}</h2>
+                  <p>{project.description}</p>
+                </a>
+              ) : (
+                <img src={project.imageUrl} alt={project.title} style={{ width: '100%', height: 'auto' }} />
+              )}
+              <Project {...project} />
+            </WindowContent>
+          </Window>
+        </Wrapper>
+      ))}
     </div>
   );
 };

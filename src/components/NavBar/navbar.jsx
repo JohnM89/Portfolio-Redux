@@ -7,9 +7,20 @@ import {
   faGithub, faGitAlt
 } from '@fortawesome/free-brands-svg-icons';
 import { MenuList, MenuListItem } from 'react95';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  padding: 5rem;
+  // background: ${({ theme }) => theme.desktopBackground};
+  display: flex;
+  align-items: center;
+  & > * {
+    margin-right: 1rem;
+  }
+`;
 
 function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -21,6 +32,7 @@ function Navigation() {
   ];
 
   return (
+    <Wrapper>
     <div className={`sidebar-container ${isOpen ? 'open' : ''}`}>
       {/* <div className="toggle-button" onClick={toggleSidebar}>
         <img src="/images/windowsStart.PNG" alt="Menu" />
@@ -30,28 +42,55 @@ function Navigation() {
             <FontAwesomeIcon key={index} icon={icon} size="lg" className="nav-tech-icon" />
           ))}
         </div> */}
-      <nav className={`sidebar ${isOpen ? 'show' : ''}`}>
-        <MenuList>
+      {/* <nav className={`sidebar ${isOpen ? 'show' : ''}`}> */}
+        <MenuList
+                      style={{
+                position: 'absolute',
+                left: '0',
+                bottom: '100%'
+              }}
+              onClick={() => setOpen(false)}
+        >
                         <div className="nav-technologies">
           {technologies.map((icon, index) => (
             <FontAwesomeIcon key={index} icon={icon} size="lg" className="nav-tech-icon" />
           ))}
         </div>
           <Link smooth to="/#about" onClick={toggleSidebar}>
-            <MenuListItem>About Me</MenuListItem>
+            <MenuListItem>                <span role='img' aria-label='👨‍💻'>
+                  👨‍💻
+                </span>
+                About Me</MenuListItem>
           </Link>
           <Link smooth to="/#portfolio" onClick={toggleSidebar}>
-            <MenuListItem>Portfolio</MenuListItem>
+            <MenuListItem>                <span role='img' aria-label='📁'>
+                  📁
+                </span>
+                Portfolio</MenuListItem>
           </Link>
           <Link smooth to="/#contact" onClick={toggleSidebar}>
-            <MenuListItem>Contact</MenuListItem>
+            <MenuListItem>                <span role='img' aria-label='📁'>
+                  📁
+                </span>
+                Contact</MenuListItem>
           </Link>
           <Link smooth to="/#resume" onClick={toggleSidebar}>
-            <MenuListItem>Resume</MenuListItem>
+            <MenuListItem>                <span role='img' aria-label='📁'>
+                  📁
+                </span>
+                Resume</MenuListItem>
+                              <Separator />
+              <MenuListItem disabled>
+                <span role='img' aria-label='🔙'>
+                  🔙
+                </span>
+                Logout
+              </MenuListItem>
           </Link>
         </MenuList>
-      </nav>
+      {/* </nav> */}
     </div>
+  </Wrapper>
   );
 }
 

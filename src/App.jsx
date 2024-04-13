@@ -61,7 +61,7 @@ function App() {
             <section id="about">
               <AboutMe />
             </section>
-            <section>
+            <section id="portfolio">
               <Portfolio />
             </section>
             <section id="contact">
