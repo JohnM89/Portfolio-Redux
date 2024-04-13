@@ -178,7 +178,7 @@
     /* Maximum width */
     margin: 0 auto;
     /* Center in the available space */
-    transform: translateY(-50%);
+    // transform: translateY(-50%);
     /* Adjust based on layout */
     z-index: 1;
     align-items: center;
@@ -186,6 +186,12 @@
     overflow: hidden;
 
 }
+
+//temporary workaround
+.popup-window-language.hidden {
+    display: none !important;
+}
+
 
 .popup-window-Xterminal {
     position: absolute;
@@ -219,11 +225,11 @@
     font-size: 13.5px;
     /* Adjust based on actual cmd prompt size, typical values might range from 12px to 16px */
     line-height: 1.5;
-    width: 80%;
+    width: 100%;
     max-width: 600px;
     border: 1px solid #333333ee;
     box-shadow: 0 0 3px rgba(255, 255, 255, 0.111);
-    top: -45px;
+    bottom: -65px;
     right: 50vh;
     /* Shadow for depth */
     width: 80%;

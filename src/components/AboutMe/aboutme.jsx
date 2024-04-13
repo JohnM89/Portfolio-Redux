@@ -475,12 +475,14 @@ const About = () => {
                                     width: 320,
                                     height: 200
                                 }}>
- <Window className={`window popup-window-language ${isProfileOpen ? "" : "hidden"}`}>
-        <WindowHeader className="window-header">
-          <span>Languages</span>
-          <Button className="window-control">&#x2212;</Button> {/* Minimize */}
-          <Button className="window-control">&#9744;</Button> {/* Maximize */}
-          <Button className="window-control">&#10005;</Button> {/* Close */}
+ <Window className={`popup-window-language ${isProfileOpen ? "" : "hidden"}`}>
+                            <WindowHeader className="window-title-bar">
+                                <span className="window-title">Languages</span>
+                                <div className="window-controls">
+                                    <Button className="window-control">&#x2212;</Button> {/* Minimize */}
+                                    <Button className="window-control">&#9744;</Button> {/* Maximize */}
+                                    <Button className="window-control">&#10005;</Button> {/* Close */}
+                                </div>
         </WindowHeader>
         <WindowContent>
           {/* Assuming you replace this part with a suitable React95 element or keep it as is if it matches the style */}
