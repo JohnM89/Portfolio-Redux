@@ -252,8 +252,8 @@ const About = () => {
 
     return (
         <>
-            <div className="tray-image"></div>
-            <div className="container about-page">
+
+            <div className="tray-image">
                 <img src="/images/Documents Folder.ico" alt="Open Profile" onClick={toggleProfileWindow} className="profile-icon" />
                 {showOverlay && (
                     <div
@@ -352,6 +352,15 @@ const About = () => {
 
 
                         </div>
+                        {/* <Rnd
+
+                                default={{
+                                    x: 500,
+                                    y: 300,
+                                    width: 320,
+                                    height: 200
+                                }}> */}
+
                         <div className="cmd-container">
                             <div className="cmd-title-bar">
                                 <span className="cmd-title">Select Command Prompt</span>
@@ -365,6 +374,7 @@ const About = () => {
                                 Click here to interrupt<span className="cmd-cursor">_</span>
                             </div>
                         </div>
+                        {/* </Rnd> */}
                     </div>
 
                 )}
@@ -380,24 +390,73 @@ const About = () => {
                             />
                         </h1>
                     </div>
-                    <div className="desktop">
-                        <img src="/images/Search on Earth.ico" alt="Icon 7" className="desktop-icon icon-5" onClick={() => handleIconClick('Icon 1')} />
-                        <img src="/images/Folder.ico" alt="Icon 2" className="desktop-icon icon-2" onClick={() => handleIconClick('Icon 2')} />
-                        <img src="/images/Folder.ico" alt="Icon 3" className="desktop-icon icon-3" onClick={() => handleIconClick('Icon 3')} />
-                        <img src="/images/Network Drive.ico" alt="Icon 4" className="desktop-icon icon-4" onClick={() => handleIconClick('Icon 4')} />
-                        <img src="/images/Recycle Bin with folder and document.ico" alt="Icon 5" className="desktop-icon icon-1" onClick={() => handleIconClick('Icon 5')} />
-                        <img src="/images/My Computer.ico" alt="Icon 6" className="desktop-icon icon-6" onClick={() => handleIconClick('Icon 6')} />
+                    {/* <div className="desktop"> */}
+
+                    <Rnd
+
+                        default={{
+                            x: 20,
+                            y: 450,
+                            width: 50,
+                            height: 50
+                        }}>
+                        <img src="/images/Search on Earth.ico" alt="Icon 7" className="desktop-icon icon-5" onClick={() => handleIconClick('Icon 1')} /></Rnd>
+                    <Rnd
+
+                        default={{
+                            x: 20,
+                            y: 150,
+                            width: 50,
+                            height: 50
+                        }}>
+                        <img src="/images/Folder.ico" alt="Icon 2" className="desktop-icon icon-2" onClick={() => handleIconClick('Icon 2')} /></Rnd>
+                    <Rnd
+
+                        default={{
+                            x: 20,
+                            y: 250,
+                            width: 50,
+                            height: 50
+                        }}>
+                        <img src="/images/Folder.ico" alt="Icon 3" className="desktop-icon icon-3" onClick={() => handleIconClick('Icon 3')} /></Rnd>
+                    <Rnd
+
+                        default={{
+                            x: 20,
+                            y: 350,
+                            width: 50,
+                            height: 50
+                        }}>
+                        <img src="/images/Network Drive.ico" alt="Icon 4" className="desktop-icon icon-4" onClick={() => handleIconClick('Icon 4')} /></Rnd>
+                    <Rnd
+
+                        default={{
+                            x: 20,
+                            y: 50,
+                            width: 50,
+                            height: 50
+                        }}>
+                        <img src="/images/Recycle Bin with folder and document.ico" alt="Icon 5" className="desktop-icon icon-1" onClick={() => handleIconClick('Icon 5')} /></Rnd>
+                    <Rnd
+
+                        default={{
+                            x: 20,
+                            y: 550,
+                            width: 50,
+                            height: 50
+                        }}>
+                        <img src="/images/My Computer.ico" alt="Icon 6" className="desktop-icon icon-6" onClick={() => handleIconClick('Icon 6')} /></Rnd>
 
 
-                    </div>
+                    {/* </div> */}
 
                     <Wrapper>
                         <div id="about-section" className={`popup-window ${isProfileOpen ? "" : "hidden"}`}>
                             <Rnd
 
                                 default={{
-                                    x: 0,
-                                    y: 0,
+                                    x: 320,
+                                    y: -50,
                                     width: 320,
                                     height: 200
                                 }}>
@@ -433,121 +492,167 @@ const About = () => {
                     </Wrapper>
 
 
-<Wrapper>
-  
-                    <div className={`popup-window profile-window ${isProfileOpen ? "" : "hidden"}`}>
-                                                                              <Rnd
+                    <Wrapper>
+
+                        <div className={`popup-window profile-window ${isProfileOpen ? "" : "hidden"}`}>
+                            <Rnd
 
                                 default={{
                                     x: 0,
-                                    y: 0,
+                                    y: -100,
                                     width: 320,
                                     height: 200
                                 }}>
 
-                        <Window>
-                            <WindowHeader className="window-title-bar">
-                                <span className="window-title">Profile</span>
-                                <div className="window-controls">
-                                    <Button className="window-control">&#x2212;</Button> {/* Minimize */}
-                                    <Button className="window-control">&#9744;</Button> {/* Maximize */}
-                                    <Button className="window-control">&#10005;</Button> {/* Close */}
-                                </div>
-                            </WindowHeader>
-                            <WindowContent>
-                                <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
-                            </WindowContent>
-                        </Window>
-                        </Rnd>
-                    </div>
-                    
+                                <Window>
+                                    <WindowHeader className="window-title-bar">
+                                        <span className="window-title">Profile</span>
+                                        <div className="window-controls">
+                                            <Button className="window-control">&#x2212;</Button> {/* Minimize */}
+                                            <Button className="window-control">&#9744;</Button> {/* Maximize */}
+                                            <Button className="window-control" >&#10005;</Button> {/* Close */}
+                                        </div>
+                                    </WindowHeader>
+                                                                           <Toolbar>
+
+                                            <Button variant='menu' size='sm'>File</Button>
+                                            <Button variant='menu' size='sm'>Edit</Button>
+                                            <Button variant='menu' size='sm' disabled>Save</Button>
+                                        </Toolbar>
+                                    <WindowContent>
+                                        <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
+                                    </WindowContent>
+                                </Window>
+                            </Rnd>
+                        </div>
+
                     </Wrapper>
 
 
                     <>
 
-<Wrapper>
-                                 <Rnd
+                        <Wrapper>
+                                                        <Rnd
 
                                 default={{
-                                    x: 0,
-                                    y: 0,
+                                    x: 420,
+                                    y: -240,
                                     width: 320,
                                     height: 200
                                 }}>
- <Window className={`popup-window-language ${isProfileOpen ? "" : "hidden"}`}>
-                            <WindowHeader className="window-title-bar">
-                                <span className="window-title">Languages</span>
-                                <div className="window-controls">
-                                    <Button className="window-control">&#x2212;</Button> {/* Minimize */}
-                                    <Button className="window-control">&#9744;</Button> {/* Maximize */}
-                                    <Button className="window-control">&#10005;</Button> {/* Close */}
-                                </div>
-        </WindowHeader>
-        <WindowContent>
-          {/* Assuming you replace this part with a suitable React95 element or keep it as is if it matches the style */}
-          {/* <div className="cube-container-languages"></div> */}
-          <div className="cube-container">
-            <div className="stage-cube-cont left-cube">
-              <div className="cubespinner">
-                {currentIcons.map((icon, index) => (
-                  <div className={`face${index + 1}`} key={icon.iconName}>
-                    <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </WindowContent>
-      </Window>
-                        </Rnd>
+                            <div className='language-container'>
+
+                                <Window className={`popup-window-language ${isProfileOpen ? "" : "hidden"}`}>
+                                    <WindowHeader className="window-title-bar">
+                                        <span className="window-title">Languages</span>
+                                        <div className="window-controls">
+                                            <Button className="window-control">&#x2212;</Button> {/* Minimize */}
+                                            <Button className="window-control">&#9744;</Button> {/* Maximize */}
+                                            <Button className="window-control">&#10005;</Button> {/* Close */}
+                                        </div>
+                                    </WindowHeader>
+                                                                           <Toolbar>
+
+                                            <Button variant='menu' size='sm'>File</Button>
+                                            <Button variant='menu' size='sm'>Edit</Button>
+                                            <Button variant='menu' size='sm' disabled>Save</Button>
+                                        </Toolbar>
+                                    <WindowContent>
+                                        {/* Assuming you replace this part with a suitable React95 element or keep it as is if it matches the style */}
+                                        {/* <div className="cube-container-languages"></div> */}
+                                        <div className="cube-container">
+                                            <div className="stage-cube-cont left-cube">
+                                                <div className="cubespinner">
+                                                    {currentIcons.map((icon, index) => (
+                                                        <div className={`face${index + 1}`} key={icon.iconName}>
+                                                            <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </WindowContent>
+                                    
+                                </Window>
+                            </div>
+                            </Rnd>
+
                         </Wrapper>
 
 
 
-
-                                 <Rnd
+                        <Wrapper    >
+                            <Rnd
 
                                 default={{
-                                    x: 0,
-                                    y: 0,
+                                    x: 500,
+                                    y: -100,
                                     width: 320,
                                     height: 200
                                 }}>
-                        <div className={`popup-window-scroll ${isProfileOpen ? "" : "hidden"}`}>
-                            <div className="window-title-bar">
-                                <span className="window-title">Notice</span>
-                                <div className="window-controls">
-                                    <button className="window-control">&#x2212;</button> {/* Minimize */}
-                                    <button className="window-control">&#9744;</button>  {/* Maximize */}
-                                    <button className="window-control">&#10005;</button> {/* Close */}
+                                <div className={`popup-window-scroll ${isProfileOpen ? "" : "hidden"}`}>
+                                    <Window>
+                                        <WindowHeader className="window-title-bar">
+                                            <span className="window-title">Notice</span>
+                                            <div className="window-controls">
+                                                <Button className="window-control"  disabled>&#x2212;</Button> {/* Minimize */}
+                                                <Button className="window-control"  disabled>&#9744;</Button>  {/* Maximize */}
+                                                <Button className="window-control"  disabled>&#10005;</Button> {/* Close */}
+                                            </div>
+                                        </WindowHeader>
+                                        {/* <Toolbar>
+
+                                            <Button variant='menu' size='sm'>File</Button>
+                                            <Button variant='menu' size='sm'>Edit</Button>
+                                            <Button variant='menu' size='sm' disabled>Save</Button>
+                                        </Toolbar> */}
+                                        <WindowContent className="window-content">
+                                            <p>Scroll down to continue<span className="cmd-cursor">_</span></p>
+                                        </WindowContent>
+                                    </Window>
+                                </div>
+                            </Rnd>
+                        </Wrapper>
+                        <Rnd
+
+                            default={{
+                                x: 0,
+                                y: 0,
+                                width: 700,
+                                height: 200
+                            }}>
+
+
+                            <div className={`popup-window-Xterminal ${isXterminalOpen ? "" : "hidden"}`}>
+                                <div className="window-title-bar">
+                                    <span className="window-title">Terminal</span>
+                                    <div className="window-controls">
+                                        <button className="window-control">&#x2212;</button> {/* Minimize */}
+                                        <button className="window-control">&#9744;</button>  {/* Maximize */}
+                                        <button className="window-control">&#10005;</button> {/* Close */}
+                                    </div>
+                                </div>
+                                <div className="window-content">
+                                    <XTerminal />
                                 </div>
                             </div>
-                            <div className="window-content">
-                                <p>Scroll down to continue<span className="cmd-cursor">_</span></p>
-                            </div>
-                        </div>
                         </Rnd>
-                        <div className={`popup-window-Xterminal ${isXterminalOpen ? "" : "hidden"}`}>
-                            <div className="window-title-bar">
-                                <span className="window-title">Terminal</span>
-                                <div className="window-controls">
-                                    <button className="window-control">&#x2212;</button> {/* Minimize */}
-                                    <button className="window-control">&#9744;</button>  {/* Maximize */}
-                                    <button className="window-control">&#10005;</button> {/* Close */}
-                                </div>
-                            </div>
-                            <div className="window-content">
-                                <XTerminal />
-                            </div>
-                        </div>
 
                     </>
 
                 </div>
-                <img src="/images/clippy.png" className="clippy" id="clippy" />
+                {/* <Rnd
+                    default={{
+                        x: 1000,
+                        y: 700,
+                        width: 60,
+                        height: 60
+                    }}> */}
+                    <img src="/images/clippy.png" className="clippy" id="clippy" />
+                {/* </Rnd> */}
 
             </div>
+  
         </>
 
     );

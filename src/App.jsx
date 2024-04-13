@@ -6,8 +6,9 @@ import AboutMe from './components/AboutMe/aboutme';
 import Portfolio from './components/Portfolio/portfolio';
 import Contact from './components/Contact/contact';
 import Resume from './components/Resume/resume';
-import ParallaxSection from './utils/parallaxsection';
-import {  ScrollView, Window, WindowContent, styleReset } from 'react95';
+// import ParallaxSection from './utils/parallaxsection';
+// import {  ScrollView, Window, WindowContent, styleReset } from 'react95';
+import { styleReset } from 'react95';
 // import styled from 'styled-components';
 
 
@@ -65,7 +66,7 @@ function App() {
 
               
               
-            <Window>
+            {/* <Window>
               <WindowContent >
                 <ScrollView
           style={{ background: 'teal' }}>
@@ -75,7 +76,7 @@ function App() {
 
             </ScrollView>
             </WindowContent>
-            </Window>
+            </Window> */}
            
 
 

@@ -1,18 +1,4 @@
-.cubes-container {
-    // // display: flex;
-    // // This spreads out the children to each end
-    // position: absolute; // Establishes a new positioning context
-    // height: 200%; // Adjust as necessary
-}
 
-.stage-cube-cont {
-    // width: 50%;
-    // height: 100%;
-    // padding-top: 3%;
-
-    // overflow: hidden;
-
-}
 
 .text-zone {
     color: #000000;
@@ -46,18 +32,12 @@
 .text-over-image {
     position: absolute;
     top: 50%;
-    /* Adjust the position as necessary */
+
     left: 50%;
     transform: translate(-59%, -50%);
-    /* Center the text */
+
     color: rgb(5, 0, 0);
-    /* Or any color */
-    /* Add more styling as needed */
-    // padding: 20px;
-    // margin-top: 20px;
-    // background-color: #f4f4f498; // Light grey background
-    // border-radius: 8px;
-    // box-shadow: 0 2px 4px rgba(103, 101, 101, 0.355);
+
 
 }
 
@@ -82,11 +62,7 @@
 
 .monaco-editor-container {
 
-    // position: relative;
-    // background-color: #000;
-    // border-radius: 8px;
-    // box-shadow: inset 0 0 10px #000, 0 0 20px rgba(0, 255, 0, 0.3);
-    // overflow: hidden;
+
     @media (max-width: 768px) {
         width: 100%;
         /* Full width on smaller screens */
@@ -115,24 +91,40 @@
 }
 
 .tray-image {
-    width: 100%;
-    /* Full width of the footer */
-    height: 100%;
-    /* Match the height of the footer or adjust as necessary */
-    background-image: url('/images/TrayCapture.PNG');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    /* Use 'contain' to ensure the image fits within the div */
-    margin: auto;
-    z-index: 3;
+    // display: flex; /* Flexbox to center content and handle spacing */
+    // position: relative; /* Keeps the footer at the bottom regardless of scrolling */
+    // // bottom: 0; /* Aligns the footer at the bottom of the viewport */
+    // // left: 0;
+    // // right: 0;
+    // // height: auto; /* Allows the height to adjust based on content size */
+    // // overflow: hidden; /* Prevents the footer from making horizontal scroll */
+    // margin: 0 auto; /* Centers the footer if there's any horizontal space */
+}
+
+
+
+@media (max-width: 768px) {
+    .tray-image {
+        padding: 10px; /* Adds padding to decrease actual image size and give breathing room */
+        height: 60px; /* Sets a fixed height for smaller devices */
+        background-size: cover; /* Changes background sizing to cover to ensure it fills the height */
+    }
+}
+
+/* Optional: Additional media query for even smaller devices */
+@media (max-width: 480px) {
+    .tray-image {
+        padding: 5px; /* Less padding for very small devices */
+        height: 50px; /* Further reduces height */
+        background-size: cover; /* Continues to ensure background covers the entire area */
+    }
 }
 
 .popup-window {
     position: relative;
     background-color: #000;
     color: #b4b4b4;
-    font-family: 'Consolas', 'Courier New', Courier;
+    // font-family: 'Consolas', 'Courier New', Courier;
     font-size: 13.5px;
     /* Adjust based on actual cmd prompt size, typical values might range from 12px to 16px */
     line-height: 1.5;
@@ -156,7 +148,7 @@
     right: 370px;
     background-color: #000;
     color: #b4b4b4;
-    font-family: 'Consolas', 'Courier New', Courier;
+    // font-family: 'Consolas', 'Courier New', Courier;
     font-size: 13.5px;
     /* Adjust based on actual cmd prompt size, typical values might range from 12px to 16px */
     line-height: 1.5;
@@ -202,7 +194,7 @@
     /* Align to the right */
     background-color: #000;
     color: #b4b4b4;
-    font-family: 'Consolas', 'Courier New', Courier;
+    // font-family: 'Consolas', 'Courier New', Courier;
     font-size: 13.5px;
     line-height: 1.5;
     width: 80%;
@@ -219,16 +211,16 @@
 
 .popup-window-scroll {
     position: relative;
-    background-color: #000;
+    background-color: #00000000;
     color: #b4b4b4;
-    font-family: 'Consolas', 'Courier New', Courier;
+    // font-family: 'Consolas', 'Courier New', Courier;
     font-size: 13.5px;
     /* Adjust based on actual cmd prompt size, typical values might range from 12px to 16px */
     line-height: 1.5;
     width: 100%;
     max-width: 600px;
-    border: 1px solid #333333ee;
-    box-shadow: 0 0 3px rgba(255, 255, 255, 0.111);
+    // border: 1px solid #333333ee;
+    // box-shadow: 0 0 3px rgba(255, 255, 255, 0.111);
     bottom: -65px;
     right: 50vh;
     /* Shadow for depth */
@@ -347,7 +339,7 @@
     transform: translate(-50%, -50%);
     background-color: #000;
     color: #b4b4b4;
-    font-family: 'Consolas', 'Courier New', Courier;
+    // font-family: 'Consolas', 'Courier New', Courier;
     font-size: 13.5px;
     /* Adjust based on actual cmd prompt size, typical values might range from 12px to 16px */
     line-height: 1.5;
@@ -418,32 +410,7 @@
 
 
 
-.left-cube,
-.right-cube {
-    // position: fixed;
-    // justify-content: space-between;
-    // /* Take them out of document flow */
-    // z-index: 1;
-    /* Place them below the image */
-    // top: 50%;
-    // transform: translateY(-50%);
 
-}
-
-.left-cube {
-    // left: 0;
-    // transform: translateX(-19%) translateY(-33.33%);
-    /* Move it to the left of the container */
-    /* Additional styling for the cube */
-}
-
-.right-cube {
-    // right: 0;
-    // bottom: 0;
-    // transform: translateX(19%) translateY(-33.33%);
-    /* Move it to the right of the container */
-    /* Additional styling for the cube */
-}
 
 .stage-cube-cont {
     // width: 50%;
@@ -533,6 +500,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 
 .desktop-icon {
     cursor: pointer;

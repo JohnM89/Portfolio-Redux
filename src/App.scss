@@ -4,7 +4,7 @@ $primary-color: #5d0cff;
 
 @media (max-width: 768px) {
   #root {
-    padding: 1rem;
+    // padding: 1rem;
     max-width: 100%;
   }
 
@@ -47,10 +47,10 @@ textarea {
 }
 
 #root {
-  max-width: 700px;
-  margin: 0 auto;
+  // max-width: 700px;
+  // margin: 0 auto;
 
-  padding: 2rem;
+  // padding: 2rem;
   text-align: center;
   display: flow-root;
 }
@@ -60,37 +60,37 @@ textarea {
 }
 
 
-@media (max-width: 768px) {
-  div#parallax-1 {
-    background-attachment: scroll;
+// @media (max-width: 768px) {
+//   div#parallax-1 {
+//     background-attachment: scroll;
 
-    background-size: cover;
-    border-radius: 20px;
+//     background-size: cover;
+//     border-radius: 20px;
 
-    background-position: center top;
+//     background-position: center top;
 
-  }
-}
-
-
-
-@media (max-width: 768px) {
-  div#parallax-2 {
-    background-attachment: scroll;
-    background-size: cover;
-    height: 200px;
-  }
-}
+//   }
+// }
 
 
-.parallax {
-  height: 500px;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  z-index: 0;
 
-}
+// @media (max-width: 768px) {
+//   div#parallax-2 {
+//     background-attachment: scroll;
+//     background-size: cover;
+//     height: 200px;
+//   }
+// }
+
+
+// .parallax {
+//   height: 500px;
+//   background-position: center;
+//   background-size: cover;
+//   position: relative;
+//   z-index: 0;
+
+// }
 
 
 // .portfolio-parallax {
@@ -133,14 +133,14 @@ div#parallax-2 {
 //   animation-fill-mode: forwards;
 // }
 
-#about {
-  // margin-bottom: 150px; 
+// #about {
+//   // margin-bottom: 150px; 
 
-}
+// }
 
-#portfolio {
-  // margin-top: -100px;
-}
+// #portfolio {
+//   // margin-top: -100px;
+// }
 
 
 

@@ -134,7 +134,7 @@ const Portfolio = () => {
               {project.liveLink ? (
                 <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
                   <img src={project.imageUrl} alt={project.title} style={{ width: '100%', height: 'auto' }} />
-                  <h2>{project.title}</h2>
+                  {/* <h2>{project.title}</h2> */}
                   <p>{project.description}</p>
                 </a>
               ) : (
