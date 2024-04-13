@@ -10,24 +10,80 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faHtml5, faReact, faGitAlt, faNode, faGithub, faSass, } from '@fortawesome/free-brands-svg-icons';
 import './AboutMe.scss';
 import MonacoEditor from 'react-monaco-editor';
-import { GroupBox,  MenuList, MenuListItem, ScrollView, Toolbar, Separator, Button, TextInput, Window, WindowContent, WindowHeader } from 'react95';
+import { GroupBox, MenuList, MenuListItem, ScrollView, Toolbar, Separator, Button, TextInput, Window, WindowContent, WindowHeader } from 'react95';
 import styled from 'styled-components';
+import { render } from "react-dom";
+import { Rnd } from "react-rnd";
 
 
 library.add(fas, fab);
 
+
+
+// const Wrapper = styled.div`
+//   padding: 5rem;
+//   background: ${({ theme }) => theme.material};
+//   #default-buttons button {
+//     margin-bottom: 1rem;
+//     margin-right: 1rem;
+//   }
+
+//   #cutout {
+//     background: ${({ theme }) => theme.canvas};
+//     padding: 1rem;
+//     width: 300px;
+//   }
+// `;
+
 const Wrapper = styled.div`
   padding: 5rem;
-  background: ${({ theme }) => theme.material};
-  #default-buttons button {
-    margin-bottom: 1rem;
-    margin-right: 1rem;
+  // background: ${({ theme }) => theme.desktopBackground};
+  .window-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-
-  #cutout {
-    background: ${({ theme }) => theme.canvas};
-    padding: 1rem;
-    width: 300px;
+  .close-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: -1px;
+    margin-top: -1px;
+    transform: rotateZ(45deg);
+    position: relative;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background: ${({ theme }) => theme.materialText};
+    }
+    &:before {
+      height: 100%;
+      width: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:after {
+      height: 3px;
+      width: 100%;
+      left: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .window {
+    width: 400px;
+    min-height: 200px;
+  }
+  .window:nth-child(2) {
+    margin: 2rem;
+  }
+  .footer {
+    display: block;
+    margin: 0.25rem;
+    height: 31px;
+    line-height: 31px;
+    padding-left: 0.25rem;
   }
 `;
 
@@ -79,12 +135,12 @@ const About = () => {
         // Extend with more conditions if other icons have specific actions
     };
 
-useEffect(() => {
-    document.body.style.overflow = isProfileOpen ? 'unset' : 'hidden';
-    // No cleanup function needed here since we want the effect of this
-    // styling to persist as long as the component is mounted and its
-    // state changes.
-}, [isProfileOpen]);
+    useEffect(() => {
+        document.body.style.overflow = isProfileOpen ? 'unset' : 'hidden';
+        // No cleanup function needed here since we want the effect of this
+        // styling to persist as long as the component is mounted and its
+        // state changes.
+    }, [isProfileOpen]);
 
 
 
@@ -327,75 +383,135 @@ useEffect(() => {
                     <div className="desktop">
                         <img src="/images/Search on Earth.ico" alt="Icon 7" className="desktop-icon icon-5" onClick={() => handleIconClick('Icon 1')} />
                         <img src="/images/Folder.ico" alt="Icon 2" className="desktop-icon icon-2" onClick={() => handleIconClick('Icon 2')} />
-                        <img src="/images/Network Drive.ico" alt="Icon 3" className="desktop-icon icon-3" onClick={() => handleIconClick('Icon 3')} />
-                        <img src="/images/Folder.ico" alt="Icon 4" className="desktop-icon icon-4" onClick={() => handleIconClick('Icon 4')} />
+                        <img src="/images/Folder.ico" alt="Icon 3" className="desktop-icon icon-3" onClick={() => handleIconClick('Icon 3')} />
+                        <img src="/images/Network Drive.ico" alt="Icon 4" className="desktop-icon icon-4" onClick={() => handleIconClick('Icon 4')} />
                         <img src="/images/Recycle Bin with folder and document.ico" alt="Icon 5" className="desktop-icon icon-1" onClick={() => handleIconClick('Icon 5')} />
                         <img src="/images/My Computer.ico" alt="Icon 6" className="desktop-icon icon-6" onClick={() => handleIconClick('Icon 6')} />
 
 
                     </div>
-                    <div id="about-section" className={`popup-window ${isProfileOpen ? "" : "hidden"}`}>
-                        <div className="window-title-bar">
-                            <span className="window-title">About Me</span>
-                            <div className="window-controls">
-                                <button className="window-control">&#x2212;</button> {/* Minimize */}
-                                <button className="window-control">&#9744;</button>  {/* Maximize */}
-                                <button className="window-control">&#10005;</button> {/* Close */}
-                            </div>
+
+                    <Wrapper>
+                        <div id="about-section" className={`popup-window ${isProfileOpen ? "" : "hidden"}`}>
+                            <Rnd
+
+                                default={{
+                                    x: 0,
+                                    y: 0,
+                                    width: 320,
+                                    height: 200
+                                }}>
+                                <Window>
+                                    <WindowHeader className="window-title-bar">
+                                        <span className="window-title">About Me</span>
+
+
+                                        <div className="window-controls">
+                                            <Button className="window-control">&#x2212;</Button> {/* Minimize */}
+                                            <Button className="window-control">&#9744;</Button>  {/* Maximize */}
+                                            <Button className="window-control">&#10005;</Button> {/* Close */}
+                                        </div>
+                                    </WindowHeader>
+                                    <Toolbar>
+                                        <Button variant='menu' size='sm'>File</Button>
+                                        <Button variant='menu' size='sm'>Edit</Button>
+                                        <Button variant='menu' size='sm' disabled>Save</Button>
+                                    </Toolbar>
+                                    <WindowContent>
+                                        <GroupBox>
+                                            {/* <div className="window-content"> */}
+                                            <p>Hi there, Im John, a full stack developer, a coder and a problem solver. I love to build things, websites, applications, devices, you name it. This portfolio is a work in progress but also a showcase of my abilities. Scroll down to see more! </p>
+                                            {/* </div> */}
+                                        </GroupBox>
+                                    </WindowContent>
+
+                                </Window>
+                            </Rnd>
+
                         </div>
-                        <div className="window-content">
-                            <p>Hi there, Im John, a full stack developer, a coder and a problem solver. I love to build things, websites, applications, devices, you name it. This portfolio is a work in progress but also a showcase of my abilities. Scroll down to see more! </p>
-                        </div>
-                    </div>
+
+                    </Wrapper>
+
+
+<Wrapper>
+  
                     <div className={`popup-window profile-window ${isProfileOpen ? "" : "hidden"}`}>
-                        <div className="window-title-bar">
-                            <span className="window-title">Profile</span>
-                            <div className="window-controls">
-                                <button className="window-control">&#x2212;</button> {/* Minimize */}
-                                <button className="window-control">&#9744;</button>  {/* Maximize */}
-                                <button className="window-control">&#10005;</button> {/* Close */}
-                            </div>
-                        </div>
-                        <div className="window-content">
-                            <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
-                        </div>
+                                                                              <Rnd
+
+                                default={{
+                                    x: 0,
+                                    y: 0,
+                                    width: 320,
+                                    height: 200
+                                }}>
+
+                        <Window>
+                            <WindowHeader className="window-title-bar">
+                                <span className="window-title">Profile</span>
+                                <div className="window-controls">
+                                    <Button className="window-control">&#x2212;</Button> {/* Minimize */}
+                                    <Button className="window-control">&#9744;</Button> {/* Maximize */}
+                                    <Button className="window-control">&#10005;</Button> {/* Close */}
+                                </div>
+                            </WindowHeader>
+                            <WindowContent>
+                                <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
+                            </WindowContent>
+                        </Window>
+                        </Rnd>
                     </div>
+                    
+                    </Wrapper>
 
 
                     <>
-  
 
-                        <div className={`popup-window-language ${isProfileOpen ? "" : "hidden"}`}>
+<Wrapper>
+                                 <Rnd
 
-                            <div className="window-title-bar">
-                                <span className="window-title">Languages</span>
-                                <div className="window-controls">
-                                    <button className="window-control">&#x2212;</button> {/* Minimize */}
-                                    <button className="window-control">&#9744;</button>  {/* Maximize */}
-                                    <button className="window-control">&#10005;</button> {/* Close */}
-                                </div>
-                            </div>
-                            <div className="window-content">
-                                <div className="cube-container-languages"></div>
-                                <div className="cube-container">
-                                    <div className="stage-cube-cont left-cube">
-                                        <div className="cubespinner">
-                                            {currentIcons.map((icon, index) => (
-                                                <div className={`face${index + 1}`} key={icon.iconName}>
-                                                    <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
+                                default={{
+                                    x: 0,
+                                    y: 0,
+                                    width: 320,
+                                    height: 200
+                                }}>
+ <Window className={`window popup-window-language ${isProfileOpen ? "" : "hidden"}`}>
+        <WindowHeader className="window-header">
+          <span>Languages</span>
+          <Button className="window-control">&#x2212;</Button> {/* Minimize */}
+          <Button className="window-control">&#9744;</Button> {/* Maximize */}
+          <Button className="window-control">&#10005;</Button> {/* Close */}
+        </WindowHeader>
+        <WindowContent>
+          {/* Assuming you replace this part with a suitable React95 element or keep it as is if it matches the style */}
+          {/* <div className="cube-container-languages"></div> */}
+          <div className="cube-container">
+            <div className="stage-cube-cont left-cube">
+              <div className="cubespinner">
+                {currentIcons.map((icon, index) => (
+                  <div className={`face${index + 1}`} key={icon.iconName}>
+                    <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </WindowContent>
+      </Window>
+                        </Rnd>
+                        </Wrapper>
 
-                                </div>
-                            </div>
-                        </div>
 
 
 
+                                 <Rnd
 
-
+                                default={{
+                                    x: 0,
+                                    y: 0,
+                                    width: 320,
+                                    height: 200
+                                }}>
                         <div className={`popup-window-scroll ${isProfileOpen ? "" : "hidden"}`}>
                             <div className="window-title-bar">
                                 <span className="window-title">Notice</span>
@@ -409,6 +525,7 @@ useEffect(() => {
                                 <p>Scroll down to continue<span className="cmd-cursor">_</span></p>
                             </div>
                         </div>
+                        </Rnd>
                         <div className={`popup-window-Xterminal ${isXterminalOpen ? "" : "hidden"}`}>
                             <div className="window-title-bar">
                                 <span className="window-title">Terminal</span>

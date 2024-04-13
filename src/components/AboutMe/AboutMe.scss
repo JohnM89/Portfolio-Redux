@@ -61,53 +61,6 @@
 
 }
 
-// .about-me-content {
-//     padding: 20px;
-//     margin-top: 20px;
-//     background-color: #f4f4f498; // Light grey background
-//     border-radius: 8px;
-//     box-shadow: 0 2px 4px rgba(103, 101, 101, 0.355);
-
-
-//     p {
-//         color: #000000; // Darker text color for contrast
-//         line-height: 1.6;
-//         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-//     }
-// }
-
-// .portfolio-image-div {
-//     display: flex;
-//     justify-content: center;
-//     /* Center items horizontally */
-//     align-items: center;
-//     /* Center items vertically */
-//     height: 100vh;
-//     position: relative;
-//     overflow: hidden;
-//     /* Ensure the pseudo-element doesn't extend outside this container */
-// }
-
-
-// .portfolio-image {
-//     width: auto;
-//     /* Adjust based on your preference */
-//     height: 85%;
-//     /* Maintain aspect ratio */
-//     object-fit: cover;
-//     align-items: center;
-//     // border-radius: 8px;
-//     // box-shadow: 0 2px 4px rgba(255, 255, 255, 0.355);
-//     z-index: 2;
-//     /* Ensure it's above the cubes if they overlap */
-//     position: absolute;
-//     top: 100%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     overflow: hidden;
-//     /* Ensure the pseudo-element doesn't extend outside this container */
-// }
-
 .technologies-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -185,7 +138,7 @@
     line-height: 1.5;
     width: 80%;
     max-width: 600px;
-    border: 1px solid #333333ee;
+    // border: 1px solid #333333ee;
     box-shadow: 0 0 3px rgba(255, 255, 255, 0.111);
     /* Adjust based on preference */
     max-width: 600px;
