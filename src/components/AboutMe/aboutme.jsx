@@ -163,12 +163,12 @@ const About = () => {
         // Extend with more conditions if other icons have specific actions
     };
 
-    useEffect(() => {
-        document.body.style.overflow = isProfileOpen ? 'unset' : 'hidden';
-        // No cleanup function needed here since we want the effect of this
-        // styling to persist as long as the component is mounted and its
-        // state changes.
-    }, [isProfileOpen]);
+    // useEffect(() => {
+    //     document.body.style.overflow = isProfileOpen ? 'unset' : 'hidden';
+    //     // No cleanup function needed here since we want the effect of this
+    //     // styling to persist as long as the component is mounted and its
+    //     // state changes.
+    // }, [isProfileOpen]);
 
 
 
