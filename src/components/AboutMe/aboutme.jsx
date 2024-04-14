@@ -134,7 +134,7 @@ const About = () => {
 
     };
 
-    
+
 
 
     const toggleProfileWindow = () => {
@@ -159,7 +159,7 @@ const About = () => {
         if (iconName === 'My Computer') {
             toggleProfileWindow();
         }
-        
+
         // Extend with more conditions if other icons have specific actions
     };
 
@@ -405,7 +405,7 @@ const About = () => {
                             <AnimatedLetters
                                 letterClass={letterClass}
                                 strArray={[
-                                    'C', 'l', 'i', 'c', 'k', ' ', 'A', 'r', 'o','u', 'n', 'd', '!',
+                                    'C', 'l', 'i', 'c', 'k', ' ', 'A', 'r', 'o', 'u', 'n', 'd', '!',
                                 ]}
                                 idx={15}
                             />
@@ -625,7 +625,9 @@ const About = () => {
                                         <Button variant='menu' size='sm' disabled>Save</Button>
                                     </Toolbar>
                                     <WindowContent>
-                                        <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
+                                        <GroupBox>
+                                            <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
+                                        </GroupBox>
                                     </WindowContent>
                                 </Window>
                             </Rnd>
@@ -638,86 +640,81 @@ const About = () => {
 
                         <Wrapper>
                             <Rnd
-
                                 default={{
                                     x: 420,
                                     y: -240,
                                     width: 320,
                                     height: 200
-                                }}>
-                                <div className='language-container'>
+                                }}
+                            >
+                                <Window className={`popup-window-language ${isLanguageOpen ? "" : "hidden"}`}>
+                                    <WindowHeader className="window-title-bar">
+                                        <span className="window-title">Languages</span>
+                                        <div className="window-controls">
+                                            <Button className="window-control">&#x2212;</Button> {/* Minimize */}
+                                            <Button className="window-control">&#9744;</Button> {/* Maximize */}
+                                            <Button className="window-control">&#10005;</Button> {/* Close */}
+                                        </div>
+                                    </WindowHeader>
+                                    <Toolbar>
+                                        <Button variant='menu' size='sm'>File</Button>
+                                        <Button variant='menu' size='sm'>Edit</Button>
+                                        <Button variant='menu' size='sm' disabled>Save</Button>
+                                    </Toolbar>
+                                    <WindowContent>
 
-                                    <Window className={`popup-window-language ${isLanguageOpen ? "" : "hidden"}`}>
-                                        <WindowHeader className="window-title-bar">
-                                            <span className="window-title">Languages</span>
-                                            <div className="window-controls">
-                                                <Button className="window-control">&#x2212;</Button> {/* Minimize */}
-                                                <Button className="window-control">&#9744;</Button> {/* Maximize */}
-                                                <Button className="window-control">&#10005;</Button> {/* Close */}
-                                            </div>
-                                        </WindowHeader>
-                                        {/* <Toolbar>
-
-                                            <Button variant='menu' size='sm'>File</Button>
-                                            <Button variant='menu' size='sm'>Edit</Button>
-                                            <Button variant='menu' size='sm' disabled>Save</Button>
-                                        </Toolbar> */}
-                                        <WindowContent>
-                                            {/* Assuming you replace this part with a suitable React95 element or keep it as is if it matches the style */}
-                                            {/* <div className="cube-container-languages"></div> */}
-                                            <div className="cube-container">
-                                                <div className="stage-cube-cont left-cube">
-                                                    <div className="cubespinner">
-                                                        {currentIcons.map((icon, index) => (
-                                                            <div className={`face${index + 1}`} key={icon.iconName}>
-                                                                <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
-                                                            </div>
-                                                        ))}
-                                                    </div>
+                                        <div className="cube-container">
+                                            <div className="stage-cube-cont left-cube">
+                                                <div className="cubespinner">
+                                                    {currentIcons.map((icon, index) => (
+                                                        <div className={`face${index + 1}`} key={icon.iconName}>
+                                                            <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
+                                                        </div>
+                                                    ))}
                                                 </div>
                                             </div>
-                                        </WindowContent>
+                                        </div>
 
-                                    </Window>
-                                </div>
+                                    </WindowContent>
+                                </Window>
                             </Rnd>
-
                         </Wrapper>
 
 
 
-                        <Wrapper    >
-                            <Rnd
 
+                        <Wrapper>
+                            <Rnd
                                 default={{
                                     x: 500,
                                     y: -100,
                                     width: 320,
                                     height: 200
-                                }}>
-                                <div className={`popup-window-scroll ${isScrollOpen ? "" : "hidden"}`}>
-                                    <Window>
-                                        <WindowHeader className="window-title-bar">
-                                            <span className="window-title">Notice</span>
-                                            <div className="window-controls">
-                                                <Button className="window-control" disabled>&#x2212;</Button> {/* Minimize */}
-                                                <Button className="window-control" disabled>&#9744;</Button>  {/* Maximize */}
-                                                <Button className="window-control" disabled>&#10005;</Button> {/* Close */}
-                                            </div>
-                                        </WindowHeader>
-                                        {/* <Toolbar>
-
-                                            <Button variant='menu' size='sm'>File</Button>
-                                            <Button variant='menu' size='sm'>Edit</Button>
-                                            <Button variant='menu' size='sm' disabled>Save</Button>
-                                        </Toolbar> */}
-                                        <WindowContent className="window-content">
-                                            <p>Scroll down to continue<span className="cmd-cursor">_</span></p>
-                                        </WindowContent>
-                                    </Window>
-                                </div>
+                                }}
+                            >
+                                <Window className={`popup-window-scroll ${isScrollOpen ? "" : "hidden"}`}>
+                                    <WindowHeader className="window-title-bar">
+                                        <span className="window-title">Notice</span>
+                                        <div className="window-controls">
+                                            <Button className="window-control" disabled >&#x2212;</Button> {/* Minimize */}
+                                            <Button className="window-control" disabled>&#9744;</Button> {/* Maximize */}
+                                            <Button className="window-control" disabled>&#10005;</Button> {/* Close */}
+                                        </div>
+                                    </WindowHeader>
+                                    <Toolbar>
+                                        <Button variant='menu' size='sm'>File</Button>
+                                        <Button variant='menu' size='sm'>Edit</Button>
+                                        <Button variant='menu' size='sm' disabled>Save</Button>
+                                    </Toolbar>
+                                    <WindowContent>
+                                        {/* <GroupBox> */}
+                                        <p>Scroll down to continue<span className="cmd-cursor">_</span></p>
+                                        {/* </GroupBox> */}
+                                    </WindowContent>
+                                </Window>
                             </Rnd>
                         </Wrapper>
+
                         <Rnd
 
                             default={{
