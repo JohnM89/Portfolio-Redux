@@ -10,9 +10,9 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faHtml5, faReact, faGitAlt, faNode, faGithub, faSass, } from '@fortawesome/free-brands-svg-icons';
 import './AboutMe.scss';
 import MonacoEditor from 'react-monaco-editor';
-import { GroupBox, MenuList, MenuListItem, ScrollView, Toolbar, Separator, Button, TextInput, Window, WindowContent, WindowHeader } from 'react95';
+import { GroupBox, Toolbar, Button, Window, WindowContent, WindowHeader } from 'react95';
 import styled from 'styled-components';
-import { render } from "react-dom";
+// import { render } from "react-dom";
 import { Rnd } from "react-rnd";
 
 
@@ -20,24 +20,18 @@ library.add(fas, fab);
 
 
 
-// const Wrapper = styled.div`
-//   padding: 5rem;
-//   background: ${({ theme }) => theme.material};
-//   #default-buttons button {
-//     margin-bottom: 1rem;
-//     margin-right: 1rem;
-//   }
-
-//   #cutout {
-//     background: ${({ theme }) => theme.canvas};
-//     padding: 1rem;
-//     width: 300px;
-//   }
-// `;
-
 const Wrapper = styled.div`
   padding: 5rem;
   // background: ${({ theme }) => theme.desktopBackground};
+    #cutout {
+    background: ${({ theme }) => theme.canvas};
+    padding: 1rem;
+    width: 300px;
+  }
+    #default-buttons button {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
   .window-title {
     display: flex;
     align-items: center;
@@ -393,59 +387,143 @@ const About = () => {
                     {/* <div className="desktop"> */}
 
                     <Rnd
-
-                        default={{
-                            x: 20,
-                            y: 450,
-                            width: 50,
-                            height: 50
-                        }}>
-                        <img src="/images/Search on Earth.ico" alt="Icon 7" className="desktop-icon icon-5" onClick={() => handleIconClick('Icon 1')} /></Rnd>
-                    <Rnd
-
-                        default={{
-                            x: 20,
-                            y: 150,
-                            width: 50,
-                            height: 50
-                        }}>
-                        <img src="/images/Folder.ico" alt="Icon 2" className="desktop-icon icon-2" onClick={() => handleIconClick('Icon 2')} /></Rnd>
-                    <Rnd
-
-                        default={{
-                            x: 20,
-                            y: 250,
-                            width: 50,
-                            height: 50
-                        }}>
-                        <img src="/images/Folder.ico" alt="Icon 3" className="desktop-icon icon-3" onClick={() => handleIconClick('Icon 3')} /></Rnd>
-                    <Rnd
-
-                        default={{
-                            x: 20,
-                            y: 350,
-                            width: 50,
-                            height: 50
-                        }}>
-                        <img src="/images/Network Drive.ico" alt="Icon 4" className="desktop-icon icon-4" onClick={() => handleIconClick('Icon 4')} /></Rnd>
-                    <Rnd
-
                         default={{
                             x: 20,
                             y: 50,
-                            width: 50,
-                            height: 50
-                        }}>
-                        <img src="/images/Recycle Bin with folder and document.ico" alt="Icon 5" className="desktop-icon icon-1" onClick={() => handleIconClick('Icon 5')} /></Rnd>
+                            width: 70,
+                            height: 80
+                        }}
+                        enableResizing={{
+                            bottom: false,
+                            bottomLeft: false,
+                            bottomRight: false,
+                            left: false,
+                            right: false,
+                            top: false,
+                            topLeft: false,
+                            topRight: false
+                        }}
+                    >
+                        <div className="icon-container" onClick={() => handleIconClick('Recycle Bin')}>
+                            <img src="/images/Recycle Bin with folder and document.ico" alt="Recycle Bin" />
+                            <div className="icon-label">Recycle Bin</div>
+                        </div>
+                    </Rnd>
                     <Rnd
-
+                        default={{
+                            x: 20,
+                            y: 150,
+                            width: 70,
+                            height: 80
+                        }}
+                        enableResizing={{
+                            bottom: false,
+                            bottomLeft: false,
+                            bottomRight: false,
+                            left: false,
+                            right: false,
+                            top: false,
+                            topLeft: false,
+                            topRight: false
+                        }}
+                    >
+                        <div className="icon-container" onClick={() => handleIconClick('Folder')}>
+                            <img src="/images/Folder.ico" alt="Folder" />
+                            <div className="icon-label">Folder</div>
+                        </div>
+                    </Rnd>
+                    <Rnd
+                        default={{
+                            x: 20,
+                            y: 250,
+                            width: 70,
+                            height: 80
+                        }}
+                        enableResizing={{
+                            bottom: false,
+                            bottomLeft: false,
+                            bottomRight: false,
+                            left: false,
+                            right: false,
+                            top: false,
+                            topLeft: false,
+                            topRight: false
+                        }}
+                    >
+                        <div className="icon-container" onClick={() => handleIconClick('Folder')}>
+                            <img src="/images/Folder.ico" alt="Folder" />
+                            <div className="icon-label">Folder</div>
+                        </div>
+                    </Rnd>
+                    <Rnd
+                        default={{
+                            x: 20,
+                            y: 350,
+                            width: 70,
+                            height: 80
+                        }}
+                        enableResizing={{
+                            bottom: false,
+                            bottomLeft: false,
+                            bottomRight: false,
+                            left: false,
+                            right: false,
+                            top: false,
+                            topLeft: false,
+                            topRight: false
+                        }}
+                    >
+                        <div className="icon-container" onClick={() => handleIconClick('Icon 1')}>
+                            <img src="/images/Network Drive.ico" alt="Network Drive" />
+                            <div className="icon-label">Network Drive</div>
+                        </div>
+                    </Rnd>
+                    <Rnd
+                        default={{
+                            x: 20,
+                            y: 450,
+                            width: 70,
+                            height: 80
+                        }}
+                        enableResizing={{
+                            bottom: false,
+                            bottomLeft: false,
+                            bottomRight: false,
+                            left: false,
+                            right: false,
+                            top: false,
+                            topLeft: false,
+                            topRight: false
+                        }}
+                    >
+                        <div className="icon-container" onClick={() => handleIconClick('Search')}>
+                            <img src="/images/Search on Earth.ico" alt="Search on Earth" />
+                            <div className="icon-label">Search</div>
+                        </div>
+                    </Rnd>
+                    <Rnd
                         default={{
                             x: 20,
                             y: 550,
-                            width: 50,
-                            height: 50
-                        }}>
-                        <img src="/images/My Computer.ico" alt="Icon 6" className="desktop-icon icon-6" onClick={() => handleIconClick('Icon 6')} /></Rnd>
+                            width: 70,
+                            height: 80
+                        }}
+                        enableResizing={{
+                            bottom: false,
+                            bottomLeft: false,
+                            bottomRight: false,
+                            left: false,
+                            right: false,
+                            top: false,
+                            topLeft: false,
+                            topRight: false
+                        }}
+                    >
+                        <div className="icon-container" onClick={() => handleIconClick('My Computer')}>
+                            <img src="/images/My Computer.ico" alt="My Computer" />
+                            <div className="icon-label">My Computer</div>
+                        </div>
+                    </Rnd>
 
 
                     {/* </div> */}
@@ -513,12 +591,12 @@ const About = () => {
                                             <Button className="window-control" >&#10005;</Button> {/* Close */}
                                         </div>
                                     </WindowHeader>
-                                                                           <Toolbar>
+                                    <Toolbar>
 
-                                            <Button variant='menu' size='sm'>File</Button>
-                                            <Button variant='menu' size='sm'>Edit</Button>
-                                            <Button variant='menu' size='sm' disabled>Save</Button>
-                                        </Toolbar>
+                                        <Button variant='menu' size='sm'>File</Button>
+                                        <Button variant='menu' size='sm'>Edit</Button>
+                                        <Button variant='menu' size='sm' disabled>Save</Button>
+                                    </Toolbar>
                                     <WindowContent>
                                         <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
                                     </WindowContent>
@@ -532,7 +610,7 @@ const About = () => {
                     <>
 
                         <Wrapper>
-                                                        <Rnd
+                            <Rnd
 
                                 default={{
                                     x: 420,
@@ -540,41 +618,41 @@ const About = () => {
                                     width: 320,
                                     height: 200
                                 }}>
-                            <div className='language-container'>
+                                <div className='language-container'>
 
-                                <Window className={`popup-window-language ${isProfileOpen ? "" : "hidden"}`}>
-                                    <WindowHeader className="window-title-bar">
-                                        <span className="window-title">Languages</span>
-                                        <div className="window-controls">
-                                            <Button className="window-control">&#x2212;</Button> {/* Minimize */}
-                                            <Button className="window-control">&#9744;</Button> {/* Maximize */}
-                                            <Button className="window-control">&#10005;</Button> {/* Close */}
-                                        </div>
-                                    </WindowHeader>
-                                                                           <Toolbar>
+                                    <Window className={`popup-window-language ${isProfileOpen ? "" : "hidden"}`}>
+                                        <WindowHeader className="window-title-bar">
+                                            <span className="window-title">Languages</span>
+                                            <div className="window-controls">
+                                                <Button className="window-control">&#x2212;</Button> {/* Minimize */}
+                                                <Button className="window-control">&#9744;</Button> {/* Maximize */}
+                                                <Button className="window-control">&#10005;</Button> {/* Close */}
+                                            </div>
+                                        </WindowHeader>
+                                        {/* <Toolbar>
 
                                             <Button variant='menu' size='sm'>File</Button>
                                             <Button variant='menu' size='sm'>Edit</Button>
                                             <Button variant='menu' size='sm' disabled>Save</Button>
-                                        </Toolbar>
-                                    <WindowContent>
-                                        {/* Assuming you replace this part with a suitable React95 element or keep it as is if it matches the style */}
-                                        {/* <div className="cube-container-languages"></div> */}
-                                        <div className="cube-container">
-                                            <div className="stage-cube-cont left-cube">
-                                                <div className="cubespinner">
-                                                    {currentIcons.map((icon, index) => (
-                                                        <div className={`face${index + 1}`} key={icon.iconName}>
-                                                            <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
-                                                        </div>
-                                                    ))}
+                                        </Toolbar> */}
+                                        <WindowContent>
+                                            {/* Assuming you replace this part with a suitable React95 element or keep it as is if it matches the style */}
+                                            {/* <div className="cube-container-languages"></div> */}
+                                            <div className="cube-container">
+                                                <div className="stage-cube-cont left-cube">
+                                                    <div className="cubespinner">
+                                                        {currentIcons.map((icon, index) => (
+                                                            <div className={`face${index + 1}`} key={icon.iconName}>
+                                                                <FontAwesomeIcon icon={icon} color={iconColors[icon.iconName]} />
+                                                            </div>
+                                                        ))}
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </WindowContent>
-                                    
-                                </Window>
-                            </div>
+                                        </WindowContent>
+
+                                    </Window>
+                                </div>
                             </Rnd>
 
                         </Wrapper>
@@ -595,9 +673,9 @@ const About = () => {
                                         <WindowHeader className="window-title-bar">
                                             <span className="window-title">Notice</span>
                                             <div className="window-controls">
-                                                <Button className="window-control"  disabled>&#x2212;</Button> {/* Minimize */}
-                                                <Button className="window-control"  disabled>&#9744;</Button>  {/* Maximize */}
-                                                <Button className="window-control"  disabled>&#10005;</Button> {/* Close */}
+                                                <Button className="window-control" disabled>&#x2212;</Button> {/* Minimize */}
+                                                <Button className="window-control" disabled>&#9744;</Button>  {/* Maximize */}
+                                                <Button className="window-control" disabled>&#10005;</Button> {/* Close */}
                                             </div>
                                         </WindowHeader>
                                         {/* <Toolbar>
@@ -648,11 +726,11 @@ const About = () => {
                         width: 60,
                         height: 60
                     }}> */}
-                    <img src="/images/clippy.png" className="clippy" id="clippy" />
+                <img src="/images/clippy.png" className="clippy" id="clippy" />
                 {/* </Rnd> */}
 
             </div>
-  
+
         </>
 
     );

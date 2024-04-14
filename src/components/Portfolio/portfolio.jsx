@@ -118,7 +118,7 @@ const Portfolio = () => {
       </h1> */}
       {projects.map((project, index) => (
         <Wrapper key={project.id}>
-          <Window className={`project project-${index}`} style={{ width: 'auto', margin: '20px' }}>
+          <Window className={`project project-${index}`} style={{ width: '50%', margin: '20px' }}>
             <WindowHeader className="window-title">
               <span>{project.title}</span>
               <Button>
@@ -133,12 +133,12 @@ const Portfolio = () => {
             <WindowContent>
               {project.liveLink ? (
                 <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                  <img src={project.imageUrl} alt={project.title} style={{ width: '100%', height: 'auto' }} />
+                  <img src={project.imageUrl} alt={project.title} style={{ width: '50%', height: 'auto' }} />
                   {/* <h2>{project.title}</h2> */}
                   <p>{project.description}</p>
                 </a>
               ) : (
-                <img src={project.imageUrl} alt={project.title} style={{ width: '100%', height: 'auto' }} />
+                <img src={project.imageUrl} alt={project.title} style={{ width: '50%', height: 'auto' }} />
               )}
               <Project {...project} />
             </WindowContent>

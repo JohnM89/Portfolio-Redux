@@ -90,16 +90,16 @@
     }
 }
 
-.tray-image {
-    // display: flex; /* Flexbox to center content and handle spacing */
-    // position: relative; /* Keeps the footer at the bottom regardless of scrolling */
-    // // bottom: 0; /* Aligns the footer at the bottom of the viewport */
-    // // left: 0;
-    // // right: 0;
-    // // height: auto; /* Allows the height to adjust based on content size */
-    // // overflow: hidden; /* Prevents the footer from making horizontal scroll */
-    // margin: 0 auto; /* Centers the footer if there's any horizontal space */
-}
+// .tray-image {
+//     // display: flex; /* Flexbox to center content and handle spacing */
+//     // position: relative; /* Keeps the footer at the bottom regardless of scrolling */
+//     // // bottom: 0; /* Aligns the footer at the bottom of the viewport */
+//     // // left: 0;
+//     // // right: 0;
+//     // // height: auto; /* Allows the height to adjust based on content size */
+//     // // overflow: hidden; /* Prevents the footer from making horizontal scroll */
+//     // margin: 0 auto; /* Centers the footer if there's any horizontal space */
+// }
 
 
 
@@ -501,6 +501,34 @@
     transform: translate(-50%, -50%);
 }
 
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px; // Adjust spacing as needed
+  cursor: pointer;
+
+  img {
+    width: 50px; // Icon size, adjust as needed
+    height: 50px; // Icon size, adjust as needed
+  }
+
+  .icon-label {
+    margin-top: 8px; // Space between icon and text
+    font-size: 12px; // Match your desired font size
+    color: white; // Text color
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; // Windows-like font
+  }
+}
+
+// .icon-container:hover {
+//   // Optional: hover effect to mimic Windows icon selection
+//   background-color: rgba(255, 255, 255, 0.2);
+//   border-radius: 5px;
+//   padding: 10px;
+// }
 
 .desktop-icon {
     cursor: pointer;

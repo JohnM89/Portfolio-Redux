@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AppBar, Button, MenuList, MenuListItem, Separator, TextInput, Toolbar } from 'react95';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import logoIMG from '/images/win95.png';
 // import logoIMG from '../assets/images/logo.png';
 
 const Footer = () => {
@@ -18,7 +19,7 @@ const Footer = () => {
 
   const Wrapper = styled.div`
 
-    // background: ${({ theme }) => theme.desktopBackground};
+    background: ${({ theme }) => theme.desktopBackground};
   `; 
 
     const technologies = [
@@ -40,6 +41,11 @@ const Footer = () => {
   active={open}
   style={{ fontWeight: 'bold' }}
 >
+              <img
+              src={logoIMG}
+             alt='react95 logo'
+             style={{ height: '20px', marginRight: 4 }}
+           />
   Start
 </Button>
 {open && (
