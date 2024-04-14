@@ -573,7 +573,7 @@ const About = () => {
                                         <div className="window-controls">
                                             <Button className="window-control">&#x2212;</Button> {/* Minimize */}
                                             <Button className="window-control">&#9744;</Button>  {/* Maximize */}
-                                            <Button className="window-control">&#10005;</Button> {/* Close */}
+                                            <Button  className="window-control">&#10005;</Button> {/* Close */}
                                         </div>
                                     </WindowHeader>
                                     <Toolbar>
