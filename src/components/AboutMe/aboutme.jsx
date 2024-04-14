@@ -108,9 +108,9 @@ const About = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
     const [currentIcons, setCurrentIcons] = useState([...initialIcons]);
     const [showOverlay, setShowOverlay] = useState(true);
-    const [isProfileOpen, setIsProfileOpen] = useState(false);
+    const [isProfileOpen, setIsProfileOpen] = useState(true);
     const [isXterminalOpen, setIsXterminalOpen] = useState(false);
-    const [isAboutOpen, setIsAboutOpen] = useState(false);
+    const [isAboutOpen, setIsAboutOpen] = useState(true);
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
     const [isScrollOpen, setIsScrollOpen] = useState(false);
 
@@ -584,7 +584,7 @@ const About = () => {
                                     <WindowContent>
                                         <GroupBox>
                                             {/* <div className="window-content"> */}
-                                            <p>Hi there, Im John, a full stack developer, a coder and a problem solver. I love to build things, websites, applications, devices, you name it. This portfolio is a work in progress but also a showcase of my abilities. Scroll down to see more! </p>
+                                            <p> Hello, Im John — a full stack developer passionate about building innovative websites, applications, and devices. My portfolio is both a work in progress and a showcase of what I can do. Please click around and explore to learn more about my skills and projects! </p>
                                             {/* </div> */}
                                         </GroupBox>
                                     </WindowContent>
