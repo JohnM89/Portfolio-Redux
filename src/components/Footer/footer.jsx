@@ -12,7 +12,7 @@ import { AppBar, Button, MenuList, MenuListItem, Separator, TextInput, Toolbar }
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import logoIMG from '/images/win95.png';
-// import logoIMG from '../assets/images/logo.png';
+
 
 const Footer = () => {
   const [open, setOpen] = useState(false);

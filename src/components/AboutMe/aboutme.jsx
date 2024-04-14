@@ -110,10 +110,31 @@ const About = () => {
     const [showOverlay, setShowOverlay] = useState(true);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [isXterminalOpen, setIsXterminalOpen] = useState(false);
+    const [isAboutOpen, setIsAboutOpen] = useState(false);
+    const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+    const [isScrollOpen, setIsScrollOpen] = useState(false);
+
 
     const toggleXterminalWindow = () => {
         setIsXterminalOpen(!isXterminalOpen);
     };
+
+    const toggleAboutWindow = () => {
+        setIsAboutOpen(!isAboutOpen);
+
+    };
+
+    const toggleLanguageWindow = () => {
+        setIsLanguageOpen(!isLanguageOpen);
+
+    };
+
+    const toggleScrollWindow = () => {
+        setIsScrollOpen(!isScrollOpen);
+
+    };
+
+    
 
 
     const toggleProfileWindow = () => {
@@ -126,6 +147,19 @@ const About = () => {
         if (iconName === 'Icon 1') { // Assuming Icon 7 is meant for XTerminal
             toggleXterminalWindow();
         }
+        if (iconName === 'Folder') {
+            toggleAboutWindow();
+        }
+        if (iconName === 'Recycle Bin') {
+            toggleLanguageWindow();
+        }
+        if (iconName === 'Search') {
+            toggleScrollWindow();
+        }
+        if (iconName === 'My Computer') {
+            toggleProfileWindow();
+        }
+        
         // Extend with more conditions if other icons have specific actions
     };
 
@@ -248,13 +282,13 @@ const About = () => {
         <>
 
             <div className="tray-image">
-                <img src="/images/Documents Folder.ico" alt="Open Profile" onClick={toggleProfileWindow} className="profile-icon" />
+                {/* <img src="/images/Documents Folder.ico" alt="Open Profile" onClick={toggleProfileWindow} className="profile-icon" /> */}
                 {showOverlay && (
                     <div
                         className="overlay"
                         onClick={hideOverlay}
                         style={{
-                            position: 'fixed',
+                            position: 'absolute',
                             top: 0,
                             left: 0,
                             width: '100%',
@@ -266,7 +300,7 @@ const About = () => {
                             color: '#FFF',
 
 
-                            // textAlign: 'center'
+
                         }}
                     >
 
@@ -346,14 +380,7 @@ const About = () => {
 
 
                         </div>
-                        {/* <Rnd
 
-                                default={{
-                                    x: 500,
-                                    y: 300,
-                                    width: 320,
-                                    height: 200
-                                }}> */}
 
                         <div className="cmd-container">
                             <div className="cmd-title-bar">
@@ -368,7 +395,7 @@ const About = () => {
                                 Click here to interrupt<span className="cmd-cursor">_</span>
                             </div>
                         </div>
-                        {/* </Rnd> */}
+
                     </div>
 
                 )}
@@ -378,7 +405,7 @@ const About = () => {
                             <AnimatedLetters
                                 letterClass={letterClass}
                                 strArray={[
-                                    'C', 'l', 'i', 'c', 'k', ' ', 'M', 'e', '!',
+                                    'C', 'l', 'i', 'c', 'k', ' ', 'A', 'r', 'o','u', 'n', 'd', '!',
                                 ]}
                                 idx={15}
                             />
@@ -529,7 +556,7 @@ const About = () => {
                     {/* </div> */}
 
                     <Wrapper>
-                        <div id="about-section" className={`popup-window ${isProfileOpen ? "" : "hidden"}`}>
+                        <div id="about-section" className={`popup-window ${isAboutOpen ? "" : "hidden"}`}>
                             <Rnd
 
                                 default={{
@@ -620,7 +647,7 @@ const About = () => {
                                 }}>
                                 <div className='language-container'>
 
-                                    <Window className={`popup-window-language ${isProfileOpen ? "" : "hidden"}`}>
+                                    <Window className={`popup-window-language ${isLanguageOpen ? "" : "hidden"}`}>
                                         <WindowHeader className="window-title-bar">
                                             <span className="window-title">Languages</span>
                                             <div className="window-controls">
@@ -668,7 +695,7 @@ const About = () => {
                                     width: 320,
                                     height: 200
                                 }}>
-                                <div className={`popup-window-scroll ${isProfileOpen ? "" : "hidden"}`}>
+                                <div className={`popup-window-scroll ${isScrollOpen ? "" : "hidden"}`}>
                                     <Window>
                                         <WindowHeader className="window-title-bar">
                                             <span className="window-title">Notice</span>
@@ -719,15 +746,9 @@ const About = () => {
                     </>
 
                 </div>
-                {/* <Rnd
-                    default={{
-                        x: 1000,
-                        y: 700,
-                        width: 60,
-                        height: 60
-                    }}> */}
+
                 <img src="/images/clippy.png" className="clippy" id="clippy" />
-                {/* </Rnd> */}
+
 
             </div>
 

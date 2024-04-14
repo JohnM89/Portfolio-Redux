@@ -33,11 +33,10 @@ $primary-color: #5d0cff;
 
 @media (max-width: 768px) {
 
-  img,
-  video {
-    max-width: 100%;
-    height: auto;
-  }
+img, video {
+  max-width: 100%;
+  height: auto;
+}
 }
 
 input,
@@ -46,9 +45,14 @@ textarea {
     sans-serif;
 }
 
+// img, video {
+//   max-width: 100%;
+//   height: auto;
+// }
+
 #root {
-  // max-width: 700px;
-  // margin: 0 auto;
+  max-width: 100%;
+  overflow-x: hidden;  // This will prevent any horizontal overflow
 
   // padding: 2rem;
   text-align: center;
@@ -99,24 +103,24 @@ textarea {
 //   background-attachment: fixed;
 // }
 
-div#parallax-2 {
-  background-size: cover;
-  justify-content: center;
-  background-attachment: fixed;
-  // padding: 2rem;
-  width: calc(600px + 40px) !important;
-  /* Make it wider than its container by extending 20px on each side */
-  max-width: none;
-  /* Override any max-width constraints */
-  height: 200px;
-  /* Adjust the height to your preference */
-  // margin-left: -20px;
-  /* Negative margin to extend the element beyond its container on the left */
-  // margin-right: -20px;
-  /* Negative margin to extend the element beyond its container on the right */
-  position: relative;
-  /* May need to adjust positioning depending on your layout */
-}
+// div#parallax-2 {
+//   background-size: cover;
+//   justify-content: center;
+//   background-attachment: fixed;
+//   // padding: 2rem;
+//   width: calc(600px + 40px) !important;
+//   /* Make it wider than its container by extending 20px on each side */
+//   max-width: none;
+//   /* Override any max-width constraints */
+//   height: 200px;
+//   /* Adjust the height to your preference */
+//   // margin-left: -20px;
+//   /* Negative margin to extend the element beyond its container on the left */
+//   // margin-right: -20px;
+//   /* Negative margin to extend the element beyond its container on the right */
+//   position: relative;
+//   /* May need to adjust positioning depending on your layout */
+// }
 
 
 // .loader-active {
@@ -144,14 +148,14 @@ div#parallax-2 {
 
 
 
-@media (max-width: 768px) {
-  .parallax {
-    height: 200px;
-  }
-}
+// @media (max-width: 768px) {
+//   .parallax {
+//     height: 200px;
+//   }
+// }
 
-@media (max-width: 768px) {
-  .parallax-portfolio {
-    height: 500px;
-  }
-}
+// @media (max-width: 768px) {
+//   .parallax-portfolio {
+//     height: 500px;
+//   }
+// }

@@ -120,26 +120,18 @@
     }
 }
 
-.popup-window {
-    position: relative;
-    background-color: #000;
-    color: #b4b4b4;
-    // font-family: 'Consolas', 'Courier New', Courier;
-    font-size: 13.5px;
-    /* Adjust based on actual cmd prompt size, typical values might range from 12px to 16px */
-    line-height: 1.5;
-    width: 80%;
-    max-width: 600px;
-    // border: 1px solid #333333ee;
-    box-shadow: 0 0 3px rgba(255, 255, 255, 0.111);
-    /* Adjust based on preference */
-    max-width: 600px;
-    /* Maximum width */
-    margin: auto;
-    /* Center in the available space */
-    transform: translateY(-50%);
-    /* Adjust based on layout */
-    z-index: 2;
+.popup-window, .window {
+  width: 100%; /* Use percentage */
+  max-width: 600px; /* Keep the max-width for larger screens */
+  margin: 20px auto; /* Center it horizontally */
+  padding: 20px; /* Consider inner spacing */
+}
+
+@media (max-width: 768px) {
+  .window, .popup-window {
+    width: 90%; /* Allow a bit more width on small screens */
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
 }
 
 .popup-window-language {
@@ -511,7 +503,7 @@
 
   img {
     width: 50px; // Icon size, adjust as needed
-    height: 50px; // Icon size, adjust as needed
+    // height: 50px; // Icon size, adjust as needed
   }
 
   .icon-label {
@@ -530,12 +522,12 @@
 //   padding: 10px;
 // }
 
-.desktop-icon {
-    cursor: pointer;
-    height: 50px;
-    width: 50px;
-    position: absolute;
-}
+// .desktop-icon {
+//     cursor: pointer;
+//     // height: 50px;
+//     // width: 50px;
+//     position: absolute;
+// }
 
 .clippy {
     cursor: pointer;
