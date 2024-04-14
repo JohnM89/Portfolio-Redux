@@ -191,6 +191,11 @@
     z-index: 2; /* Ensure it appears above other content if necessary */
 }
 
+.popup-window-scroll.hidden {
+    display: none !important;
+}
+
+
 @media (max-width: 768px) {
     .popup-window-scroll {
         width: 90%; /* Slightly narrower on smaller screens for padding */
