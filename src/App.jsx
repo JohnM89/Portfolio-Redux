@@ -1,4 +1,4 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
 import Header from './components/Header/header';
 import Footer from './components/Footer/footer';
@@ -92,3 +92,64 @@ function App() {
 }
 
 export default App;
+
+    // <Router>
+    //   <GlobalStyles />
+    //   <ThemeProvider theme={original}>
+    //     <div className="app">
+    //       <Header />
+    //       <main>
+    //         <section id="about">
+    //           <AboutMe />
+    //         </section>
+    //         <section id="portfolio">
+    //           <Portfolio />
+    //         </section>
+    //         <section id="contact">
+    //           <Contact />
+    //         </section>
+
+
+              
+              
+    //         {/* <Window>
+    //           <WindowContent >
+    //             <ScrollView
+    //       style={{ background: 'teal' }}>
+
+    //         <ParallaxSection id="parallax-2" backgroundImage="/images/setup.jpg"
+    //         className='parallax-custom-2' />
+
+    //         </ScrollView>
+    //         </WindowContent>
+    //         </Window> */}
+           
+
+
+    //         <section id="resume">
+    //           <Resume />
+    //         </section>
+    //       </main>
+    //       <Footer />
+    //     </div>
+    //   </ThemeProvider>
+    // </Router>
+
+    //     <Router>
+    //   <GlobalStyles />
+    //   <ThemeProvider theme={original}>
+    //     <div className="app">
+    //       <Header />
+    //       <main>
+    //         <Routes>
+    //           <Route path="/" element={<AboutMe />} />
+    //           <Route path="/about" element={<AboutMe />} />
+    //           <Route path="/portfolio" element={<Portfolio />} />
+    //           <Route path="/contact" element={<Contact />} />
+    //           <Route path="/resume" element={<Resume />} />
+    //         </Routes>
+    //       </main>
+    //       <Footer />
+    //     </div>
+    //   </ThemeProvider>
+    // </Router>
