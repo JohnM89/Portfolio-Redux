@@ -558,7 +558,6 @@ const About = () => {
                     <Wrapper>
                         <div id="about-section" className={`popup-window ${isAboutOpen ? "" : "hidden"}`}>
                             <Rnd
-
                                 default={{
                                     x: 320,
                                     y: -50,
@@ -568,12 +567,10 @@ const About = () => {
                                 <Window>
                                     <WindowHeader className="window-title-bar">
                                         <span className="window-title">About Me</span>
-
-
                                         <div className="window-controls">
-                                            <Button className="window-control">&#x2212;</Button> {/* Minimize */}
-                                            <Button className="window-control">&#9744;</Button>  {/* Maximize */}
-                                            <Button  className="window-control">&#10005;</Button> {/* Close */}
+                                            <Button className="window-control">&#x2212;</Button> 
+                                            <Button className="window-control">&#9744;</Button>  
+                                            <Button className="window-control" onClick={toggleAboutWindow}>&#10005;</Button> {/* Close */}
                                         </div>
                                     </WindowHeader>
                                     <Toolbar>
@@ -582,59 +579,43 @@ const About = () => {
                                         <Button variant='menu' size='sm' disabled>Save</Button>
                                     </Toolbar>
                                     <WindowContent>
-                                        <GroupBox>
-                                            {/* <div className="window-content"> */}
-                                            <p> Hello, Im John — a full stack developer passionate about building innovative websites, applications, and devices. My portfolio is both a work in progress and a showcase of what I can do. Please click around and explore to learn more about my skills and projects! </p>
-                                            {/* </div> */}
-                                        </GroupBox>
+                                        <p> Hello, Im John — a full stack developer passionate about building innovative websites, applications, and devices. My portfolio is both a work in progress and a showcase of what I can do. Please click around and explore to learn more about my skills and projects! </p>
                                     </WindowContent>
-
                                 </Window>
                             </Rnd>
-
                         </div>
-
                     </Wrapper>
 
-
                     <Wrapper>
-
                         <div className={`popup-window profile-window ${isProfileOpen ? "" : "hidden"}`}>
                             <Rnd
-
                                 default={{
                                     x: 0,
                                     y: -100,
                                     width: 320,
                                     height: 200
                                 }}>
-
                                 <Window>
                                     <WindowHeader className="window-title-bar">
                                         <span className="window-title">Profile</span>
                                         <div className="window-controls">
-                                            <Button className="window-control">&#x2212;</Button> {/* Minimize */}
-                                            <Button className="window-control">&#9744;</Button> {/* Maximize */}
-                                            <Button className="window-control" >&#10005;</Button> {/* Close */}
+                                            <Button className="window-control">&#x2212;</Button> 
+                                            <Button className="window-control">&#9744;</Button> 
+                                            <Button className="window-control" onClick={toggleProfileWindow}>&#10005;</Button> {/* Close */}
                                         </div>
                                     </WindowHeader>
                                     <Toolbar>
-
                                         <Button variant='menu' size='sm'>File</Button>
                                         <Button variant='menu' size='sm'>Edit</Button>
                                         <Button variant='menu' size='sm' disabled>Save</Button>
                                     </Toolbar>
                                     <WindowContent>
-                                        <GroupBox>
-                                            <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
-                                        </GroupBox>
+                                        <img src="/images/Okinawa.jpeg" alt="Me" className="profile-image" />
                                     </WindowContent>
                                 </Window>
                             </Rnd>
                         </div>
-
                     </Wrapper>
-
 
                     <>
 
@@ -645,15 +626,14 @@ const About = () => {
                                     y: -240,
                                     width: 320,
                                     height: 200
-                                }}
-                            >
+                                }}>
                                 <Window className={`popup-window-language ${isLanguageOpen ? "" : "hidden"}`}>
                                     <WindowHeader className="window-title-bar">
                                         <span className="window-title">Languages</span>
                                         <div className="window-controls">
-                                            <Button className="window-control">&#x2212;</Button> {/* Minimize */}
-                                            <Button className="window-control">&#9744;</Button> {/* Maximize */}
-                                            <Button className="window-control">&#10005;</Button> {/* Close */}
+                                            <Button className="window-control">&#x2212;</Button> 
+                                            <Button className="window-control">&#9744;</Button> 
+                                            <Button className="window-control" onClick={toggleLanguageWindow}>&#10005;</Button> {/* Close */}
                                         </div>
                                     </WindowHeader>
                                     <Toolbar>
@@ -662,7 +642,6 @@ const About = () => {
                                         <Button variant='menu' size='sm' disabled>Save</Button>
                                     </Toolbar>
                                     <WindowContent>
-
                                         <div className="cube-container">
                                             <div className="stage-cube-cont left-cube">
                                                 <div className="cubespinner">
@@ -674,14 +653,10 @@ const About = () => {
                                                 </div>
                                             </div>
                                         </div>
-
                                     </WindowContent>
                                 </Window>
                             </Rnd>
                         </Wrapper>
-
-
-
 
                         <Wrapper>
                             <Rnd
@@ -690,15 +665,14 @@ const About = () => {
                                     y: -100,
                                     width: 320,
                                     height: 200
-                                }}
-                            >
+                                }}>
                                 <Window className={`popup-window-scroll ${isScrollOpen ? "" : "hidden"}`}>
                                     <WindowHeader className="window-title-bar">
                                         <span className="window-title">Notice</span>
                                         <div className="window-controls">
-                                            <Button className="window-control" disabled >&#x2212;</Button> {/* Minimize */}
-                                            <Button className="window-control" disabled>&#9744;</Button> {/* Maximize */}
-                                            <Button className="window-control" disabled>&#10005;</Button> {/* Close */}
+                                            <Button className="window-control" disabled >&#x2212;</Button> 
+                                            <Button className="window-control" disabled>&#9744;</Button> 
+                                            <Button className="window-control" disabled onClick={toggleScrollWindow}>&#10005;</Button> 
                                         </div>
                                     </WindowHeader>
                                     <Toolbar>
@@ -707,31 +681,26 @@ const About = () => {
                                         <Button variant='menu' size='sm' disabled>Save</Button>
                                     </Toolbar>
                                     <WindowContent>
-                                        {/* <GroupBox> */}
                                         <p>Scroll down to continue<span className="cmd-cursor">_</span></p>
-                                        {/* </GroupBox> */}
                                     </WindowContent>
                                 </Window>
                             </Rnd>
                         </Wrapper>
 
                         <Rnd
-
                             default={{
                                 x: 0,
                                 y: 0,
                                 width: 700,
                                 height: 200
                             }}>
-
-
                             <div className={`popup-window-Xterminal ${isXterminalOpen ? "" : "hidden"}`}>
                                 <div className="window-title-bar">
                                     <span className="window-title">Terminal</span>
                                     <div className="window-controls">
                                         <button className="window-control">&#x2212;</button> {/* Minimize */}
                                         <button className="window-control">&#9744;</button>  {/* Maximize */}
-                                        <button className="window-control">&#10005;</button> {/* Close */}
+                                        <button className="window-control" onClick={toggleXterminalWindow}>&#10005;</button> {/* Close */}
                                     </div>
                                 </div>
                                 <div className="window-content">
