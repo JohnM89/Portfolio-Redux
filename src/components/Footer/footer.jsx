@@ -71,7 +71,7 @@ const Footer = () => {
         About Me
       </MenuListItem>
     </Link>
-    <Link smooth to="/#portfolio">
+    <Link smooth to="/home#portfolio">
       <MenuListItem>
         <span role='img' aria-label='📁'>
           📁
@@ -79,7 +79,7 @@ const Footer = () => {
         Portfolio
       </MenuListItem>
     </Link>
-    <Link smooth to="/#contact">
+    <Link smooth to="/home#contact">
       <MenuListItem>
         <span role='img' aria-label='📁'>
           📁
@@ -87,7 +87,7 @@ const Footer = () => {
         Contact
       </MenuListItem>
     </Link>
-    <Link smooth to="/#resume">
+    <Link smooth to="/home#resume">
       <MenuListItem>
         <span role='img' aria-label='📁'>
           📁

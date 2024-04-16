@@ -10,7 +10,8 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faHtml5, faReact, faGitAlt, faNode, faGithub, faSass, } from '@fortawesome/free-brands-svg-icons';
 import './AboutMe.scss';
 import MonacoEditor from 'react-monaco-editor';
-import { GroupBox, Toolbar, Button, Window, WindowContent, WindowHeader } from 'react95';
+import {  Toolbar, Button, Window, WindowContent, WindowHeader } from 'react95';
+
 import styled from 'styled-components';
 // import { render } from "react-dom";
 import { Rnd } from "react-rnd";
@@ -113,6 +114,7 @@ const About = () => {
     const [isAboutOpen, setIsAboutOpen] = useState(true);
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
     const [isScrollOpen, setIsScrollOpen] = useState(false);
+    const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
 
 
     const toggleXterminalWindow = () => {
@@ -131,6 +133,11 @@ const About = () => {
 
     const toggleScrollWindow = () => {
         setIsScrollOpen(!isScrollOpen);
+
+    };
+
+    const togglePortfolioWindow = () => {
+        setIsPortfolioOpen(!isPortfolioOpen);
 
     };
 
@@ -158,6 +165,9 @@ const About = () => {
         }
         if (iconName === 'My Computer') {
             toggleProfileWindow();
+        }
+        if (iconName === 'Folder2') {
+            togglePortfolioWindow();
         }
 
         // Extend with more conditions if other icons have specific actions
@@ -477,9 +487,9 @@ const About = () => {
                             topRight: false
                         }}
                     >
-                        <div className="icon-container" onClick={() => handleIconClick('Folder')}>
-                            <img src="/images/Folder.ico" alt="Folder" />
-                            <div className="icon-label">Folder</div>
+                        <div className="icon-container" onClick={() => handleIconClick('Folder2')}>
+                            <img src="/images/Folder.ico" alt="Folder2" />
+                            <div className="icon-label">Folder2</div>
                         </div>
                     </Rnd>
                     <Rnd

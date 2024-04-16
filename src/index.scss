@@ -43,6 +43,18 @@
 
 }
 
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
 
 /* Hides the scrollbar but allows scrolling */
 ::-webkit-scrollbar {

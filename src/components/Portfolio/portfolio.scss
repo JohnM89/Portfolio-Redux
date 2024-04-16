@@ -5,6 +5,11 @@
 //   // background-blend-mode: repeat;
 // }
 
+// .canvas-container {
+//   width: 100%; /* or any specific dimension */
+//   height: 80vh; /* adjusts based on your design needs */
+// }
+
 
 
 .project {
@@ -38,13 +43,44 @@
 }
 
 
-.animated {
+// .animated {
 
-    animation: fadeIn 320s;
+//     animation: fadeIn 320s;
+// }
+
+.portfolio {
+    // position: relative;
 }
 
+.portfolio-container2 {
+    // padding-top: 50vh;
+    // position: absolute;
+    // display: fixed;
+    top: 0;
+    height: 100%;
+    width: auto;
+    //  overflow: hidden;
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .wrapper {
+  width: 48%; /* Adjust based on gutter space */
+  margin-bottom: 20px; /* Space between rows */
+}
+
+}
+
+
+
 .portfolio-container {
-    padding-top: 50vh;
+    // display: sticky;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    // overflow: hidden;
+    top:0%;
+    // z-index: 11;
+  
 
 }
 

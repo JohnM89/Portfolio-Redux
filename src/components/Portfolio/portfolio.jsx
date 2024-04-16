@@ -1,4 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState  } from 'react';
+// import * as THREE from 'three'
+import PropTypes from 'prop-types';
+
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Project from '../Project/project';
@@ -6,10 +9,23 @@ import projects from '../../data/projects';
 // import AnimatedLetters from '../AnimatedLetters/animatedletters';
 import { Button, Toolbar, Window, WindowContent, WindowHeader} from 'react95';
 import styled from 'styled-components';
+// import { Canvas, useFrame, useThree } from '@react-three/fiber'
+
+// import { useIntersect, Image, ScrollControls, Scroll } from '@react-three/drei'
+
 
 import './portfolio.scss';
 
 gsap.registerPlugin(ScrollTrigger);
+
+// const StyledPage = styled.div`
+//   width: 100%;
+//   height: 100vh; // Set to the height that fits your design
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+
+// `;
 
 const Wrapper = styled.div`
   padding: 5rem;
@@ -63,11 +79,50 @@ const Wrapper = styled.div`
   }
 `;
 
+// const Item = ({ url, scale, ...props }) => {
+//   const visible = useRef(false);
+//   const [hovered, hover] = useState(false);
+//   const ref = useIntersect((isVisible) => (visible.current = isVisible));
+//   const { height } = useThree((state) => state.viewport);
+
+
+//   useFrame((state, delta) => {
+//     ref.current.position.y = THREE.MathUtils.damp(ref.current.position.y, visible.current ? 0 : -height / 2 + 1, 4, delta);
+//     ref.current.material.zoom = THREE.MathUtils.damp(ref.current.material.zoom, visible.current ? 1 : 1.5, 4, delta);
+//     ref.current.material.grayscale = THREE.MathUtils.damp(ref.current.material.grayscale, hovered ? 1 : 0, 4, delta);
+//   });
+
+//   return (
+//     <group {...props}>
+//       <Image ref={ref} onPointerOver={() => hover(true)} onPointerOut={() => hover(false)} scale={scale} url={url} />
+//     </group>
+//   );
+// };
+
+
+// const computeScale = (scale, w) => scale.map(s => s * w);
+// const computePosition = (position, w, h) => [position[0] * w, position[1] * h, position[2]];
+// const Items = () => {
+//     const { width: w, height: h } = useThree((state) => state.viewport);
+//     return (
+//         <Scroll>
+//             {projects.map((project, index) => (
+//                 <Item
+//                     key={project.id}
+//                     url={project.imageUrl}
+//                     scale={computeScale(project.scale, w )} // Simplified scale computation
+//                     position={computePosition(project.position, w, h)} // Simplified position computation
+//                 />
+//             ))}
+//         </Scroll>
+//     );
+// };
+
 const Portfolio = () => {
   // const [letterClass,] = useState('text-animate');
 
   useEffect(() => {
-    gsap.set('.portfolio', { paddingTop: '80%' });
+    gsap.set('.portfolio', { paddingTop: '0%' });
     ScrollTrigger.refresh();
 
     projects.forEach((project, index) => {
@@ -77,7 +132,7 @@ const Portfolio = () => {
         projectClass,
         { autoAlpha: 0, x: () => (index % 2 === 0 ? '-100%' : '100%') },
         {
-          duration: 2,
+          duration: .8,
           autoAlpha: 1,
           x: 0,
           ease: 'power2.out',
@@ -85,22 +140,22 @@ const Portfolio = () => {
             trigger: projectClass,
             start: "top center+=100",
             end: "bottom top-=100",
-            toggleActions: "play none none reverse",
+            toggleActions: "play none none none", //removed reverse
             markers: false,
-            onLeave: () => gsap.to(projectClass, {
-              duration: 3,
-              autoAlpha: 0,
-              scale: 0.5
-            }),
-            onEnterBack: () => gsap.fromTo(projectClass, {
-              autoAlpha: 0,
-              scale: 0.5,
-            }, {
-              duration: 2,
-              autoAlpha: 1,
-              x: 0,
-              scale: 1
-            }),
+            // onLeave: () => gsap.to(projectClass, {
+            //   duration: 9,
+            //   autoAlpha: 0,
+            //   scale: 0.5
+            // }),
+            // onEnterBack: () => gsap.fromTo(projectClass, {
+            //   autoAlpha: 0,
+            //   scale: 0.5,
+            // }, {
+            //   duration: 2,
+            //   autoAlpha: 1,
+            //   x: 0,
+            //   scale: 1
+            // }),
           },
         }
       );
@@ -108,17 +163,48 @@ const Portfolio = () => {
   }, []);
 
   return (
+
     <div className="portfolio">
-      {/* <h1 className="animated">
-        <AnimatedLetters
-          letterClass={letterClass}
-          strArray={[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']}
-          idx={15}
-        />
-      </h1> */}
+       {/* <div className="portfolio-container">
+       <Wrapper>
+      <Window>
+        <WindowHeader className="window-title">
+              <span>Portfolio</span>
+              <Button>
+                <span className="close-icon" />
+              </Button>
+            </WindowHeader>
+            <WindowContent>
+
+
+
+
+      <StyledPage>
+        <Canvas orthographic camera={{ zoom: 80 }} gl={{ alpha: true, antialias: true, preserveDrawingBuffer: true ,  stencil: false, depth: false }}  style={{ background: 'transparent' }} dpr={[1, 1.5]}>
+    <ScrollControls damping={6} pages={5}>
+      
+      <Items />
+      <Scroll html style={{ width: '100%' }}>
+        <h1 style={{ position: 'absolute', top: `100vh`, right: '20vw', fontSize: '25em', transform: `translate3d(0,-100%,0)` }}>all</h1>
+        <h1 style={{ position: 'absolute', top: '180vh', left: '10vw' }}>my</h1>
+        <h1 style={{ position: 'absolute', top: '260vh', right: '10vw' }}>projects,</h1>
+        <h1 style={{ position: 'absolute', top: '350vh', left: '10vw' }}>right</h1>
+        <h1 style={{ position: 'absolute', top: '450vh', right: '10vw' }}>he
+          <br />re.
+        </h1>
+      </Scroll>
+    </ScrollControls>
+  </Canvas>
+      </StyledPage>
+      </WindowContent>
+      </Window>
+      </Wrapper>
+      </div>  */}
+
+     <div className="portfolio-container2">
       {projects.map((project, index) => (
-        <Wrapper key={project.id}>
-          <Window className={`project project-${index}`} style={{ width: '50%', margin: '20px' }}>
+        <Wrapper className="wrapper" key={project.id}>
+          <Window className={`project project-${index}`} style={{ width: '100%', margin: '20px' }}>
             <WindowHeader className="window-title">
               <span>{project.title}</span>
               <Button>
@@ -131,6 +217,7 @@ const Portfolio = () => {
               <Button variant='menu' size='sm' disabled>Save</Button>
             </Toolbar>
             <WindowContent>
+              
               {project.liveLink ? (
                 <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
                   <img src={project.imageUrl} alt={project.title} style={{ width: '50%', height: 'auto' }} />
@@ -145,8 +232,19 @@ const Portfolio = () => {
           </Window>
         </Wrapper>
       ))}
+      </div>
     </div>
+
+    
   );
+};
+
+//props validation
+Portfolio.propTypes = {
+
+
+  project: PropTypes.object.isRequired,
+
 };
 
 export default Portfolio;

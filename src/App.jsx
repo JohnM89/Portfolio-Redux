@@ -10,6 +10,8 @@ import Resume from './components/Resume/resume';
 // import {  ScrollView, Window, WindowContent, styleReset } from 'react95';
 import { styleReset } from 'react95';
 // import styled from 'styled-components';
+// import { createRoot } from 'react-dom/client'
+import { Suspense } from 'react'
 
 
 
@@ -45,6 +47,8 @@ const GlobalStyles = createGlobalStyle`
 
 
 
+
+//temporary setup while im working on scroll or remove it not sure yet.
 function App() {
   return (
     <Router>
@@ -53,36 +57,20 @@ function App() {
         <div className="app">
           <Header />
           <main>
-            <section id="about">
-              <AboutMe />
-            </section>
-            <section id="portfolio">
-              <Portfolio />
-            </section>
-            <section id="contact">
-              <Contact />
-            </section>
-
-
-              
-              
-            {/* <Window>
-              <WindowContent >
-                <ScrollView
-          style={{ background: 'teal' }}>
-
-            <ParallaxSection id="parallax-2" backgroundImage="/images/setup.jpg"
-            className='parallax-custom-2' />
-
-            </ScrollView>
-            </WindowContent>
-            </Window> */}
-           
-
-
-            <section id="resume">
-              <Resume />
-            </section>
+            <Routes>
+              <Route path="/" element={<AboutMe />} />
+              <Route path="/home" element={
+                <>
+                  <section id="portfolio">
+                    <Suspense fallback={<div>Loading Portfolio...</div>}>
+                      <Portfolio />
+                    </Suspense>
+                  </section>
+                  <section id="contact"><Contact /></section>
+                  <section id="resume"><Resume /></section>
+                </>
+              } />
+            </Routes>
           </main>
           <Footer />
         </div>
@@ -93,6 +81,8 @@ function App() {
 
 export default App;
 
+
+//original setup
     // <Router>
     //   <GlobalStyles />
     //   <ThemeProvider theme={original}>
@@ -135,21 +125,3 @@ export default App;
     //   </ThemeProvider>
     // </Router>
 
-    //     <Router>
-    //   <GlobalStyles />
-    //   <ThemeProvider theme={original}>
-    //     <div className="app">
-    //       <Header />
-    //       <main>
-    //         <Routes>
-    //           <Route path="/" element={<AboutMe />} />
-    //           <Route path="/about" element={<AboutMe />} />
-    //           <Route path="/portfolio" element={<Portfolio />} />
-    //           <Route path="/contact" element={<Contact />} />
-    //           <Route path="/resume" element={<Resume />} />
-    //         </Routes>
-    //       </main>
-    //       <Footer />
-    //     </div>
-    //   </ThemeProvider>
-    // </Router>
