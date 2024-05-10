@@ -26,7 +26,7 @@ const Resume = () => {
                 </div>
                 <div className="social-links3">
                 <img src="./images/logo2.png" alt="Logo 3" className="placeholder" />
-                                <a href="/pdf/John MToronto 1 (1).pdf" target="pdf" rel="noopener noreferrer">
+                                <a href="/pdf/John-MacNeil-Resume.pdf" target="pdf" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faFilePdf} /> Resume PDF
                 </a>
                 </div>
